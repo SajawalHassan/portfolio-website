@@ -1,130 +1,58 @@
-"use client";
+import clsx from "clsx";
 
-import Coffee from "@/public/assets/icons/coffee-svgrepo-com.svg";
-import ChevronRight from "@/public/assets/icons/chevron-right-yellow.svg";
-import Image from "next/image";
-import { easeIn, motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { useEverythingState } from "@/store/store";
+interface Props {
+  className?: string;
+  text: string;
+}
 
-export const LoadingScreen = () => {
+export const Heading1 = (props: Props) => {
   return (
-    <motion.div
-      className="fixed inset-0 z-50 bg-bg flex items-center justify-center z-999"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 0, display: "none" }}
-      transition={{ duration: 0.4, ease: "easeInOut", delay: 1.5 }}
+    <h1
+      className={clsx(
+        `font-francois text-[38px] sm:text-[44px] md:text-[52px] text-black leading-[112.3%] xl:text-[56px] 2xl:text-[65px] 3xl:text-[70px]!`,
+        props.className,
+      )}
     >
-      <motion.div
-        initial={{ y: "200%", opacity: 0 }}
-        animate={{
-          y: ["200%", "0%"],
-          scale: [1, 1.2, 2],
-          opacity: [1, 0],
-        }}
-        transition={{
-          y: { duration: 0.6, ease: "easeInOut", times: [0, 1] },
-          scale: { duration: 1.5, ease: "easeInOut", times: [0, 0.5, 1] },
-          opacity: { duration: 0.4, ease: "easeInOut", delay: 1.5 },
-        }}
-      >
-        <Image
-          src={Coffee}
-          width={200}
-          height={200}
-          alt="coffee"
-          className="animate-bounce"
-          loading="eager"
-        />
-      </motion.div>
-    </motion.div>
+      {props.text}
+    </h1>
   );
 };
 
-export const PageTransition = ({ href }: { href: string }) => {
-  const router = useRouter();
-  const everythingState = useEverythingState();
-
-  setTimeout(() => {
-    everythingState.setDoExitAnim(false);
-
-    if (everythingState.doExitAnim == true) {
-      router.push(href);
-    }
-  }, 2200);
-
+export const Heading2 = (props: Props) => {
   return (
-    <motion.div
-      className="bg-bg h-screen w-screen flex items-center max-w-screen overflow-x-hidden fixed top-0 left-0 z-999"
-      initial={{ x: "-100%", opacity: "100%" }}
-      animate={{ x: ["-100%", "0%", "0%"], opacity: ["100%", "100%", "0%"] }}
-      transition={{
-        x: { duration: 0.52, ease: "easeInOut", times: [0, 0.8, 1] },
-        opacity: {
-          duration: 0.5,
-          ease: "easeInOut",
-          times: [0, 0.8, 1],
-          delay: 1.8,
-        },
-      }}
+    <h1
+      className={clsx(
+        `font-francois text-[36px] sm:text-[42px] md:text-[50px] lg:text-[40px]! text-black leading-[112.3%] xl:text-[54px]! 2xl:text-[62px]! 3xl:text-[68px]!`,
+        props.className,
+      )}
     >
-      <motion.div
-        initial={{
-          x: "-100%",
-          clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)",
-        }}
-        animate={{
-          x: ["-100%", "-35%", "-35%", "100%"],
-          clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)",
-        }}
-        transition={{
-          x: { duration: 2, ease: "easeInOut", times: [0, 0.4, 0.6, 1] },
-          clipPath: { duration: 2, ease: "easeIn" },
-        }}
-        className="bg-black h-[145px] md:h-[230px] lg:h-[250px] xl:h-[305px] xl:h- min-w-[115%] flex items-center justify-center"
-      >
-        <motion.div>
-          <Image
-            src={ChevronRight}
-            height={200}
-            width={200}
-            alt="chevron right"
-            className="md:w-[280px] md:h-[280px] xl:w-[368px] xl:h-[368px]"
-          />
-        </motion.div>
-      </motion.div>
-      {/* <motion.div
-        initial={{
-          x: "-100%",
-          clipPath: "polygon(0 0, 75% 0, 100% 100%, 0 100%)",
-        }}
-        animate={{
-          x: ["0%", "0%", "50%"],
-          clipPath: [
-            "polygon(0 0, 75% 0, 100% 100%, 0 100%)",
-            "polygon(0 0, 75% 0, 100% 100%, 0 100%)",
-            "polygon(0 0, 75% 0, 100% 100%, 0 100%)",
-            "polygon(0 0, 100% 0, 100% 100%, 20% 100%)",
-          ],
-        }}
-        transition={{
-          x: { duration: 1.8, ease: "easeInOut", times: [0, 0.5, 1] },
-          clipPath: {
-            duration: 1.8,
-            ease: "easeInOut",
-            times: [0, 0.5, 0.8, 1],
-          },
-        }}
-        className="bg-black h-[345px] w-[79%] flex items-center justify-center"
-      >
-        <Image
-          src={ChevronRight}
-          height={380}
-          width={380}
-          alt="chevron right"
-          className="mr-50"
-        />
-      </motion.div> */}
-    </motion.div>
+      {props.text}
+    </h1>
+  );
+};
+
+export const Heading3 = (props: Props) => {
+  return (
+    <h1
+      className={clsx(
+        `text-[25px] md:text-[35px] font-francois text-black group-hover:text-white transition-all z-50 duration-400 lg:text-[30px] 2xl:text-[40px] 3xl:text-[45px]!`,
+        props.className,
+      )}
+    >
+      {props.text}
+    </h1>
+  );
+};
+
+export const HeadingSubText = (props: Props) => {
+  return (
+    <p
+      className={clsx(
+        props.className,
+        "text-[16px] leading-[134%] text-subtext md:text-[18px] 2xl:text-[20px] 3xl:text-[22px]!",
+      )}
+    >
+      {props.text}
+    </p>
   );
 };

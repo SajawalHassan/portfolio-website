@@ -1,12 +1,12 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import { Heading2, HeadingSubText } from "./ui";
+import { Heading2, HeadingSubText } from "../ui";
 import TOCItem from "./TOCItem";
 import { TOC as TOCItemData } from "@/data/homepage";
 import { container, item } from "../global-anim-variants";
 import { useEverythingState } from "@/store/store";
 import { useState } from "react";
-import { PageTransition } from "../ui";
+import { PageTransition } from "@/components/page-transition";
 
 function TOC() {
   const [showLoading, setShowLoading] = useState(false);

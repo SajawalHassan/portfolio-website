@@ -2,7 +2,7 @@
 import Squiggle from "@/public/assets/icons/squiggle.svg";
 import Pencil from "@/public/assets/icons/pencil.svg";
 import Image from "next/image";
-import { Heading1, HeadingSubText } from "./ui";
+import { Heading1, HeadingSubText } from "../ui";
 import { motion } from "framer-motion";
 import { useEverythingState } from "@/store/store";
 import { container, item } from "../global-anim-variants";

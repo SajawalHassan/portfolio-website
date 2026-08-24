@@ -1,9 +1,8 @@
 "use client";
 import { MouseEvent, useEffect, useState } from "react";
-import { Heading3 } from "./ui";
+import { Heading3 } from "../ui";
 import clsx from "clsx";
 import Link from "next/link";
-import { PageTransition } from "../ui";
 import { useEverythingState } from "@/store/store";
 
 interface Props {
@@ -58,7 +57,7 @@ function TOCItem(props: Props) {
           />
           <div
             className={clsx(
-              "md:w-[380px] lg:w-full 2xl:w-full md:mx-auto lg:mx-0 flex 2xl:mx-0 2xl:ml-3! items-center gap-x-[13px] py-[10px] z-50",
+              "md:w-[380px] lg:w-full 2xl:w-full md:mx-auto lg:mx-0 flex 2xl:mx-0 lg:ml-1.5! xl:ml-3! items-center gap-x-[13px] py-[10px] z-50",
               props.isAlt && "ml-3",
             )}
           >

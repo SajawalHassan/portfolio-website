@@ -1,7 +1,7 @@
 "use client";
 import CoffeeIcon from "@/public/assets/icons/coffee-mug.svg";
 import Image from "next/image";
-import { Heading3 } from "./ui";
+import { Heading3 } from "../ui";
 import { motion } from "framer-motion";
 import { container, item } from "../global-anim-variants";
 import { useEverythingState } from "@/store/store";
