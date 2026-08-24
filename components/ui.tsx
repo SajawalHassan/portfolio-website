@@ -5,6 +5,7 @@ import ChevronRight from "@/public/assets/icons/chevron-right-yellow.svg";
 import Image from "next/image";
 import { easeIn, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useEverythingState } from "@/store/store";
 
 export const LoadingScreen = () => {
   return (
@@ -42,8 +43,11 @@ export const LoadingScreen = () => {
 
 export const PageTransition = ({ href }: { href: string }) => {
   const router = useRouter();
+  const everythingState = useEverythingState();
 
   setTimeout(() => {
+    everythingState.setDoExitAnim(false);
+    console.log("pushing user to href");
     router.push(href);
   }, 2200);
 

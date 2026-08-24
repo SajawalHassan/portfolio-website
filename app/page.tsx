@@ -1,4 +1,3 @@
-import FloatingCircles from "@/components/bg-circles";
 import Header from "@/components/homepage/header";
 import Hero from "@/components/homepage/hero";
 import TOC from "@/components/homepage/TOC";
