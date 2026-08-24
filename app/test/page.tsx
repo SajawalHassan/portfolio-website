@@ -1,7 +1,7 @@
-import React from "react";
+import FloatingCircles from "@/components/bg-circles";
 
 const Page = () => {
-  return <div>Page</div>;
+  return <div className="h-screen w-screen home-page">Test</div>;
 };
 
 export default Page;

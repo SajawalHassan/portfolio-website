@@ -3,34 +3,26 @@ import { motion, Variants } from "framer-motion";
 import { Heading2, HeadingSubText } from "./ui";
 import TOCItem from "./TOCItem";
 import { TOC as TOCItemData } from "@/data/homepage";
-
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 2.2,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+import { container, item } from "../global-anim-variants";
+import { useEverythingState } from "@/store/store";
+import { useState } from "react";
+import { PageTransition } from "../ui";
 
 function TOC() {
+  const [showLoading, setShowLoading] = useState(false);
+  const everythingState = useEverythingState();
+
+  if (showLoading) return <PageTransition href="test" />;
+
   return (
     <motion.div
       className="sm:px-10 md:px-20 lg:px-0 lg:w-full xl:max-w-[470px] 2xl:max-w-[531px] 2xl:w-full 3xl:max-w-full"
       variants={container}
       initial="hidden"
-      animate="show"
+      animate={everythingState.doExitAnim ? "exit" : "show"}
+      onAnimationComplete={(definition) => {
+        if (definition === "exit") setShowLoading(true);
+      }}
     >
       <div className="md:text-center lg:text-left">
         <motion.div variants={item}>

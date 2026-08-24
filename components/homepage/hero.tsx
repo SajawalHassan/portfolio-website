@@ -3,35 +3,19 @@ import Squiggle from "@/public/assets/icons/squiggle.svg";
 import Pencil from "@/public/assets/icons/pencil.svg";
 import Image from "next/image";
 import { Heading1, HeadingSubText } from "./ui";
-import { motion, Variants } from "framer-motion";
-
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 2.2,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+import { motion } from "framer-motion";
+import { useEverythingState } from "@/store/store";
+import { container, item } from "../global-anim-variants";
 
 function Hero() {
+  const everythingState = useEverythingState();
+
   return (
     <motion.div
       className="space-y-[60px] lg:max-w-[670px] xl:max-w-[740px] 2xl:max-w-full"
       variants={container}
       initial="hidden"
-      animate="show"
+      animate={everythingState.doExitAnim ? "exit" : "show"}
     >
       <div className="space-y-[14px] max-w-[550px] sm:max-w-full md:px-20 lg:px-0 sm:px-10 md:text-center lg:text-left">
         <motion.div variants={item}>

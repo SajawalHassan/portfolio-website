@@ -25,6 +25,7 @@
   --font-inter: var(--font-inter);
   --color-subtext: #5b564c;
   --color-accent: #dab56a;
+  --color-bg: #c7c1b1;
 }
 
 body {
@@ -35,6 +36,8 @@ body {
 
 .home-page {
   background-image: url("/assets/image_1.webp");
+  overflow-x: hidden;
+  max-width: 100vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
