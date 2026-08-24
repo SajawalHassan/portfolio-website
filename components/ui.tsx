@@ -47,8 +47,10 @@ export const PageTransition = ({ href }: { href: string }) => {
 
   setTimeout(() => {
     everythingState.setDoExitAnim(false);
-    console.log("pushing user to href");
-    router.push(href);
+
+    if (everythingState.doExitAnim == true) {
+      router.push(href);
+    }
   }, 2200);
 
   return (
