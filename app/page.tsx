@@ -1,4 +1,4 @@
-import Header from "@/components/homepage/header";
+import Header from "@/components/header";
 import Hero from "@/components/homepage/hero";
 import TOC from "@/components/homepage/TOC";
 

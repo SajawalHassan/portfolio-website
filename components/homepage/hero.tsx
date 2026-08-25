@@ -1,6 +1,5 @@
 "use client";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
-import Pencil from "@/public/assets/icons/pencil.svg";
 import Image from "next/image";
 import { Heading1, HeadingSubText } from "../ui";
 import { motion } from "framer-motion";
@@ -12,7 +11,7 @@ function Hero() {
 
   return (
     <motion.div
-      className="space-y-[60px] lg:max-w-[670px] xl:max-w-[740px] 2xl:max-w-full"
+      className="space-y-[60px] lg:space-y-[80px] lg:max-w-[670px] xl:max-w-[780px]! 2xl:max-w-[850px]!"
       variants={container}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
@@ -31,20 +30,20 @@ function Hero() {
         </motion.div>
       </div>
 
-      <div className="flex items-center gap-x-[27px] w-max mx-auto lg:gap-x-18 2xl:gap-x-0 2xl:justify-around 2xl:max-w-[740px] 2xl:w-full border border-transparent 2xl:mx-0">
+      <div className="flex items-center gap-x-[27px] w-max mx-auto md:gap-x-18 2xl:gap-x-0 2xl:justify-around 2xl:max-w-[700px] 2xl:w-full border border-transparent">
         <motion.div variants={item}>
           <Image
             src={Squiggle}
             height={101}
             width={25}
             alt="squiggle"
-            className="rotate-180 sm:h-[150px] sm:w-[75px] lg:hidden"
+            className="rotate-180 sm:h-[150px] sm:w-[75px] md:h-[215px] md:w-[55px] 2xl:h-[260px] 2xl:w-[75px] animate-float-sm"
           />
         </motion.div>
 
         <motion.div
           variants={item}
-          className="animate-float [animation-delay:3s] w-[198px] h-[198px] rounded-full border border-black bg-[#D9D9D9] sm:w-[240px] sm:h-[240px] xl:h-[220px] xl:w-[220px] 2xl:h-[261px] 2xl:w-[261px]"
+          className="animate-float [animation-delay:3s] w-[198px] h-[198px] rounded-full border-[6px] border-black bg-[#D9D9D9] sm:w-[240px] sm:h-[240px] xl:h-[220px] xl:w-[220px] 2xl:h-[280px] 2xl:w-[280px]"
         />
 
         <motion.div variants={item}>
@@ -53,41 +52,8 @@ function Hero() {
             height={101}
             width={25}
             alt="squiggle"
-            className="sm:h-[150px] sm:w-[75px] lg:hidden"
+            className="sm:h-[150px] sm:w-[75px] md:h-[215px] md:w-[55px] 2xl:h-[260px] 2xl:w-[75px] animate-float-sm"
           />
-        </motion.div>
-
-        <motion.div variants={item} className="relative">
-          <Image
-            src={Pencil}
-            width={180}
-            height={180}
-            alt="pencil"
-            className="relative z-50 hidden lg:block 2xl:w-[196px] 2xl:h-[196px] animate-float [animation-delay:2s]"
-          />
-          <div className="items-center gap-x-0 absolute top-0 z-0 hidden lg:flex 2xl:-left-15 2xl:top-3 animate-float">
-            <Image
-              src={Squiggle}
-              width={25}
-              height={101}
-              alt="squiggle"
-              className="2xl:w-[35px] 2xl:h-[130px]"
-            />
-            <Image
-              src={Squiggle}
-              width={25}
-              height={101}
-              alt="squiggle"
-              className="2xl:w-[35px] 2xl:h-[130px]"
-            />
-            <Image
-              src={Squiggle}
-              width={25}
-              height={101}
-              alt="squiggle"
-              className="2xl:w-[35px] 2xl:h-[130px]"
-            />
-          </div>
         </motion.div>
       </div>
     </motion.div>
