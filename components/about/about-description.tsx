@@ -20,13 +20,13 @@ const MoveButton = (props: {
       onClick={props.onClick}
     >
       {!props.disabled && (
-        <div className="h-[48px] w-[48px] xl:h-[66px] xl:w-[66px] bg-[#000000] cursor-pointer rounded-[7px] z-0 absolute top-0 left-0 -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform will-change-transform" />
+        <div className="h-[48px] w-[48px] 2xl:h-[66px] 2xl:w-[66px] bg-[#000000] cursor-pointer rounded-[7px] z-0 absolute top-0 left-0 -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform will-change-transform" />
       )}
       <button
         type="button"
         disabled={props.disabled}
         className={clsx(
-          "h-[48px] w-[48px] xl:h-[66px] xl:w-[66px] bg-[#565551] rounded-[7px] flex items-center justify-center transition-opacity",
+          "h-[48px] w-[48px] 2xl:h-[66px] 2xl:w-[66px] bg-[#565551] rounded-[7px] flex items-center justify-center transition-opacity",
           props.disabled && "opacity-40 cursor-not-allowed",
         )}
       >
@@ -36,7 +36,7 @@ const MoveButton = (props: {
           height={20}
           alt="chevron"
           className={clsx(
-            "xl:w-[33px] xl:h-[27.5px] cursor-pointer relative z-10",
+            "2xl:w-[33px] 2xl:h-[27.5px] cursor-pointer relative z-10",
             props.className,
             props.disabled && "cursor-not-allowed!",
           )}
@@ -98,10 +98,10 @@ function AboutDescription() {
   );
 
   return (
-    <div className="flex flex-col xl:max-w-[850px] 2xl:max-w-[950px] 3xl:max-w-[1100px]!">
+    <div className="flex flex-col lg:max-w-[650px] xl:max-w-[800px] 2xl:max-w-[950px] 3xl:max-w-[1100px]!">
       <div
         ref={scrollRef}
-        className="h-[484.5px]! overflow-y-auto p-[17px] md:p-[40px] lg:p-[30px] xl:p-[45px] rounded-[4px] border-2 bg-[#e5e0d4]"
+        className="h-[400px] 2xl:h-[484.5px]! overflow-y-auto p-[17px] md:p-[40px] lg:p-[30px] xl:p-[35px] 2xl:p-[45px] rounded-[4px] border-2 bg-[#e5e0d4]"
       >
         <div className="overflow-hidden">
           <AnimatePresence
@@ -121,7 +121,7 @@ function AboutDescription() {
               {visibleParas.map((para, i) => (
                 <p
                   key={startIndex + i}
-                  className="font-light text-[14px] sm:text-[18px] md:text-[22px] lg:text-[22px] xl:text-[19px]! 2xl:text-[20px]! 3xl:text-[25px]! leading-[114%] text-[#33312B]"
+                  className="font-light text-[14px] sm:text-[18px] md:text-[22px] lg:text-[14px] xl:text-[17.5px] 2xl:text-[20px] 3xl:text-[21px]! leading-[114%] text-[#33312B]"
                 >
                   {para}
                 </p>

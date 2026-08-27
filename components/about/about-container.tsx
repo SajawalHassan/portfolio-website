@@ -25,7 +25,7 @@ function AboutContainer() {
       <motion.div variants={item}>
         <AboutHeading
           text="More about me!"
-          className="max-w-[70%] sm:max-w-[20%] md:max-w-[430px] lg:max-w-[500px] xl:max-w-[500px]"
+          className="max-w-[70%] sm:max-w-[20%] md:max-w-[430px] lg:max-w-[200px] xl:max-w-[400px] 3xl:max-w-[500px]!"
         />
       </motion.div>
 
@@ -36,10 +36,10 @@ function AboutContainer() {
             className="relative ml-auto mr-[15px] animate-float-sm-long"
           />
         </motion.div>
-        <div className="lg:flex lg:gap-x-12 lg:mt-3 xl:gap-x-40 xl:justify-between xl:mt-10 3xl:ml-4!">
+        <div className="lg:flex lg:gap-x-12 lg:mt-8 xl:gap-x-40 lg:justify-between xl:mt-3 2xl:mt-10 3xl:ml-4!">
           <motion.div
             variants={item}
-            className="hidden lg:block min-w-[350px] max-h-[450px] animate-float [animation-delay:-0.5s] 2xl:min-w-[350px]! 2xl:max-h-[430px]! 3xl:min-w-[500px]! 3xl:max-h-[600px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0!"
+            className="hidden lg:block min-w-[350px] max-h-[450px] lg:min-w-[300px] lg:max-h-[400px] animate-float [animation-delay:-0.5s] xl:max-h-[400px] 2xl:min-w-[350px] 2xl:max-h-[430px] 3xl:min-w-[400px]! 3xl:max-h-[500px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0!"
           />
           <motion.div variants={item}>
             <AboutDescription />
