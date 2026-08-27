@@ -9,7 +9,7 @@ const AboutSubHeading = (props: Props) => {
   return (
     <div
       className={clsx(
-        "font-caveat text-[30px] sm:text-[35px] md:text-[42px] lg:text-[47px] xl:text-[60px] w-max relative",
+        "font-caveat text-[30px] sm:text-[35px] md:text-[42px] lg:text-[47px] xl:text-[50px] w-max relative",
         props.className,
       )}
     >

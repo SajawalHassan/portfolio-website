@@ -46,7 +46,7 @@ const MoveButton = (props: {
   );
 };
 
-const PARAS_PER_PAGE = 2;
+const PARAS_PER_PAGE = 3;
 
 const groupVariants: Variants = {
   enter: {
@@ -121,7 +121,7 @@ function AboutDescription() {
               {visibleParas.map((para, i) => (
                 <p
                   key={startIndex + i}
-                  className="font-light text-[14px] sm:text-[18px] md:text-[22px] lg:text-[22px] xl:text-[25px] leading-[114%] text-[#33312B]"
+                  className="font-light text-[14px] sm:text-[18px] md:text-[22px] lg:text-[22px] xl:text-[19px]! 2xl:text-[20px]! 3xl:text-[25px]! leading-[114%] text-[#33312B]"
                 >
                   {para}
                 </p>
