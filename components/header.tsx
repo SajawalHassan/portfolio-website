@@ -9,6 +9,7 @@ import {
   item,
 } from "../lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
+import CustomLink from "./custom-link";
 
 function Header() {
   const everythingState = useEverythingState();
@@ -22,14 +23,16 @@ function Header() {
     >
       <motion.div className="flex items-center justify-between pt-[22px] 2xl:pl-3 pr-[14px] pb-[4px] 2xl:pb-0 2xl:pt-[10px]">
         <motion.div variants={item}>
-          <Image
-            src={CoffeeIcon}
-            height={67}
-            width={67}
-            alt="Coffee"
-            loading="eager"
-            className="2xl:h-[90px] 2xl:w-[90px]"
-          />
+          <CustomLink href={"/"}>
+            <Image
+              src={CoffeeIcon}
+              height={67}
+              width={67}
+              alt="Coffee"
+              loading="eager"
+              className="2xl:h-[90px] 2xl:w-[90px]"
+            />
+          </CustomLink>
         </motion.div>
 
         <motion.div variants={item}>

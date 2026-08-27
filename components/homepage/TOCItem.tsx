@@ -1,9 +1,8 @@
 "use client";
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
 import { Heading3 } from "../ui";
 import clsx from "clsx";
-import Link from "next/link";
-import { useEverythingState } from "@/store/store";
+import CustomLink from "../custom-link";
 
 interface Props {
   number: number;
@@ -15,84 +14,68 @@ interface Props {
 function TOCItem(props: Props) {
   const [isGroupHovering, setIsGroupHovering] = useState(false);
 
-  const everythingState = useEverythingState();
-
-  const onClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
-      return;
-    }
-
-    e.preventDefault();
-    e.stopPropagation();
-
-    everythingState.setTransitionLink(href);
-    everythingState.setDoExitAnim(true);
-  };
-
   return (
-    <>
-      <Link href={props.link} onClick={(e) => onClick(e, props.link)}>
+    <CustomLink href={props.link}>
+      <div
+        className="relative group overflow-x-hidden cursor-pointer"
+        onMouseEnter={() => setIsGroupHovering(true)}
+        onMouseLeave={() => setIsGroupHovering(false)}
+      >
         <div
-          className="relative group overflow-x-hidden cursor-pointer"
-          onMouseEnter={() => setIsGroupHovering(true)}
-          onMouseLeave={() => setIsGroupHovering(false)}
+          className={clsx(
+            "w-full h-full bg-black absolute transition-all duration-400 z-0 rounded-[4px]",
+            !props.isAlt && "-translate-x-[101%] group-hover:translate-x-0",
+          )}
+          style={{
+            clipPath: isGroupHovering
+              ? props.isAlt
+                ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+                : "polygon(0 0, 92% 0, 100% 100%, 0 100%)"
+              : "polygon(0 0, 92% 0, 100% 100%, 0 100%)",
+          }}
+        />
+        <div
+          className={clsx(
+            "md:w-[380px] lg:w-full 2xl:w-full md:mx-auto lg:mx-0 flex 2xl:mx-0 lg:ml-1.5! xl:ml-3! items-center gap-x-[13px] py-[10px] z-50",
+            props.isAlt && "ml-3",
+          )}
         >
           <div
             className={clsx(
-              "w-full h-full bg-black absolute transition-all duration-400 z-0 rounded-[4px]",
-              !props.isAlt && "-translate-x-[101%] group-hover:translate-x-0",
-            )}
-            style={{
-              clipPath: isGroupHovering
-                ? props.isAlt
-                  ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-                  : "polygon(0 0, 92% 0, 100% 100%, 0 100%)"
-                : "polygon(0 0, 92% 0, 100% 100%, 0 100%)",
-            }}
-          />
-          <div
-            className={clsx(
-              "md:w-[380px] lg:w-full 2xl:w-full md:mx-auto lg:mx-0 flex 2xl:mx-0 lg:ml-1.5! xl:ml-3! items-center gap-x-[13px] py-[10px] z-50",
-              props.isAlt && "ml-3",
+              "w-[35px] h-[35px] bg-transparent border-[3px] transition-all duration-400 rounded-full flex items-center justify-center z-50 shrink-0",
+              !props.isAlt
+                ? "border-black group-hover:border-white"
+                : "text-accent group-hover:text-white",
             )}
           >
-            <div
+            <p
               className={clsx(
-                "w-[35px] h-[35px] bg-transparent border-[3px] transition-all duration-400 rounded-full flex items-center justify-center z-50 shrink-0",
+                "text-[18px] font-francois transition-all duration-400",
                 !props.isAlt
-                  ? "border-black group-hover:border-white"
+                  ? "text-black group-hover:text-white"
                   : "text-accent group-hover:text-white",
               )}
             >
-              <p
-                className={clsx(
-                  "text-[18px] font-francois transition-all duration-400",
-                  !props.isAlt
-                    ? "text-black group-hover:text-white"
-                    : "text-accent group-hover:text-white",
-                )}
-              >
-                {props.number.toString()}
-              </p>
-            </div>
-            <Heading3
-              text={props.text}
-              className={
-                props.isAlt ? "group-hover:text-white! text-accent!" : ""
-              }
-            />
+              {props.number.toString()}
+            </p>
           </div>
-          <div
-            className={clsx(
-              "h-[1px] w-full transition-all duration-400",
-              props.isAlt
-                ? "bg-transparent group-hover:bg-black"
-                : "bg-black group-hover:bg-transparent",
-            )}
+          <Heading3
+            text={props.text}
+            className={
+              props.isAlt ? "group-hover:text-white! text-accent!" : ""
+            }
           />
         </div>
-      </Link>
-    </>
+        <div
+          className={clsx(
+            "h-[1px] w-full transition-all duration-400",
+            props.isAlt
+              ? "bg-transparent group-hover:bg-black"
+              : "bg-black group-hover:bg-transparent",
+          )}
+        />
+      </div>
+    </CustomLink>
   );
 }
 

@@ -11,16 +11,25 @@ import {
   item,
 } from "@/lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
+import { useState } from "react";
+import { PageTransition } from "../page-transition";
 
 function AboutContainer() {
+  const [showLoading, setShowLoading] = useState(false);
   const everythingState = useEverythingState();
+
+  if (showLoading)
+    return <PageTransition href={everythingState.transitionLink} />;
 
   return (
     <motion.div
       className="mt-[50px] max-w-[380px] sm:max-w-[600px] md:max-w-[850px] lg:max-w-[1100px] xl:max-w-[1350px] 2xl:max-w-[1500px] 3xl:max-w-[1700px]! mx-auto!"
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
-      animate="show"
+      animate={everythingState.doExitAnim ? "exit" : "show"}
+      onAnimationComplete={(definition) => {
+        if (definition === "exit") setShowLoading(true);
+      }}
     >
       <motion.div variants={item}>
         <AboutHeading
