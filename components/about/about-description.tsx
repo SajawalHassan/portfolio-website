@@ -84,12 +84,7 @@ function AboutDescription() {
   };
 
   const goForward = () => {
-    setStartIndex((prev) =>
-      Math.min(
-        prev + PARAS_PER_PAGE,
-        Math.max(0, aboutDescriptionParas.length - PARAS_PER_PAGE),
-      ),
-    );
+    setStartIndex((prev) => prev + PARAS_PER_PAGE);
   };
 
   const visibleParas = aboutDescriptionParas.slice(

@@ -1,5 +1,5 @@
 "use client";
-import { MouseEvent, useState } from "react";
+import { MouseEvent } from "react";
 import Link from "next/link";
 import { useEverythingState } from "@/store/store";
 import { usePathname } from "next/navigation";
