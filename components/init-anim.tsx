@@ -3,11 +3,21 @@
 import Coffee from "@/public/assets/icons/coffee-svgrepo-com.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEverythingState } from "@/store/store";
 
-export const LoadingScreen = () => {
+// In seconds
+export const INIT_ANIM_DURATION = 2;
+
+export const InitAnim = () => {
+  const everythingState = useEverythingState();
+
+  setTimeout(() => {
+    everythingState.setShowInitAnim(false);
+  }, INIT_ANIM_DURATION * 1000);
+
   return (
     <motion.div
-      className="fixed inset-0 z-50 bg-bg flex items-center justify-center z-999"
+      className="fixed inset-0 bg-bg flex items-center justify-center z-999"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0, display: "none" }}
       transition={{ duration: 0.4, ease: "easeInOut", delay: 1.5 }}

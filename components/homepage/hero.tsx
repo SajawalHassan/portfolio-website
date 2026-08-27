@@ -4,7 +4,11 @@ import Image from "next/image";
 import { Heading1, HeadingSubText } from "../ui";
 import { motion } from "framer-motion";
 import { useEverythingState } from "@/store/store";
-import { container, item } from "../global-anim-variants";
+import {
+  container,
+  containerUndelayed,
+  item,
+} from "../../lib/global-anim-variants";
 
 function Hero() {
   const everythingState = useEverythingState();
@@ -12,7 +16,7 @@ function Hero() {
   return (
     <motion.div
       className="space-y-[60px] lg:space-y-[80px] lg:max-w-[670px] xl:max-w-[780px]! 2xl:max-w-[850px]!"
-      variants={container}
+      variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
     >

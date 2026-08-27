@@ -1,5 +1,5 @@
 "use client";
-import { MouseEvent, useEffect, useState } from "react";
+import { MouseEvent, useState } from "react";
 import { Heading3 } from "../ui";
 import clsx from "clsx";
 import Link from "next/link";
@@ -8,12 +8,14 @@ import { useEverythingState } from "@/store/store";
 interface Props {
   number: number;
   text: string;
+  link: string;
   isAlt?: boolean;
 }
 
 function TOCItem(props: Props) {
   const [isGroupHovering, setIsGroupHovering] = useState(false);
-  const [linkInfo, setLinkInfo] = useState({ href: "", showTransition: false });
+
+  const everythingState = useEverythingState();
 
   const onClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
@@ -23,20 +25,13 @@ function TOCItem(props: Props) {
     e.preventDefault();
     e.stopPropagation();
 
-    setLinkInfo({ ...linkInfo, showTransition: true, href });
+    everythingState.setTransitionLink(href);
+    everythingState.setDoExitAnim(true);
   };
-
-  const everythingState = useEverythingState();
-
-  useEffect(() => {
-    if (linkInfo.showTransition == true && everythingState.doExitAnim != true) {
-      everythingState.setDoExitAnim(true);
-    }
-  }, [linkInfo.showTransition]);
 
   return (
     <>
-      <Link href="test" onClick={(e) => onClick(e, "test")}>
+      <Link href={props.link} onClick={(e) => onClick(e, props.link)}>
         <div
           className="relative group overflow-x-hidden cursor-pointer"
           onMouseEnter={() => setIsGroupHovering(true)}

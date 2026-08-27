@@ -3,7 +3,11 @@ import CoffeeIcon from "@/public/assets/icons/coffee-mug.svg";
 import Image from "next/image";
 import { Heading3 } from "./ui";
 import { motion } from "framer-motion";
-import { container, item } from "./global-anim-variants";
+import {
+  container,
+  containerUndelayed,
+  item,
+} from "../lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
 
 function Header() {
@@ -11,10 +15,10 @@ function Header() {
 
   return (
     <motion.div
-      variants={container}
+      variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
-      className="ml-[14px] 2xl:ml-[30px]"
+      className=""
     >
       <motion.div className="flex items-center justify-between pt-[22px] 2xl:pl-3 pr-[14px] pb-[4px] 2xl:pb-0 2xl:pt-[10px]">
         <motion.div variants={item}>

@@ -1,5 +1,7 @@
 "use client";
+import { useEverythingState } from "@/store/store";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface CircleConfig {
@@ -28,16 +30,29 @@ function generateCircles(count: number): CircleConfig[] {
 
 function FloatingCircles({ count = 12 }: { count?: number }) {
   const [circles, setCircles] = useState<CircleConfig[] | null>(null);
+  const pathname = usePathname();
+  const everythingState = useEverythingState();
 
   useEffect(() => {
     setCircles(generateCircles(count));
   }, [count]);
 
-  // Nothing rendered on server / during initial hydration pass
   if (!circles) return null;
 
+  console.log(everythingState.doExitAnim);
+
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+        delay: 1,
+      }}
+      key={pathname}
+      className="absolute top-0 left-0 inset-0 overflow-hidden pointer-events-none z-10"
+    >
       {circles.map((circle) => (
         <motion.div
           key={circle.id}
@@ -61,7 +76,7 @@ function FloatingCircles({ count = 12 }: { count?: number }) {
           }}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
 

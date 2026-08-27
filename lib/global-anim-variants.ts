@@ -5,7 +5,6 @@ export const container: Variants = {
   show: {
     opacity: 1,
     transition: {
-      delay: 2.2,
       delayChildren: 2.2,
       staggerChildren: 0.2,
     },
@@ -15,6 +14,18 @@ export const container: Variants = {
     transition: {
       delayChildren: 0,
       staggerChildren: 0.1,
+    },
+  },
+};
+
+export const containerUndelayed: Variants = {
+  ...container,
+  show: {
+    ...container.show,
+    transition: {
+      // @ts-ignore
+      ...container.show.transition,
+      delayChildren: 0.2,
     },
   },
 };

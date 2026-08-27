@@ -1,13 +1,17 @@
 "use client";
-import { LoadingScreen } from "@/components/homepage/home-init-anim";
-import { usePathname } from "next/navigation";
+import { InitAnim } from "@/components/init-anim";
+import { useEverythingState } from "@/store/store";
+import { useEffect } from "react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const everythingState = useEverythingState();
 
+  useEffect(() => {
+    everythingState.setDoExitAnim(false);
+  }, []);
   return (
     <>
-      {pathname == "/" && <LoadingScreen />}
+      {everythingState.showInitAnim && <InitAnim />}
       {children}
     </>
   );

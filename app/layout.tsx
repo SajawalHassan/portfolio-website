@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Francois_One, Inter } from "next/font/google";
+import { Caveat, Francois_One, Inter } from "next/font/google";
 import "./globals.css";
 import FloatingCircles from "@/components/bg-circles";
 
@@ -12,6 +12,10 @@ const francois_font = Francois_One({
 const font_inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const font_caveat = Caveat({
+  variable: "--font-caveat",
 });
 
 export const metadata: Metadata = {
@@ -28,12 +32,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${font_inter.variable} ${francois_font.variable} h-full antialiased`}
+      className={`${font_inter.variable} ${francois_font.variable} ${font_caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
-        <FloatingCircles />
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

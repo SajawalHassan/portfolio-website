@@ -12,18 +12,14 @@ export const PageTransition = ({ href }: { href: string }) => {
   const router = useRouter();
   const everythingState = useEverythingState();
 
-  setTimeout(
-    () => {
-      if (everythingState.doExitAnim == true) {
-        router.push(href);
-        everythingState.setDoExitAnim(false);
-      }
-    },
-    (mainAnimationDuration + 0.2) * 1000,
-  );
+  setTimeout(() => {
+    if (everythingState.doExitAnim == true) {
+      router.push(href);
+    }
+  }, mainAnimationDuration * 1000);
 
   return (
-    <motion.div className="bg-transparent h-screen w-screen flex items-center max-w-screen overflow-x-hidden fixed top-0 left-0 z-999">
+    <div className="bg-[#e5e0d4] h-screen w-screen flex items-center max-w-screen overflow-x-hidden fixed top-0 left-0 z-999">
       <motion.div
         initial={{
           x: "-100%",
@@ -51,6 +47,6 @@ export const PageTransition = ({ href }: { href: string }) => {
           className="md:w-[280px] md:h-[280px] xl:w-[368px] xl:h-[368px]"
         />
       </motion.div>
-    </motion.div>
+    </div>
   );
 };

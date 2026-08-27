@@ -30,6 +30,7 @@
     }
   }
   --animate-float-sm: float-sm 2.5s ease-in-out infinite;
+  --animate-float-sm-long: float-sm 3.5s ease-in-out infinite;
 
   --breakpoint-3xl: 1600px;
 }
@@ -37,6 +38,8 @@
 @theme inline {
   --font-francois: var(--font-francois);
   --font-inter: var(--font-inter);
+  --font-caveat: var(--font-caveat);
+
   --color-subtext: #5b564c;
   --color-accent: #dab56a;
   --color-bg: #c7c1b1;
