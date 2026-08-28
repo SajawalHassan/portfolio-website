@@ -1,16 +1,16 @@
-export interface TOCItemtype {
+export interface ItemType {
   link: string;
   text: string;
   isLast?: boolean;
 }
 
-export const TOC: TOCItemtype[] = [
+export const TOC: ItemType[] = [
   {
     link: "/about",
     text: "More About me",
   },
   {
-    link: "#",
+    link: "/computers",
     text: "Everything Computers",
   },
   {
@@ -33,4 +33,23 @@ export const aboutDescriptionParas: string[] = [
   `Then there's the more humanitarian part of me. I love books, poetry, literature, philosophy and skepticism. I'm mainly influenced by Bertrand Russell and Will Durant on life and love reading classical literature. My favorite novel is Brave New World by Huxley (though The Odyssey is a close second) as it genuinely changed my worldview on a lot of things; I love the writings of Orwell and of course his famous, 1984; and some plays by Shakespeare which I find utterly fascinating. In philosophy I've read basic classics like The Problems of Philosophy by Russell, The Pleasures of Philosophy (currently reading) by Durant and a golden mention of "The Conquest of Happiness" by Russell since it changed a little boy's life forever. See my full book list here!`,
   `Lastly (I promise this is the finale!) I love poetry! English poetry obviously, but Eastern poetry a lot. I know a plentiful of kalams in Urdu, some in Farci (Persian), and a couple from the bhaktvi tradition in Sant Bhasha, Brij Bhasha etc. I love qawwalis, and see them not just as an entertainment, but as a cultivation of the self and truly try to catch the lessons that qawwals like Aziz Mian, Farid Ayaz, Nusrat Fateh Ali Khan may bestow. I'm very new to it all, voyaging in a vast sea with no map nor a north star; just a boy trying to connect to this "Ultimate Reality". I engage with Sufi Mysticism and enjoy it a lot, but due to the influence of western thought, I don't necessarily accept all its doctrines.`,
   `So that is me, Sajawal Hassan! Sorry for the long essay, you don't have to read it, but as I said, I love writing >.<! You can check some of my poetry, quotes and essays here! I'm unsure where I'll be going in the future, but I'm interested in a lot of things, and have an unquenching thirst for knowledge that, I hope, never fades.`,
+];
+
+export const computersGateways: ItemType[] = [
+  {
+    text: "Web Dev",
+    link: "/computers/web",
+  },
+  {
+    text: "Linux",
+    link: "/computers/linux",
+  },
+  {
+    text: "Data Science",
+    link: "/computers/ds",
+  },
+  {
+    text: "Random",
+    link: "/computers/random",
+  },
 ];

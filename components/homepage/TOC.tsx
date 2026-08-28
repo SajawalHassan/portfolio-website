@@ -11,7 +11,7 @@ import {
 import { useEverythingState } from "@/store/store";
 import { useState } from "react";
 import { PageTransition } from "@/components/page-transition";
-import { TOCItemtype } from "@/lib/content-data";
+import { ItemType } from "@/lib/content-data";
 
 function TOC() {
   const [showLoading, setShowLoading] = useState(false);
@@ -39,7 +39,7 @@ function TOC() {
         </motion.div>
       </div>
       <div className="mt-[28px] space-y-[28px]">
-        {TOCItemData.map((tocItem: TOCItemtype, index: number) => (
+        {TOCItemData.map((tocItem: ItemType, index: number) => (
           <motion.div key={index} variants={item}>
             <TOCItem
               text={tocItem.text}
