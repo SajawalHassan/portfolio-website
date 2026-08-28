@@ -96,7 +96,7 @@ function AboutDescription() {
     <div className="flex flex-col lg:max-w-[650px] xl:max-w-[800px] 2xl:max-w-[950px] 3xl:max-w-[1100px]!">
       <div
         ref={scrollRef}
-        className="h-[400px] 2xl:h-[484.5px]! overflow-y-auto p-[17px] md:p-[40px] lg:p-[30px] xl:p-[35px] 2xl:p-[45px] rounded-[4px] border-2 bg-[#e5e0d4]"
+        className="h-[400px] 2xl:h-[484.5px]! overflow-y-auto p-[17px] md:p-[40px] lg:p-[30px] xl:p-[35px] 2xl:p-[45px] rounded-[4px] border-2 bg-bg"
       >
         <div className="overflow-hidden">
           <AnimatePresence

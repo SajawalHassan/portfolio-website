@@ -17,7 +17,7 @@ export const InitAnim = () => {
 
   return (
     <motion.div
-      className="fixed inset-0 bg-bg flex items-center justify-center z-999"
+      className="fixed inset-0 bg-[#c7c1b1] flex items-center justify-center z-999"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0, display: "none" }}
       transition={{ duration: 0.4, ease: "easeInOut", delay: 1.5 }}

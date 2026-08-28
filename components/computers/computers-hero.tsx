@@ -20,7 +20,7 @@ function ComputersHero() {
 
       <div className="mt-14">
         <ComputersCmdBox />
-        <div className="grid grid-cols-2 grid-rows-2 gap-y-[11px] gap-x-[11px] mt-4 ml-2">
+        <div className="grid grid-cols-2 grid-rows-2 gap-y-[11px] gap-x-[11px] mt-4">
           {computerGateways.map((gateway) => (
             <ComputersBtn text={gateway.text} key={gateway.link} />
           ))}
