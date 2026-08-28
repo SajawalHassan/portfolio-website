@@ -59,8 +59,7 @@ export const usePlanetsAnim = () => {
         x: [point.x, point.x + 12, point.x - 8, point.x],
         y: [point.y, point.y - 10, point.y + 8, point.y],
         transition: {
-          duration: 4 + Math.random() * 2,
-          delay: Math.random(), // desync phase from the other planet
+          duration: 2 + Math.random() * 2,
           repeat: Infinity,
           ease: "easeInOut",
         },
@@ -159,12 +158,12 @@ export const usePlanetsAnim = () => {
         planet1Controls.start({
           x: corners1[newCorner1].x,
           y: corners1[newCorner1].y,
-          transition: { duration: 0.5, ease: "easeOut" },
+          transition: { duration: 0.5, ease: [0.55, 0, 0.55, 0.35] },
         }),
         planet2Controls.start({
           x: corners2[newCorner2].x,
           y: corners2[newCorner2].y,
-          transition: { duration: 0.5, ease: "easeOut" },
+          transition: { duration: 0.5, ease: [0.55, 0, 0.55, 0.35] },
         }),
       ]);
 
