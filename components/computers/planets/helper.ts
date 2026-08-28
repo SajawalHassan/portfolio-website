@@ -1,6 +1,6 @@
 export type StarData = {
   id: number;
-  size: number;
+  // size: number;
   top: string;
   left: string;
   delay: number;
@@ -8,7 +8,7 @@ export type StarData = {
 
 export const PLANET1_SIZE = 204.5;
 export const PLANET2_SIZE = 153;
-export const EDGE_PADDING = 16;
+export const EDGE_PADDING = 30;
 
 export type Point = { x: number; y: number };
 
@@ -28,7 +28,7 @@ export function generateStars(count: number): StarData[] {
 
     return {
       id: i,
-      size: Math.random() * 20 + 8,
+      // size: Math.random() * 20 + 8,
       top: `${baseTop + jitterTop}%`,
       left: `${baseLeft + jitterLeft}%`,
       delay: Math.random() * 2,

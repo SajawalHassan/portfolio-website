@@ -4,17 +4,22 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Planet1 from "@/public/assets/icons/planet-1.svg";
 import Planet2 from "@/public/assets/icons/planet-2.svg";
-import { PLANET1_SIZE, PLANET2_SIZE } from "./helper";
 import Stars from "./stars";
 import { usePlanetsAnim } from "@/hooks/usePlanetsAnim";
 
 function ComputersPlanets() {
-  const { containerRef, planet1Controls, planet2Controls } = usePlanetsAnim();
+  const {
+    containerRef,
+    planet1Controls,
+    planet2Controls,
+    planet1Size,
+    planet2Size,
+  } = usePlanetsAnim();
 
   return (
     <div
       ref={containerRef}
-      className="relative min-h-[550px] mt-15 overflow-hidden"
+      className="relative min-h-[550px] -mt-10 z-10 overflow-hidden"
     >
       <Stars />
       <motion.div
@@ -24,8 +29,8 @@ function ComputersPlanets() {
       >
         <Image
           src={Planet1}
-          width={PLANET1_SIZE}
-          height={PLANET1_SIZE}
+          width={planet1Size}
+          height={planet1Size}
           alt="planet 1"
         />
       </motion.div>
@@ -37,8 +42,8 @@ function ComputersPlanets() {
       >
         <Image
           src={Planet2}
-          width={PLANET2_SIZE}
-          height={PLANET2_SIZE}
+          width={planet2Size}
+          height={planet2Size}
           alt="planet 2"
         />
       </motion.div>

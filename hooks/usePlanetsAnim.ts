@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useAnimationControls } from "framer-motion";
 import {
-  PLANET1_SIZE,
-  PLANET2_SIZE,
   Point,
   getCorners,
   pickCorner,
 } from "@/components/computers/planets/helper";
 
 export const usePlanetsAnim = () => {
+  const [planet1Size, setPlanet1Size] = useState(204.5);
+  const [planet2Size, setPlanet2Size] = useState(153);
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
@@ -17,6 +17,26 @@ export const usePlanetsAnim = () => {
   const corner1Ref = useRef(0);
   const corner2Ref = useRef(3);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  useEffect(() => {
+    const getSizes = (width: number) => {
+      if (width >= 1536) return { planet1: 350, planet2: 300 }; // 2xl
+      if (width >= 1280) return { planet1: 300, planet2: 200 }; // xl
+      if (width >= 1024) return { planet1: 270, planet2: 180 }; // lg
+      if (width >= 768) return { planet1: 240, planet2: 140 }; // md
+      return { planet1: 204.5, planet2: 153 };
+    };
+
+    const updateSizes = () => {
+      const { planet1, planet2 } = getSizes(window.innerWidth);
+      setPlanet1Size(planet1);
+      setPlanet2Size(planet2);
+    };
+
+    updateSizes(); // set on mount
+    window.addEventListener("resize", updateSizes);
+    return () => window.removeEventListener("resize", updateSizes);
+  }, []);
 
   // Measure container so corner/center math is correct at any screen size
   useEffect(() => {
@@ -40,7 +60,7 @@ export const usePlanetsAnim = () => {
         y: [point.y, point.y - 10, point.y + 8, point.y],
         transition: {
           duration: 4 + Math.random() * 2,
-          delay: Math.random() * 2, // desync phase from the other planet
+          delay: Math.random(), // desync phase from the other planet
           repeat: Infinity,
           ease: "easeInOut",
         },
@@ -53,8 +73,8 @@ export const usePlanetsAnim = () => {
     const { width, height } = containerSize;
     if (width === 0 || height === 0) return;
 
-    const corners1 = getCorners(width, height, PLANET1_SIZE);
-    const corners2 = getCorners(width, height, PLANET2_SIZE);
+    const corners1 = getCorners(width, height, planet1Size);
+    const corners2 = getCorners(width, height, planet2Size);
     const center = { x: width / 2, y: height / 2 };
 
     idleFloat(planet1Controls, corners1[corner1Ref.current]);
@@ -67,12 +87,12 @@ export const usePlanetsAnim = () => {
       const p1Corner = corners1[corner1Ref.current];
       const p2Corner = corners2[corner2Ref.current];
       const target1 = {
-        x: center.x - PLANET1_SIZE / 2 - 20,
-        y: center.y - PLANET1_SIZE / 2,
+        x: center.x - planet1Size / 2 - 20,
+        y: center.y - planet2Size / 2,
       };
       const target2 = {
-        x: center.x - PLANET2_SIZE / 2 + 20,
-        y: center.y - PLANET2_SIZE / 2,
+        x: center.x - planet1Size / 2 + 20,
+        y: center.y - planet2Size / 2,
       };
 
       // Anticipation step definitons. Pulls the planets back a little
@@ -107,13 +127,13 @@ export const usePlanetsAnim = () => {
           x: target1.x,
           y: target1.y,
           scale: 1,
-          transition: { duration: 0.3, ease: [0.55, 0, 0.85, 0.35] }, // fast start, eases into impact
+          transition: { duration: 0.2, ease: [0.55, 0, 0.85, 0.35] },
         }),
         planet2Controls.start({
           x: target2.x,
           y: target2.y,
           scale: 1,
-          transition: { duration: 0.3, ease: [0.55, 0, 0.85, 0.35] },
+          transition: { duration: 0.2, ease: [0.55, 0, 0.85, 0.35] },
         }),
       ]);
 
@@ -139,12 +159,12 @@ export const usePlanetsAnim = () => {
         planet1Controls.start({
           x: corners1[newCorner1].x,
           y: corners1[newCorner1].y,
-          transition: { duration: 0.7, ease: "easeOut" },
+          transition: { duration: 0.5, ease: "easeOut" },
         }),
         planet2Controls.start({
           x: corners2[newCorner2].x,
           y: corners2[newCorner2].y,
-          transition: { duration: 0.7, ease: "easeOut" },
+          transition: { duration: 0.5, ease: "easeOut" },
         }),
       ]);
 
@@ -161,5 +181,11 @@ export const usePlanetsAnim = () => {
     };
   }, [containerSize, idleFloat, planet1Controls, planet2Controls]);
 
-  return { containerRef, planet1Controls, planet2Controls };
+  return {
+    containerRef,
+    planet1Controls,
+    planet2Controls,
+    planet1Size,
+    planet2Size,
+  };
 };

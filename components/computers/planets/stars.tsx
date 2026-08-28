@@ -14,11 +14,11 @@ function Stars() {
     <Image
       key={star.id}
       src={Star}
-      width={star.size}
-      height={star.size}
+      width={50}
+      height={50}
       alt=""
       aria-hidden="true"
-      className="absolute pointer-events-none animate-float"
+      className="absolute pointer-events-none animate-float xl:w-[60px] xl:h-[60px] 3xl:w-[70px]! 3xl:h-[70px]!"
       style={{
         top: star.top,
         left: star.left,
