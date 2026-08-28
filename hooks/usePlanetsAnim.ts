@@ -149,7 +149,7 @@ export const usePlanetsAnim = () => {
       ]);
 
       // Bounce to new corners
-      const newCorner1 = pickCorner(corner2Ref.current);
+      const newCorner1 = Math.floor(Math.random() * 4);
       const newCorner2 = pickCorner(newCorner1);
       corner1Ref.current = newCorner1;
       corner2Ref.current = newCorner2;

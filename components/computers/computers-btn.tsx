@@ -31,7 +31,7 @@ const FolderIcon = (props: IconProps) => {
 
 function ComputersBtn(props: Props) {
   return (
-    <div className="overflow-x-hidden relative cursor-pointer group 2xl:max-w-[325px] border-[5px] border-black py-[4px] pl-[5px] xl:py-[6px] 2xl:px-[21px] flex items-center gap-x-[6px] md:gap-x-[2px] 2xl:gap-x-[10px] pr-2 h-max bg-bg text-black transition-colors duration-200 hover:text-white duration-200">
+    <div className="overflow-x-hidden relative overflow-y-hidden cursor-pointer group 2xl:max-w-[325px] border-[5px] border-black py-[4px] pl-[5px] xl:py-[6px] 2xl:px-[21px] flex items-center gap-x-[6px] md:gap-x-[2px] 2xl:gap-x-[10px] pr-2 h-max bg-bg text-black transition-colors duration-200 hover:text-white duration-200">
       <FolderIcon
         width={30}
         height={30}

@@ -52,8 +52,15 @@ export function getCorners(
   ];
 }
 
-export function pickCorner(exclude: number): number {
-  let idx = Math.floor(Math.random() * 4);
-  while (idx === exclude) idx = Math.floor(Math.random() * 4);
-  return idx;
+function columnPartner(idx: number): number {
+  return idx ^ 2;
+}
+
+export function pickCorner(otherPlanetCorner: number): number {
+  const forbidden = new Set([
+    otherPlanetCorner,
+    columnPartner(otherPlanetCorner),
+  ]);
+  const valid = [0, 1, 2, 3].filter((i) => !forbidden.has(i));
+  return valid[Math.floor(Math.random() * valid.length)];
 }
