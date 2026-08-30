@@ -6,7 +6,7 @@ import ChevronDouble from "@/public/assets/icons/chevron-double.svg";
 import clsx from "clsx";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 
-const MoveButton = (props: {
+export const MoveButton = (props: {
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
@@ -96,7 +96,7 @@ function AboutDescription() {
     <div className="flex flex-col lg:max-w-[650px] xl:max-w-[800px] 2xl:max-w-[950px] 3xl:max-w-[1100px]!">
       <div
         ref={scrollRef}
-        className="h-[400px] 2xl:h-[484.5px]! overflow-y-auto p-[17px] md:p-[40px] lg:p-[30px] xl:p-[35px] 2xl:p-[45px] rounded-[4px] border-2 bg-bg"
+        className="h-[400px] 2xl:h-[484.5px]! overflow-y-auto p-[17px] md:p-[40px] lg:p-[30px] xl:p-[35px] 2xl:p-[45px] rounded-[4px] border-2 border-black bg-bg"
       >
         <div className="overflow-hidden">
           <AnimatePresence

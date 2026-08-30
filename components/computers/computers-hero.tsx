@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { computersGateways as computerGateways } from "@/lib/content-data";
-import ComputersCmdBox from "./computers-cmdbox";
+import CmdBox from "./cmdbox";
 import ComputersBtn from "./computers-btn";
 import WaveLikeIcon from "@/public/assets/icons/wave-like.svg";
 import Image from "next/image";
@@ -60,12 +60,12 @@ function ComputersHero() {
       </div>
       <div className="mt-14 sm:mt-10 md:mt-0 w-full max-w-[450px] 2xl:max-w-[600px] 3xl:max-w-[700px]!">
         <motion.div variants={item}>
-          <ComputersCmdBox />
+          <CmdBox className="w-[70%] xl:w-[80%] 2xl:w-[70%] 3xl:w-[80%]!" />
         </motion.div>
         <div className="grid grid-cols-2 grid-rows-2 gap-y-[11px] gap-x-[11px] mt-4 3xl:mt-6! 2xl:max-w-[680px] 2xl:gap-x-[23px] 2xl:gap-y-[18px]">
           {computerGateways.map((gateway) => (
             <motion.div variants={item} key={gateway.link}>
-              <ComputersBtn text={gateway.text} />
+              <ComputersBtn text={gateway.text} href={gateway.link} />
             </motion.div>
           ))}
         </div>

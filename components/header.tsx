@@ -19,7 +19,6 @@ function Header() {
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
-      className=""
     >
       <motion.div className="flex items-center justify-between pt-[22px] 2xl:pl-3 pr-[14px] pb-[4px] 2xl:pb-0 2xl:pt-[10px]">
         <motion.div variants={item}>

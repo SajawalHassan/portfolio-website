@@ -5,7 +5,7 @@ interface Props {
   className?: string;
 }
 
-const AboutSubHeading = (props: Props) => {
+const HandwrittenHeading = (props: Props) => {
   return (
     <div
       className={clsx(
@@ -19,4 +19,4 @@ const AboutSubHeading = (props: Props) => {
   );
 };
 
-export default AboutSubHeading;
+export default HandwrittenHeading;

@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 interface Props {
   href: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 function CustomLink(props: Props) {
@@ -28,7 +29,11 @@ function CustomLink(props: Props) {
   };
 
   return (
-    <Link href={props.href} onClick={(e) => onClick(e, props.href)}>
+    <Link
+      href={props.href}
+      onClick={(e) => onClick(e, props.href)}
+      className={props.className}
+    >
       {props.children}
     </Link>
   );

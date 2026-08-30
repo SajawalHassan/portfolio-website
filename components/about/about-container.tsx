@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import AboutDescription from "@/components/about/about-description";
 import AboutHeading from "@/components/about/about-heading";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
-import AboutSubHeading from "@/components/about/about-subheading";
+import HandwrittenHeading from "@/components/handwritten-heading";
 import Image from "next/image";
 import {
   container,
@@ -40,7 +40,7 @@ function AboutContainer() {
 
       <div className="space-y-[8px] md:space-y-[12px] mt-[38px] sm:mt-[42px] lg:-mt-12 flex flex-col">
         <motion.div variants={item}>
-          <AboutSubHeading
+          <HandwrittenHeading
             text="Restlessly Procastinating"
             className="relative ml-auto mr-[15px] animate-float-sm-long"
           />

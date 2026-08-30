@@ -53,3 +53,31 @@ export const computersGateways: ItemType[] = [
     link: "/computers/random",
   },
 ];
+
+export interface projectType {
+  title: string;
+  description: string;
+}
+
+export const webProjectsSpotlight: projectType[] = [
+  {
+    title: "A clone of Reddit!",
+    description:
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+  },
+  {
+    title: "A clone of Discord",
+    description:
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+  },
+  {
+    title: "This portfolio",
+    description:
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+  },
+  {
+    title: "A basic form... for a university!",
+    description:
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+  },
+];
