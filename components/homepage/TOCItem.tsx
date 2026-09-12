@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { Heading3 } from "../ui";
+import { Heading3 } from "@/components/ui";
 import clsx from "clsx";
-import CustomLink from "../custom-link";
+import CustomLink from "@/components/custom-link";
 
 interface Props {
   number: number;
@@ -43,35 +43,24 @@ function TOCItem(props: Props) {
           <div
             className={clsx(
               "w-[35px] h-[35px] bg-transparent border-[3px] transition-all duration-400 rounded-full flex items-center justify-center z-50 shrink-0",
-              !props.isAlt
-                ? "border-black group-hover:border-white"
-                : "text-accent group-hover:text-white",
+              !props.isAlt ? "border-black group-hover:border-white" : "text-accent group-hover:text-white",
             )}
           >
             <p
               className={clsx(
                 "text-[18px] font-francois transition-all duration-400",
-                !props.isAlt
-                  ? "text-black group-hover:text-white"
-                  : "text-accent group-hover:text-white",
+                !props.isAlt ? "text-black group-hover:text-white" : "text-accent group-hover:text-white",
               )}
             >
               {props.number.toString()}
             </p>
           </div>
-          <Heading3
-            text={props.text}
-            className={
-              props.isAlt ? "group-hover:text-white! text-accent!" : ""
-            }
-          />
+          <Heading3 text={props.text} className={props.isAlt ? "group-hover:text-white! text-accent!" : ""} />
         </div>
         <div
           className={clsx(
             "h-[1px] w-full transition-all duration-400",
-            props.isAlt
-              ? "bg-transparent group-hover:bg-black"
-              : "bg-black group-hover:bg-transparent",
+            props.isAlt ? "bg-transparent group-hover:bg-black" : "bg-black group-hover:bg-transparent",
           )}
         />
       </div>

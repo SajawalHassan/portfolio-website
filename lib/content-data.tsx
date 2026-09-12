@@ -63,21 +63,40 @@ export const webProjectsSpotlight: projectType[] = [
   {
     title: "A clone of Reddit!",
     description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
   },
   {
     title: "A clone of Discord",
     description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
   },
   {
     title: "This portfolio",
     description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
   },
   {
-    title: "A basic form... for a university!",
+    title: "A form for a uni!",
     description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . ",
+      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
+  },
+];
+
+export const nonHighlightWebProjs: projectType[] = [
+  {
+    title: "A todo app!",
+    description: "Just a simple little todo app!",
+  },
+  {
+    title: "A todo app!",
+    description: "Just a simple little todo app!",
+  },
+  {
+    title: "A todo app!",
+    description: "Just a simple little todo app!",
+  },
+  {
+    title: "A todo app!",
+    description: "Just a simple little todo app!",
   },
 ];

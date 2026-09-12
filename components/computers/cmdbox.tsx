@@ -3,6 +3,7 @@ import clsx from "clsx";
 interface Props {
   subPath?: string;
   className?: string;
+  textClassName?: string;
 }
 
 function CmdBox(props: Props) {
@@ -13,14 +14,15 @@ function CmdBox(props: Props) {
         props.className,
       )}
     >
-      <div className="text-[22px] md:text-[20px] xl:text-[26px] 2xl:text-[34px] 3xl:text-[38px]! flex items-center space-x-2 text-white">
+      <div
+        className={clsx(
+          "text-[22px] md:text-[20px] xl:text-[26px] 2xl:text-[34px] 3xl:text-[38px]! flex items-center space-x-2 text-white",
+          props.textClassName,
+        )}
+      >
         <div className="flex items-center">
           <span className="font-francois text-accent">~/Computers/</span>
-          {props.subPath && (
-            <span className="font-francois text-[#FFFFD7]">
-              {props.subPath}
-            </span>
-          )}
+          {props.subPath && <span className="font-francois text-[#FFFFD7]">{props.subPath}</span>}
         </div>
         <span>$</span>
         <span className="font-francois">ls...</span>

@@ -1,33 +1,7 @@
 "use client";
 
-import CustomLink from "../custom-link";
-
-interface IconProps {
-  className?: string;
-  width: number;
-  height: number;
-}
-const FolderIcon = (props: IconProps) => {
-  return (
-    <svg
-      className={props.className}
-      width={props.height}
-      height={props.width}
-      viewBox="0 0 35 35"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M4.375 11.9583C4.375 10.3248 4.375 9.50809 4.6929 8.88419C4.97252 8.33537 5.41871 7.88918 5.96753 7.60956C6.59143 7.29166 7.40819 7.29166 9.04167 7.29166H14.1087C14.8221 7.29166 15.1788 7.29166 15.5145 7.37224C15.812 7.44369 16.0965 7.56154 16.3575 7.72146C16.6518 7.90182 16.9041 8.15404 17.4086 8.65849L17.5914 8.84149C18.0959 9.34594 18.3482 9.59816 18.6425 9.77852C18.9035 9.93844 19.188 10.0563 19.4855 10.1277C19.8212 10.2083 20.1779 10.2083 20.8914 10.2083H25.9583C27.5918 10.2083 28.4086 10.2083 29.0325 10.5262C29.5813 10.8058 30.0275 11.252 30.3071 11.8009C30.625 12.4248 30.625 13.2415 30.625 14.875V23.0417C30.625 24.6751 30.625 25.492 30.3071 26.1158C30.0275 26.6646 29.5813 27.1108 29.0325 27.3904C28.4086 27.7083 27.5918 27.7083 25.9583 27.7083H9.04167C7.40817 27.7083 6.59143 27.7083 5.96753 27.3904C5.41871 27.1108 4.97252 26.6646 4.6929 26.1158C4.375 25.492 4.375 24.6751 4.375 23.0417V11.9583Z"
-        stroke="currentColor"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="transition-[stroke] duration-200"
-      />
-    </svg>
-  );
-};
+import { FolderIcon } from "@/components/ui/folder-icon";
+import CustomLink from "@/components/custom-link";
 
 interface Props {
   text: string;

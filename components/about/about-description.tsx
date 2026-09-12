@@ -6,15 +6,11 @@ import ChevronDouble from "@/public/assets/icons/chevron-double.svg";
 import clsx from "clsx";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 
-export const MoveButton = (props: {
-  className?: string;
-  onClick?: () => void;
-  disabled?: boolean;
-}) => {
+export const MoveButton = (props: { className?: string; onClick?: () => void; disabled?: boolean }) => {
   return (
     <div
       className={clsx(
-        "relative overflow-hidden rounded-[7px] group cursor-pointer",
+        "relative overflow-hidden rounded-[4px] group cursor-pointer",
         props.disabled && "cursor-not-allowed",
       )}
       onClick={props.onClick}
@@ -26,7 +22,7 @@ export const MoveButton = (props: {
         type="button"
         disabled={props.disabled}
         className={clsx(
-          "h-[48px] w-[48px] 2xl:h-[66px] 2xl:w-[66px] bg-[#565551] rounded-[7px] flex items-center justify-center transition-opacity",
+          "h-[48px] w-[48px] 2xl:h-[66px] 2xl:w-[66px] bg-[#565551] border-2 border-black rounded-[4px] flex items-center justify-center transition-opacity",
           props.disabled && "opacity-40 cursor-not-allowed",
         )}
       >
@@ -76,8 +72,7 @@ function AboutDescription() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const canGoBack = startIndex > 0;
-  const canGoForward =
-    startIndex + PARAS_PER_PAGE < aboutDescriptionParas.length;
+  const canGoForward = startIndex + PARAS_PER_PAGE < aboutDescriptionParas.length;
 
   const goBack = () => {
     setStartIndex((prev) => Math.max(0, prev - PARAS_PER_PAGE));
@@ -87,10 +82,7 @@ function AboutDescription() {
     setStartIndex((prev) => prev + PARAS_PER_PAGE);
   };
 
-  const visibleParas = aboutDescriptionParas.slice(
-    startIndex,
-    startIndex + PARAS_PER_PAGE,
-  );
+  const visibleParas = aboutDescriptionParas.slice(startIndex, startIndex + PARAS_PER_PAGE);
 
   return (
     <div className="flex flex-col lg:max-w-[650px] xl:max-w-[800px] 2xl:max-w-[950px] 3xl:max-w-[1100px]!">
@@ -127,11 +119,7 @@ function AboutDescription() {
       </div>
       <div className="flex items-center gap-x-[7px] w-max ml-auto mt-[10px] xl:mt-[20px] xl:gap-x-[12px]">
         <MoveButton onClick={goBack} disabled={!canGoBack} />
-        <MoveButton
-          className="rotate-180"
-          onClick={goForward}
-          disabled={!canGoForward}
-        />
+        <MoveButton className="rotate-180" onClick={goForward} disabled={!canGoForward} />
       </div>
     </div>
   );

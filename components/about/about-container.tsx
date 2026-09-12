@@ -5,21 +5,16 @@ import AboutHeading from "@/components/about/about-heading";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
 import HandwrittenHeading from "@/components/handwritten-heading";
 import Image from "next/image";
-import {
-  container,
-  containerUndelayed,
-  item,
-} from "@/lib/global-anim-variants";
+import { container, containerUndelayed, item } from "@/lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
 import { useState } from "react";
-import { PageTransition } from "../page-transition";
+import { PageTransition } from "@/components/page-transition";
 
 function AboutContainer() {
   const [showLoading, setShowLoading] = useState(false);
   const everythingState = useEverythingState();
 
-  if (showLoading)
-    return <PageTransition href={everythingState.transitionLink} />;
+  if (showLoading) return <PageTransition href={everythingState.transitionLink} />;
 
   return (
     <motion.div
@@ -48,7 +43,7 @@ function AboutContainer() {
         <div className="lg:flex lg:gap-x-12 lg:mt-8 xl:gap-x-40 lg:justify-between xl:mt-3 2xl:mt-10 3xl:ml-4!">
           <motion.div
             variants={item}
-            className="hidden lg:block min-w-[350px] max-h-[450px] lg:min-w-[300px] lg:max-h-[400px] animate-float [animation-delay:-0.5s] xl:max-h-[400px] 2xl:min-w-[350px] 2xl:max-h-[430px] 3xl:min-w-[400px]! 3xl:max-h-[500px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0!"
+            className="hidden lg:block min-w-[350px] max-h-[450px] lg:min-w-[300px] lg:max-h-[400px] border-black animate-float [animation-delay:-0.5s] xl:max-h-[400px] 2xl:min-w-[350px] 2xl:max-h-[430px] 3xl:min-w-[400px]! 3xl:max-h-[500px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0!"
           />
           <motion.div variants={item}>
             <AboutDescription />
@@ -67,14 +62,8 @@ function AboutContainer() {
           alt="squiggle"
           className="rotate-180 hidden sm:block animate-float"
         />
-        <div className="w-[296px] h-[351px] rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0! animate-float" />
-        <Image
-          src={Squiggle}
-          height={200}
-          width={50}
-          alt="squiggle"
-          className="hidden sm:block animate-float"
-        />
+        <div className="w-[296px] h-[351px] rounded-[7px] border border-black shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0! animate-float" />
+        <Image src={Squiggle} height={200} width={50} alt="squiggle" className="hidden sm:block animate-float" />
       </motion.div>
     </motion.div>
   );

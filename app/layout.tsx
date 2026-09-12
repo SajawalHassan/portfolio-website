@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Caveat, Francois_One, Inter } from "next/font/google";
 import "./globals.css";
-import FloatingCircles from "@/components/bg-circles";
 
 const francois_font = Francois_One({
   variable: "--font-francois",
@@ -24,17 +23,13 @@ export const metadata: Metadata = {
 };
 
 // Use the explicit, native React type for layout children
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${font_inter.variable} ${francois_font.variable} ${font_caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-bg">{children}</body>
     </html>
   );
 }
