@@ -12,7 +12,7 @@ function Page() {
 
         <ProjectLayout
           heading="Planet Varia"
-          subtext="Stand upon its north pole, and wander anywhere: You shall find diversity so diverse a nomenclator might go insane."
+          subtext="Stand on its north pole and wander anywhere, and you shall find diversity so diverse a nomenclator may go insane."
           projectList={webProjects}
           planetImage={Planet}
           handwrittenText="Scattered pebbles of consciousness"

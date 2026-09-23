@@ -12,10 +12,10 @@ function Page() {
 
         <ProjectLayout
           heading="Planet Datarius"
-          subtext="The sphere early in budding, galloping towards a dystopia of machines and clankers."
+          subtext="The sphere early in budding, galloping towards a dystopia of clankers."
           projectList={webProjects}
           planetImage={Planet}
-          handwrittenText="A broken visage of wires"
+          handwrittenText="A fluttering visage of wires"
         />
       </div>
       <FloatingCircles />
