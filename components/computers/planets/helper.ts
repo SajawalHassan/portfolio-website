@@ -28,7 +28,6 @@ export function generateStars(count: number): StarData[] {
 
     return {
       id: i,
-      // size: Math.random() * 20 + 8,
       top: `${baseTop + jitterTop}%`,
       left: `${baseLeft + jitterLeft}%`,
       delay: Math.random() * 2,
@@ -36,11 +35,7 @@ export function generateStars(count: number): StarData[] {
   });
 }
 
-export function getCorners(
-  containerW: number,
-  containerH: number,
-  planetSize: number,
-): Point[] {
+export function getCorners(containerW: number, containerH: number, planetSize: number): Point[] {
   return [
     { x: EDGE_PADDING, y: EDGE_PADDING }, // top-left
     { x: containerW - planetSize - EDGE_PADDING, y: EDGE_PADDING }, // top-right
@@ -57,10 +52,7 @@ function columnPartner(idx: number): number {
 }
 
 export function pickCorner(otherPlanetCorner: number): number {
-  const forbidden = new Set([
-    otherPlanetCorner,
-    columnPartner(otherPlanetCorner),
-  ]);
+  const forbidden = new Set([otherPlanetCorner, columnPartner(otherPlanetCorner)]);
   const valid = [0, 1, 2, 3].filter((i) => !forbidden.has(i));
   return valid[Math.floor(Math.random() * valid.length)];
 }

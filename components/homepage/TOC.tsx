@@ -1,13 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { Heading2, HeadingSubText } from "../ui";
+import { Heading2, HeadingSubText } from "../ui/headings";
 import TOCItem from "./TOCItem";
 import { TOC as TOCItemData } from "@/lib/content-data";
-import {
-  container,
-  containerUndelayed,
-  item,
-} from "../../lib/global-anim-variants";
+import { container, containerUndelayed, item } from "../../lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
 import { useState } from "react";
 import { PageTransition } from "@/components/page-transition";
@@ -17,8 +13,7 @@ function TOC() {
   const [showLoading, setShowLoading] = useState(false);
   const everythingState = useEverythingState();
 
-  if (showLoading)
-    return <PageTransition href={everythingState.transitionLink} />;
+  if (showLoading) return <PageTransition href={everythingState.transitionLink} />;
 
   return (
     <motion.div
@@ -41,12 +36,7 @@ function TOC() {
       <div className="mt-[28px] space-y-[28px]">
         {TOCItemData.map((tocItem: ItemType, index: number) => (
           <motion.div key={index} variants={item}>
-            <TOCItem
-              text={tocItem.text}
-              number={index + 1}
-              isAlt={tocItem.isLast}
-              link={tocItem.link}
-            />
+            <TOCItem text={tocItem.text} number={index + 1} isAlt={tocItem.isLast} link={tocItem.link} />
           </motion.div>
         ))}
       </div>

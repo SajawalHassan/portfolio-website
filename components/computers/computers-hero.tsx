@@ -5,21 +5,17 @@ import CmdBox from "./cmdbox";
 import ComputersBtn from "./computers-btn";
 import WaveLikeIcon from "@/public/assets/icons/wave-like.svg";
 import Image from "next/image";
-import {
-  container,
-  containerUndelayed,
-  item,
-} from "@/lib/global-anim-variants";
+import { container, containerUndelayed, item } from "@/lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
 import { useState } from "react";
 import { PageTransition } from "../page-transition";
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 function ComputersHero() {
   const [showLoading, setShowLoading] = useState(false);
   const everythingState = useEverythingState();
 
-  if (showLoading)
-    return <PageTransition href={everythingState.transitionLink} />;
+  if (showLoading) return <PageTransition href={everythingState.transitionLink} />;
 
   return (
     <motion.div
@@ -32,6 +28,7 @@ function ComputersHero() {
       }}
     >
       <div className="w-full">
+        <Breadcrumb className="mb-4" />
         <motion.h1
           variants={item}
           className="font-caveat text-[25px] md:text-[20px] lg:text-[27px] xl:text-[30px] 2xl:text-[33px] 3xl:text-[38px]! leading-[107%]"
@@ -44,7 +41,7 @@ function ComputersHero() {
           variants={item}
           className="font-caveat text-[38px] md:text-[32px] lg:text-[40px] xl:text-[44px] 2xl:text-[65px] 3xl:text-[75px]! 2xl:leading-[97%] font-bold leading-[104.4%]"
         >
-          Welcome to this planet,
+          Welcome to these planets,
           <br />
           inside that cosmos.
         </motion.h1>

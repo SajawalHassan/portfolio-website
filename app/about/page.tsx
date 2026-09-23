@@ -1,5 +1,5 @@
 import AboutContainer from "@/components/about/about-container";
-import FloatingCircles from "@/components/bg-circles";
+import FloatingCircles from "@/components/ui/bg-circles";
 import Header from "@/components/header";
 
 const Page = () => {

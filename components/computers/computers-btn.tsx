@@ -1,7 +1,7 @@
 "use client";
 
 import { FolderIcon } from "@/components/ui/folder-icon";
-import CustomLink from "@/components/custom-link";
+import CustomLink from "@/components/ui/custom-link";
 
 interface Props {
   text: string;

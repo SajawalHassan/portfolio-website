@@ -1,15 +1,11 @@
 "use client";
 import CoffeeIcon from "@/public/assets/icons/coffee-mug.svg";
 import Image from "next/image";
-import { Heading3 } from "./ui";
+import { Heading3 } from "./ui/headings";
 import { motion } from "framer-motion";
-import {
-  container,
-  containerUndelayed,
-  item,
-} from "../lib/global-anim-variants";
+import { container, containerUndelayed, item } from "../lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
-import CustomLink from "./custom-link";
+import CustomLink from "./ui/custom-link";
 
 function Header() {
   const everythingState = useEverythingState();
@@ -35,10 +31,7 @@ function Header() {
         </motion.div>
 
         <motion.div variants={item}>
-          <Heading3
-            className="text-[#3B403C]!"
-            text="| Sajawal Hassan | 16 |"
-          />
+          <Heading3 className="text-[#3B403C]!" text="| Sajawal Hassan | 16 |" />
         </motion.div>
       </motion.div>
       <motion.div variants={item}>

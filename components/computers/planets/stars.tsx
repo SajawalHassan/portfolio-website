@@ -3,11 +3,11 @@ import Image from "next/image";
 import Star from "@/public/assets/icons/star.svg";
 import { StarData, generateStars } from "./helper";
 
-function Stars() {
+function Stars(props: { starsNo: number }) {
   const [stars, setStars] = useState<StarData[]>([]);
 
   useEffect(() => {
-    setStars(generateStars(10));
+    setStars(generateStars(props.starsNo));
   }, []);
 
   return stars.map((star) => (

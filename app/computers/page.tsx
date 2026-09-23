@@ -1,4 +1,4 @@
-import FloatingCircles from "@/components/bg-circles";
+import FloatingCircles from "@/components/ui/bg-circles";
 import ComputersHero from "@/components/computers/computers-hero";
 import ComputersPlanets from "@/components/computers/planets/computers-planets";
 import Header from "@/components/header";

@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import AboutDescription from "@/components/about/about-description";
 import AboutHeading from "@/components/about/about-heading";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
-import HandwrittenHeading from "@/components/handwritten-heading";
+import HandwrittenHeading from "@/components/ui/handwritten-heading";
 import Image from "next/image";
 import { container, containerUndelayed, item } from "@/lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
 import { useState } from "react";
 import { PageTransition } from "@/components/page-transition";
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 function AboutContainer() {
   const [showLoading, setShowLoading] = useState(false);
@@ -27,6 +28,7 @@ function AboutContainer() {
       }}
     >
       <motion.div variants={item}>
+        <Breadcrumb className="mb-4" />
         <AboutHeading
           text="More about me!"
           className="max-w-[70%] sm:max-w-[20%] md:max-w-[430px] lg:max-w-[200px] xl:max-w-[400px] 3xl:max-w-[500px]!"
@@ -37,7 +39,7 @@ function AboutContainer() {
         <motion.div variants={item}>
           <HandwrittenHeading
             text="Restlessly Procastinating"
-            className="relative ml-auto mr-[15px] animate-float-sm-long"
+            className="relative ml-auto mr-[15px] animate-float-sm-long w-[calc(100%+15px)]"
           />
         </motion.div>
         <div className="lg:flex lg:gap-x-12 lg:mt-8 xl:gap-x-40 lg:justify-between xl:mt-3 2xl:mt-10 3xl:ml-4!">

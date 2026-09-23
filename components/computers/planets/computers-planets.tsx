@@ -9,13 +9,7 @@ import { useEverythingState } from "@/store/store";
 import { INIT_ANIM_DURATION } from "@/components/init-anim";
 
 function ComputersPlanets() {
-  const {
-    containerRef,
-    planet1Controls,
-    planet2Controls,
-    planet1Size,
-    planet2Size,
-  } = usePlanetsAnim();
+  const { containerRef, planet1Controls, planet2Controls, planet1Size, planet2Size } = usePlanetsAnim();
   const everythingState = useEverythingState();
 
   return (
@@ -32,30 +26,12 @@ function ComputersPlanets() {
       ref={containerRef}
       className="relative min-h-[550px] z-10 overflow-hidden"
     >
-      <Stars />
-      <motion.div
-        className="absolute top-0 left-0"
-        initial={false}
-        animate={planet1Controls}
-      >
-        <Image
-          src={Planet1}
-          width={planet1Size}
-          height={planet1Size}
-          alt="planet 1"
-        />
+      <Stars starsNo={10} />
+      <motion.div className="absolute top-0 left-0" initial={false} animate={planet1Controls}>
+        <Image src={Planet1} width={planet1Size} height={planet1Size} alt="planet 1" />
       </motion.div>
-      <motion.div
-        className="absolute top-0 left-0"
-        initial={false}
-        animate={planet2Controls}
-      >
-        <Image
-          src={Planet2}
-          width={planet2Size}
-          height={planet2Size}
-          alt="planet 2"
-        />
+      <motion.div className="absolute top-0 left-0" initial={false} animate={planet2Controls}>
+        <Image src={Planet2} width={planet2Size} height={planet2Size} alt="planet 2" />
       </motion.div>
     </motion.div>
   );

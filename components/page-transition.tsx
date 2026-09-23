@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEverythingState } from "@/store/store";
 
+// in seconds
 export const mainAnimationDuration = 1.5;
 
 export const PageTransition = ({ href }: { href: string }) => {

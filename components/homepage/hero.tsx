@@ -1,14 +1,10 @@
 "use client";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
 import Image from "next/image";
-import { Heading1, HeadingSubText } from "../ui";
+import { Heading1, HeadingSubText } from "../ui/headings";
 import { motion } from "framer-motion";
 import { useEverythingState } from "@/store/store";
-import {
-  container,
-  containerUndelayed,
-  item,
-} from "../../lib/global-anim-variants";
+import { container, containerUndelayed, item } from "../../lib/global-anim-variants";
 
 function Hero() {
   const everythingState = useEverythingState();
@@ -22,9 +18,7 @@ function Hero() {
     >
       <div className="space-y-[14px] max-w-[550px] sm:max-w-full md:px-20 lg:px-0 sm:px-10 md:text-center lg:text-left">
         <motion.div variants={item}>
-          <Heading1
-            text={`Hey, I do things that I can't categorize into anything.`}
-          />
+          <Heading1 text={`Hey, I do things that I can't categorize into anything.`} />
         </motion.div>
         <motion.div variants={item}>
           <HeadingSubText

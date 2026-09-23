@@ -54,49 +54,35 @@ export const computersGateways: ItemType[] = [
   },
 ];
 
+export type badgeType = "runs" | "progress";
+
 export interface projectType {
   title: string;
   description: string;
+  badge: badgeType;
+  className?: string; // Optional property if you want to keep track of custom classes like border-t-[2px]
 }
 
-export const webProjectsSpotlight: projectType[] = [
+export const webProjects: projectType[] = [
   {
-    title: "A clone of Reddit!",
-    description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
+    title: "Script that renames my screenshots",
+    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
+    badge: "runs",
+    className: "border-t-[2px]",
   },
   {
-    title: "A clone of Discord",
-    description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
+    title: "A chess clock, magnus carlson type shi",
+    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
+    badge: "progress",
   },
   {
-    title: "This portfolio",
-    description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
+    title: "Script that renames my screenshots",
+    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
+    badge: "runs",
   },
   {
-    title: "A form for a uni!",
-    description:
-      "Sometimes I think I’m Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I’m a singer; and all of the time I have adhd, probably, not sure ",
-  },
-];
-
-export const nonHighlightWebProjs: projectType[] = [
-  {
-    title: "A todo app!",
-    description: "Just a simple little todo app!",
-  },
-  {
-    title: "A todo app!",
-    description: "Just a simple little todo app!",
-  },
-  {
-    title: "A todo app!",
-    description: "Just a simple little todo app!",
-  },
-  {
-    title: "A todo app!",
-    description: "Just a simple little todo app!",
+    title: "A chess clock, magnus carlson type shi",
+    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
+    badge: "progress",
   },
 ];

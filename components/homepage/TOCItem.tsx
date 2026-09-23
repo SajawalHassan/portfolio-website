@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { Heading3 } from "@/components/ui";
+import { Heading3 } from "@/components/ui/headings";
 import clsx from "clsx";
-import CustomLink from "@/components/custom-link";
+import CustomLink from "@/components/ui/custom-link";
 
 interface Props {
   number: number;
@@ -43,7 +43,9 @@ function TOCItem(props: Props) {
           <div
             className={clsx(
               "w-[35px] h-[35px] bg-transparent border-[3px] transition-all duration-400 rounded-full flex items-center justify-center z-50 shrink-0",
-              !props.isAlt ? "border-black group-hover:border-white" : "text-accent group-hover:text-white",
+              !props.isAlt
+                ? "border-black group-hover:border-white"
+                : "text-accent group-hover:text-white border-accent group-hover:border-white",
             )}
           >
             <p
@@ -55,7 +57,7 @@ function TOCItem(props: Props) {
               {props.number.toString()}
             </p>
           </div>
-          <Heading3 text={props.text} className={props.isAlt ? "group-hover:text-white! text-accent!" : ""} />
+          <Heading3 text={props.text} className={clsx("group-hover:text-white!", props.isAlt && "text-accent!")} />
         </div>
         <div
           className={clsx(
