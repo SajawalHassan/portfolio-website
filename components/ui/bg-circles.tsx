@@ -1,5 +1,4 @@
 "use client";
-import { useEverythingState } from "@/store/store";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,15 +30,12 @@ function generateCircles(count: number): CircleConfig[] {
 function FloatingCircles({ count = 12 }: { count?: number }) {
   const [circles, setCircles] = useState<CircleConfig[] | null>(null);
   const pathname = usePathname();
-  const everythingState = useEverythingState();
 
   useEffect(() => {
     setCircles(generateCircles(count));
   }, [count]);
 
   if (!circles) return null;
-
-  console.log(everythingState.doExitAnim);
 
   return (
     <motion.div

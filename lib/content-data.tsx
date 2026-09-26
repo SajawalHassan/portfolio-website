@@ -14,7 +14,7 @@ export const TOC: ItemType[] = [
     text: "Everything Computers",
   },
   {
-    link: "#",
+    link: "/pretentious-gibberish",
     text: "Pretentious Gibberish",
   },
   {
@@ -46,7 +46,7 @@ export const computersGateways: ItemType[] = [
   },
   {
     text: "Data Science",
-    link: "/computers/ds",
+    link: "/computers/data-science",
   },
   {
     text: "Random",
@@ -54,12 +54,12 @@ export const computersGateways: ItemType[] = [
   },
 ];
 
-export type badgeType = "runs" | "progress";
-
 export interface projectType {
   title: string;
   description: string;
-  badge: badgeType;
+  badgeText: string;
+  badgeColor: string;
+
   className?: string; // Optional property if you want to keep track of custom classes like border-t-[2px]
 }
 
@@ -67,22 +67,26 @@ export const webProjects: projectType[] = [
   {
     title: "Script that renames my screenshots",
     description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
-    badge: "runs",
+    badgeText: "runs",
+    badgeColor: "green",
     className: "border-t-[2px]",
   },
   {
     title: "A chess clock, magnus carlson type shi",
     description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
-    badge: "progress",
+    badgeText: "progress",
+    badgeColor: "yellow",
   },
   {
     title: "Script that renames my screenshots",
     description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
-    badge: "runs",
+    badgeText: "runs",
+    badgeColor: "green",
   },
   {
     title: "A chess clock, magnus carlson type shi",
     description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
-    badge: "progress",
+    badgeText: "progress",
+    badgeColor: "yellow",
   },
 ];

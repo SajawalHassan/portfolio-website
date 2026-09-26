@@ -1,8 +1,13 @@
 import clsx from "clsx";
 import { Heading3, HeadingSubText } from "@/components/ui/headings";
-import { badgeType } from "@/lib/content-data";
 
-export const ProjectItem = (props: { className?: string; text: string; subtext: string; badge: badgeType }) => {
+export const RowItem = (props: {
+  className?: string;
+  text: string;
+  subtext: string;
+  badgeText: string;
+  badgeColor: string;
+}) => {
   return (
     <div className="relative group">
       <div
@@ -23,21 +28,19 @@ export const ProjectItem = (props: { className?: string; text: string; subtext: 
         />
         <HeadingSubText
           text={props.subtext}
-          className="font-light text-[12px] md:text-[16px] 2xl:text-[18px]! 3xl:text-[18px]! leading-[122%]! mt-2 xl:mt-2 max-w-[80%] transition-transform duration-150 ease-out group-hover:translate-x-[4px]"
+          className="font-light text-[12px]! md:text-[16px] 2xl:text-[18px]! 3xl:text-[18px]! leading-[122%]! mt-1 xl:mt-2 max-w-[80%] transition-transform duration-150 ease-out group-hover:translate-x-[4px]"
         />
 
         {/* Badge */}
         <div
           className={clsx(
             "rounded-full px-3 py-1 md:px-4 md:py-1.5 text-center flex items-center justify-center w-max absolute right-[18px] top-[26px] md:right-[24px] md:top-[32px] lg:top-[23px] transition-colors duration-150 ease-out",
-            props.badge == "runs"
+            props.badgeColor == "green"
               ? "bg-[#CDCEBE] text-[#858673] group-hover:bg-[#858673] group-hover:text-[#F5F1E8]"
               : "bg-[#DFD4B6] text-[#B39C64] group-hover:bg-[#B39C64] group-hover:text-[#F5F1E8]",
           )}
         >
-          <p className="text-[10px] md:text-[12px] lg:text-[14px] font-bold">
-            {props.badge == "runs" ? "still runs" : "in progress"}
-          </p>
+          <p className="text-[10px] md:text-[12px] lg:text-[14px] font-bold">{props.badgeText}</p>
         </div>
       </div>
       <div className="z-0 h-[101%] bg-linear-to-r from-bg via-bg to-bg/0 w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 duration-200" />
