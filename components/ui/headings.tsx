@@ -48,7 +48,7 @@ export const Heading4 = (props: Props) => {
   return (
     <h1
       className={clsx(
-        `text-[20px] md:text-[30px] 2xl:text-[35px] 3xl:text-[40px] font-francois text-black group-hover:text-white transition-all z-50 duration-400 `,
+        `text-[20px] lg:text-[22px] 2xl:text-[26px] font-francois text-black transition-all z-50 duration-400 `,
         props.className,
       )}
     >
@@ -62,7 +62,7 @@ export const HeadingSubText = (props: Props) => {
     <p
       className={clsx(
         props.className,
-        "text-[16px] leading-[134%] text-subtext md:text-[18px] 2xl:text-[20px] 3xl:text-[22px]",
+        "text-[14px] lg:text-[16px] 2xl:text-[18px] lg:max-w-[90%] leading-[134%] text-subtext",
       )}
     >
       {props.text}

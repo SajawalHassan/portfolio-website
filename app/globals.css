@@ -85,6 +85,38 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+@utility max-width-stuff {
+  @apply max-w-[500px] mx-auto;
+
+  @media (width >= theme(--breakpoint-sm)) {
+    @apply max-w-[600px];
+  }
+
+  @media (width >= theme(--breakpoint-md)) {
+    @apply max-w-[750px];
+  }
+
+  @media (width >= theme(--breakpoint-lg)) {
+    @apply max-w-[900px];
+  }
+
+  @media (width >= theme(--breakpoint-xl)) {
+    @apply max-w-[1400px] w-full;
+  }
+
+  @media (width >= theme(--breakpoint-2xl)) {
+    @apply max-w-[1500px] w-full;
+  }
+
+  @media (width >= 1700px) {
+    @apply max-w-[1600px];
+  }
+}
+
+@utility text-transition-translate {
+  @apply transition-transform duration-150 ease-out group-hover:translate-x-[4px] group-hover/novel:translate-x-[4px];
+}
+
 body {
   font-family: var(--font-inter);
 }

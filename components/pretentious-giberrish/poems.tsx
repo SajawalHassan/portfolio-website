@@ -5,9 +5,9 @@ type Props = {};
 
 const PoemBox = (props: { title: string; poemText: string }) => {
   return (
-    <div className="rounded-[9px] border-2 border-black p-[13px] bg-bg">
-      <Heading4 text={props.title} />
-      <p className="font-light text-[16px] whitespace-pre-line">{props.poemText}</p>
+    <div className="max-w-[320px] mx-auto md:mx-0 rounded-[9px] border-2 border-black p-[13px] bg-bg cursor-pointer hover:-translate-y-2 transition-all hover:shadow-xl">
+      <Heading4 text={props.title} className="cursor-pointer" />
+      <HeadingSubText text={props.poemText} className="whitespace-pre-line cursor-pointer" />
     </div>
   );
 };
@@ -23,13 +23,19 @@ export const Poems = (props: Props) => {
   return (
     <div className="mt-[50px]">
       <Heading3 text="Structureless, sentimental poems" className="leading-[128.7%]" />
-      <HeadingSubText text="Bad poems, and better than bad poems." className="text-[14px]!" />
+      <HeadingSubText text="Bad poems, and better than bad poems." className="mt-0.5" />
 
-      <div className="space-y-[22px] max-w-[304px] mx-auto mt-[31px]">
-        <PoemBox title="A longing" poemText={examplePoem} />
-        <PoemBox title="A longing" poemText={examplePoem} />
-        <PoemBox title="A longing" poemText={examplePoem} />
-        <ViewMoreBtn className="max-w-full!" />
+      <div className="mt-[31px]">
+        <div className="flex flex-wrap gap-[22px]">
+          <PoemBox title="A longing" poemText={examplePoem} />
+          <PoemBox title="A longing" poemText={examplePoem} />
+          <PoemBox title="A longing" poemText={examplePoem} />
+          <PoemBox title="A longing" poemText={examplePoem} />
+          <PoemBox title="A longing" poemText={examplePoem} />
+          <PoemBox title="A longing" poemText={examplePoem} />
+          <PoemBox title="A longing" poemText={examplePoem} />
+        </div>
+        <ViewMoreBtn className="mt-[22px]" />
       </div>
     </div>
   );

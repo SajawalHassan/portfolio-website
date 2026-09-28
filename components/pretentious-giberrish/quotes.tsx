@@ -1,4 +1,4 @@
-import { Heading3, HeadingSubText } from "@/components/ui/headings";
+import { Heading3, Heading4, HeadingSubText } from "@/components/ui/headings";
 import { ViewMoreBtn } from "@/components/ui/view-more-btn";
 
 type Props = {};
@@ -6,7 +6,7 @@ type Props = {};
 export const QuoteBox = (props: { text: string }) => {
   return (
     <div className="py-[10px] px-[11px] text-center flex items-center justify-center border-[2px] border-black rounded-[9px] w-max">
-      <p className="font-caveat text-[18px]">{props.text}</p>
+      <Heading4 text={props.text} className="font-caveat!" />
     </div>
   );
 };
@@ -16,8 +16,8 @@ export const Quotes = (props: Props) => {
     <div className="mt-[50px]">
       <Heading3 text="Random lines and dialogues" className="leading-[128.7%]" />
       <HeadingSubText
+        className="mt-0.5"
         text="Sometimes entire ideas clamped into a single line, othertimes a random burst of creativity."
-        className="text-[14px]!"
       />
 
       <div className="flex flex-wrap gap-3 mt-[20px]">

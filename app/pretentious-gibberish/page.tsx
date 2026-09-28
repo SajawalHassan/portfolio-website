@@ -12,17 +12,27 @@ function Page() {
       <div className="w-full h-full z-999 relative pl-[14px] pb-30 md:pl-[24px]">
         <Header />
 
-        <div className="pr-[20px]">
-          <div className="mt-[20px]">
-            <Heading2 text="A Young Man's Diary" />
-            <HeadingSubText
-              className="text-[14px]! mt-1"
-              text="A proud cypress tree, green as any, whose leaves are scattered — some on the floor, and others still hanging; each housing some idea, some thought, some fantasy, built out of a tragedy or some joyous happening of personal life."
-            />
-          </div>
+        <div className="pr-[20px] max-width-stuff">
+          <div className="xl:flex xl:justify-between xl:gap-x-10">
+            <div className="mt-[20px] xl:w-[600px] 2xl:w-[700px] xl:shrink-0">
+              <div>
+                <Heading2 text="A Young Man's Diary" />
+                <HeadingSubText
+                  className="mt-1"
+                  text="A proud cypress tree, green as any, whose leaves are scattered — some on the floor, and others still hanging; each housing some idea, some thought, some fantasy, built out of a tragedy or some joyous happening of personal life."
+                />
+              </div>
 
-          <BlogView />
-          <Quotes />
+              <div className="hidden xl:block w-full">
+                <Quotes />
+              </div>
+            </div>
+
+            <BlogView />
+          </div>
+          <div className="xl:hidden">
+            <Quotes />
+          </div>
           <Poems />
           <Novels />
         </div>
