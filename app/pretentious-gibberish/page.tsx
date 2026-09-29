@@ -13,7 +13,7 @@ function Page() {
         <Header />
 
         <div className="pr-[20px] max-width-stuff">
-          <div className="xl:flex xl:justify-between xl:gap-x-10">
+          <div className="xl:flex xl:justify-around xl:gap-x-10">
             <div className="mt-[20px] xl:w-[600px] 2xl:w-[700px] xl:shrink-0">
               <div>
                 <Heading2 text="A Young Man's Diary" />
@@ -30,11 +30,13 @@ function Page() {
 
             <BlogView />
           </div>
-          <div className="xl:hidden">
-            <Quotes />
+          <div className="max-w-[1600px] mx-auto">
+            <div className="xl:hidden">
+              <Quotes />
+            </div>
+            <Poems />
+            <Novels />
           </div>
-          <Poems />
-          <Novels />
         </div>
       </div>
       <FloatingCircles />

@@ -17,7 +17,7 @@ function TOC() {
 
   return (
     <motion.div
-      className="sm:px-10 md:px-20 lg:px-0 lg:w-full xl:max-w-[470px] 2xl:max-w-[531px] 2xl:w-full 3xl:max-w-full"
+      className="sm:px-10 md:px-20 lg:px-0 lg:max-w-[670px] lg:mx-auto lg:w-full lg:min-w-[420px] xl:min-w-0 xl:max-w-[460px] 2xl:max-w-[531px] 2xl:w-full 3xl:max-w-full"
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
@@ -27,13 +27,13 @@ function TOC() {
     >
       <div className="md:text-center lg:text-left">
         <motion.div variants={item}>
-          <Heading2 text="Notebook peek" className="lg:text-[45px]" />
+          <Heading2 text="Notebook peek" />
         </motion.div>
         <motion.div variants={item}>
-          <HeadingSubText text={`A little table of contents :)`} />
+          <HeadingSubText text={`A little table of contents`} />
         </motion.div>
       </div>
-      <div className="mt-[28px] space-y-[28px]">
+      <div className="mt-[28px] space-y-[28px] lg:space-y-[20px]">
         {TOCItemData.map((tocItem: ItemType, index: number) => (
           <motion.div key={index} variants={item}>
             <TOCItem text={tocItem.text} number={index + 1} isAlt={tocItem.isLast} link={tocItem.link} />

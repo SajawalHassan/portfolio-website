@@ -22,7 +22,7 @@ export const Heading2 = (props: Props) => {
   return (
     <h1
       className={clsx(
-        `font-francois text-[36px] sm:text-[42px] md:text-[50px] lg:text-[40px] text-black leading-[112.3%] xl:text-[54px] 2xl:text-[62px] 3xl:text-[68px]`,
+        `font-francois text-[36px] sm:text-[42px] md:text-[50px] text-black leading-[112.3%] xl:text-[54px] 2xl:text-[62px] 3xl:text-[68px]`,
         props.className,
       )}
     >
@@ -62,7 +62,7 @@ export const HeadingSubText = (props: Props) => {
     <p
       className={clsx(
         props.className,
-        "text-[14px] lg:text-[16px] 2xl:text-[18px] lg:max-w-[90%] leading-[134%] text-subtext",
+        "text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[18px] 3xl:text-[20px]! lg:max-w-[90%] leading-[134%] text-subtext",
       )}
     >
       {props.text}

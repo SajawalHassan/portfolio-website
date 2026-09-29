@@ -32,15 +32,6 @@ export const RowItem = (props: {
           <Heading4 text={props.text} className="text-transition-translate" />
           <HeadingSubText text={props.subtext} className="text-transition-translate" />
 
-          {/* <Heading3
-            text={props.text}
-            className="max-w-[80%] text-[20px]! md:text-[25px]! 2xl:text-[28px]! 3xl:text-[32px]! leading-[119.1%] text-transition-translate"
-          />
-          <HeadingSubText
-            text={props.subtext}
-            className="font-light leading-[122%]! mt-1 xl:mt-2 max-w-[75%] text-transition-translate"
-          /> */}
-
           {/* Badge */}
           <div
             className={clsx(

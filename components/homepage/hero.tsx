@@ -11,18 +11,18 @@ function Hero() {
 
   return (
     <motion.div
-      className="space-y-[60px] lg:space-y-[80px] lg:max-w-[670px] xl:max-w-[780px]! 2xl:max-w-[850px]!"
+      className="space-y-[60px] lg:space-y-[80px] lg:mx-auto xl:max-w-[780px]! 2xl:max-w-[850px]!"
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
     >
-      <div className="space-y-[14px] max-w-[550px] sm:max-w-full md:px-20 lg:px-0 sm:px-10 md:text-center lg:text-left">
+      <div className="space-y-[14px] max-w-[550px] sm:max-w-full md:px-20 lg:px-0 sm:px-10 md:text-center xl:text-left">
         <motion.div variants={item}>
           <Heading1 text={`Hey, I do things that I can't categorize into anything.`} />
         </motion.div>
         <motion.div variants={item}>
           <HeadingSubText
-            className="max-w-[740px] 3xl:max-w-[900px]"
+            className="lg:mx-auto xl:mx-0"
             text={`Sometimes I think I'm Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I'm a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . Welcome to my mess of a personality under the guise of a catppuccin-themed (mostly) website!`}
           />
         </motion.div>

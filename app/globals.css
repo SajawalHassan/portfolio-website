@@ -97,19 +97,15 @@
   }
 
   @media (width >= theme(--breakpoint-lg)) {
-    @apply max-w-[900px];
+    @apply max-w-[800px];
   }
 
   @media (width >= theme(--breakpoint-xl)) {
-    @apply max-w-[1400px] w-full;
-  }
-
-  @media (width >= theme(--breakpoint-2xl)) {
-    @apply max-w-[1500px] w-full;
+    @apply max-w-full w-full;
   }
 
   @media (width >= 1700px) {
-    @apply max-w-[1600px];
+    @apply max-w-[1800px];
   }
 }
 
