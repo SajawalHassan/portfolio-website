@@ -12,7 +12,7 @@ export const ViewMoreBtn = (props: Props) => {
       <button className="cursor-pointer group hover:bg-stone-900 hover:text-white flex items-center gap-1 px-[10px] py-[5.5px] lg:px-[12px] border border-black rounded text-[12px] text-gray-700 transition-all whitespace-nowrap">
         <HeadingSubText
           text="View more"
-          className="group-hover:font-semibold group-hover:text-white! 2xl:text-[16px]! transition-all"
+          className="group-hover:font-semibold group-hover:text-white! xl:text-[16px]! transition-all"
         />
         <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />

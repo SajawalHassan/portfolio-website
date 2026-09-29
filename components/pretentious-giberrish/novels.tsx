@@ -3,19 +3,20 @@ import clsx from "clsx";
 
 export const NovelItem = (props: { className?: string; text: string; subtext: string }) => {
   return (
-    <div
-      className={clsx(
-        "group/novel z-10 border-[#8F8C7B] border-b-[2px] relative transition-[padding] duration-150 ease-out",
-        props.className,
-      )}
-    >
+    <div className={clsx("group/novel z-10 border-[#8F8C7B] border-b-[2px] relative", props.className)}>
       <div className="max-width-stuff relative py-[16px] px-[16px] sm:px-[10px] md:px-[20px] lg:py-[20px] xl:px-[10px] xl:py-[22px]">
         <Heading4 text={props.text} />
         <HeadingSubText text={props.subtext} />
 
-        <button className="group cursor-pointer hover:bg-black hover:text-white transition-all text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]">
+        <button className="group cursor-pointer hover:bg-black hover:text-white transition-all duration-200 text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]">
           <HeadingSubText text="View on google docs" className="group-hover:text-white!" />
-          <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg
+            className="w-4.5 h-4.5 xl:w-5 xl:w-5 transition-all duration-200"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
           </svg>
         </button>
