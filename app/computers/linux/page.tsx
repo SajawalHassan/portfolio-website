@@ -7,16 +7,18 @@ import Planet from "@/public/assets/planet.svg";
 function Page() {
   return (
     <div className="home-page relative">
-      <div className="w-full h-full z-999 relative pl-[14px] pb-30 md:pl-[24px] 3xl:pr-[40px]">
+      <div className="w-full h-full z-999 relative pb-30">
         <Header />
 
-        <ProjectLayout
-          heading="Planet Pinguinia"
-          subtext="This is the ice-world: An antartica of penguins, verdant in caves with dotfiles, a boundless plain of distros."
-          projectList={webProjects}
-          planetImage={Planet}
-          handwrittenText="Dot files of tedious creativity"
-        />
+        <div className="max-width-stuff px-[14px] md:px-[24px]">
+          <ProjectLayout
+            heading="Planet Pinguinia"
+            subtext="This is the ice-world: An antartica of penguins, verdant in caves with dotfiles, a boundless plain of distros."
+            projectList={webProjects}
+            planetImage={Planet}
+            handwrittenText="Dot files of tedious creativity"
+          />
+        </div>
       </div>
       <FloatingCircles />
     </div>

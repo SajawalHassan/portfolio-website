@@ -7,16 +7,18 @@ import Planet from "@/public/assets/planet.svg";
 function Page() {
   return (
     <div className="home-page relative">
-      <div className="w-full h-full z-999 relative pl-[14px] pb-30 md:pl-[24px] 3xl:pr-[40px]">
+      <div className="w-full h-full z-999 relative pb-30">
         <Header />
 
-        <ProjectLayout
-          heading="Planet Datarius"
-          subtext="The sphere early in budding, galloping towards a dystopia of clankers."
-          projectList={webProjects}
-          planetImage={Planet}
-          handwrittenText="A fluttering visage of wires"
-        />
+        <div className="max-width-stuff px-[14px] md:px-[24px]">
+          <ProjectLayout
+            heading="Planet Datarius"
+            subtext="The sphere early in budding, galloping towards a dystopia of clankers."
+            projectList={webProjects}
+            planetImage={Planet}
+            handwrittenText="A fluttering visage of wires"
+          />
+        </div>
       </div>
       <FloatingCircles />
     </div>

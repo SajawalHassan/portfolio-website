@@ -8,10 +8,10 @@ export const NovelItem = (props: { className?: string; text: string; subtext: st
         <Heading4 text={props.text} />
         <HeadingSubText text={props.subtext} />
 
-        <button className="group cursor-pointer hover:bg-black hover:text-white transition-all duration-200 text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]">
-          <HeadingSubText text="View on google docs" className="group-hover:text-white!" />
+        <button className="hover:-translate-y-1 hover:shadow-xl cursor-pointer transition-all text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]">
+          <HeadingSubText text="View on google docs" />
           <svg
-            className="w-4.5 h-4.5 xl:w-5 xl:w-5 transition-all duration-200"
+            className="w-4.5 h-4.5 xl:w-5 xl:w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
