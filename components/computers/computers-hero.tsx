@@ -27,8 +27,9 @@ function ComputersHero() {
         if (definition === "exit") setShowLoading(true);
       }}
     >
-      <div className="w-full">
+      <div className="w-full lg:w-max">
         <Breadcrumb className="mb-4" />
+
         <motion.h1
           variants={item}
           className="font-caveat text-[25px] md:text-[20px] lg:text-[27px] xl:text-[30px] 2xl:text-[33px] 3xl:text-[38px]! leading-[107%]"

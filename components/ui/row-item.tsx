@@ -29,19 +29,19 @@ export const RowItem = (props: {
             aria-hidden="true"
           />
 
-          <Heading4 text={props.text} className="text-transition-translate" />
-          <HeadingSubText text={props.subtext} className="text-transition-translate" />
+          <Heading4 text={props.text} className="text-transition-translate max-w-[80%] leading-[127%]" />
+          <HeadingSubText text={props.subtext} className="text-transition-translate mt-1 max-w-[85%] lg:max-w-[83%]" />
 
           {/* Badge */}
           <div
             className={clsx(
-              "rounded-full px-3 py-1 md:px-4 md:py-1.5 text-center flex items-center justify-center w-max absolute right-[18px] top-[26px] md:right-[24px] md:top-[32px] lg:top-[23px] transition-colors duration-150 ease-out",
+              "rounded-full px-3 py-1 md:px-4 md:py-1.5 text-center flex items-center justify-center w-max absolute right-[10px] top-[15px] lg:top-[10px] lg:right-[10px] transition-colors duration-150 ease-out",
               props.badgeColor == "green"
                 ? "bg-[#CDCEBE] text-[#858673] group-hover:bg-[#858673] group-hover:text-[#F5F1E8]"
                 : "bg-[#DFD4B6] text-[#B39C64] group-hover:bg-[#B39C64] group-hover:text-[#F5F1E8]",
             )}
           >
-            <p className="text-[10px] md:text-[12px] lg:text-[14px] font-bold">{props.badgeText}</p>
+            <p className="text-[10px] md:text-[12px] xl:text-[14px] font-bold">{props.badgeText}</p>
           </div>
         </div>
       </div>

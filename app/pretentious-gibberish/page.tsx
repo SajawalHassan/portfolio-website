@@ -12,7 +12,7 @@ function Page() {
       <div className="w-full h-full z-999 relative pb-30">
         <Header />
 
-        <div className="px-[14px] md:px-[24px] max-width-stuff">
+        <div className="px-[14px] md:px-[24px] mt-[30px] max-width-stuff">
           <div className="xl:flex xl:justify-around xl:gap-x-10">
             <div className="mt-[20px] xl:w-[600px] 2xl:w-[700px] xl:shrink-0">
               <div>

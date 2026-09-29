@@ -17,7 +17,7 @@ function TOC() {
 
   return (
     <motion.div
-      className="sm:px-10 md:px-20 lg:px-0 lg:max-w-[670px] lg:mx-auto lg:w-full lg:min-w-[420px] xl:min-w-0 xl:max-w-[460px] 2xl:max-w-[531px] 2xl:w-full 3xl:max-w-[600px]!"
+      className="sm:px-10 md:px-20 lg:px-0 lg:max-w-[670px] lg:mx-auto lg:w-full lg:min-w-[420px] xl:min-w-0 xl:max-w-[460px] 2xl:max-w-[531px] 2xl:w-full"
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
