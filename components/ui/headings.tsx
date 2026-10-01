@@ -61,8 +61,8 @@ export const HeadingSubText = (props: Props) => {
   return (
     <p
       className={clsx(
+        "text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[18px] 3xl:text-[20px]! leading-[134%] text-subtext",
         props.className,
-        "text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[18px] 3xl:text-[20px]! lg:max-w-[90%] leading-[134%] text-subtext",
       )}
     >
       {props.text}

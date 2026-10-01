@@ -5,6 +5,7 @@ import Image from "next/image";
 import ChevronDouble from "@/public/assets/icons/chevron-double.svg";
 import clsx from "clsx";
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import { HeadingSubText } from "@/components/ui/headings";
 
 export const MoveButton = (props: { className?: string; onClick?: () => void; disabled?: boolean }) => {
   return (
@@ -106,12 +107,13 @@ function AboutDescription() {
               className="space-y-5 md:space-y-10 lg:space-y-5"
             >
               {visibleParas.map((para, i) => (
-                <p
-                  key={startIndex + i}
-                  className="font-light text-[14px] sm:text-[18px] md:text-[22px] lg:text-[14px] xl:text-[17.5px] 2xl:text-[20px] 3xl:text-[21px]! leading-[114%] text-[#33312B]"
-                >
-                  {para}
-                </p>
+                <HeadingSubText text={para} key={i} className="leading-[144%] text-[#33312B]! lg:w-full!" />
+                // <p
+                //   key={startIndex + i}
+                //   className="font-light text-[14px] sm:text-[18px] md:text-[22px] lg:text-[14px] xl:text-[17.5px] 2xl:text-[20px] 3xl:text-[21px]! leading-[114%] text-[#33312B]"
+                // >
+                //   {para}
+                // </p>
               ))}
             </motion.div>
           </AnimatePresence>

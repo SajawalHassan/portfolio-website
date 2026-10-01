@@ -30,7 +30,7 @@ function TOC() {
           <Heading2 text="Notebook peek" />
         </motion.div>
         <motion.div variants={item}>
-          <HeadingSubText text={`A little table of contents`} />
+          <HeadingSubText text={`A table of contents of me — an entire person. What an odd thing to say.`} />
         </motion.div>
       </div>
       <div className="mt-[28px] space-y-[28px] lg:space-y-[20px]">

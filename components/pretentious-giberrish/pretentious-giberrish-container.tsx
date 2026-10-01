@@ -35,7 +35,7 @@ export const PretentiousGiberrishContainer = (props: Props) => {
             <Heading2 text="A Young Man's Diary" />
             <HeadingSubText
               className="mt-1"
-              text="A proud cypress tree, green as any, whose leaves are scattered — some on the floor, and others still hanging; each housing some idea, some thought, some fantasy, built out of a tragedy or some joyous happening of personal life."
+              text="A proud cypress tree, green as any, whose leaves are scattered — some on the floor, and others still hanging; each housing some idea, some thought, some fantasy, built out of a tragedy or joyous happening of personal life."
             />
           </motion.div>
 

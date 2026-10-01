@@ -8,7 +8,7 @@ function Page() {
       <div className="w-full h-full z-999 relative pb-30">
         <Header />
 
-        <div className="px-[14px] md:px-[24px] mt-[30px] max-width-stuff">
+        <div className="px-[14px] md:px-[24px] mt-[30px] max-width-stuff lg:max-w-[900px] xl:max-w-full min-[1700px]:max-w-[1800px]">
           <PretentiousGiberrishContainer />
         </div>
       </div>

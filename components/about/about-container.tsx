@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import AboutDescription from "@/components/about/about-description";
-import AboutHeading from "@/components/about/about-heading";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
 import HandwrittenHeading from "@/components/ui/handwritten-heading";
 import Image from "next/image";
@@ -10,6 +9,7 @@ import { useEverythingState } from "@/store/store";
 import { useState } from "react";
 import { PageTransition } from "@/components/page-transition";
 import Breadcrumb from "@/components/ui/breadcrumb";
+import { Heading1 } from "@/components/ui/headings";
 
 function AboutContainer() {
   const [showLoading, setShowLoading] = useState(false);
@@ -29,10 +29,7 @@ function AboutContainer() {
     >
       <motion.div variants={item}>
         <Breadcrumb className="mb-4" />
-        <AboutHeading
-          text="More about me!"
-          className="max-w-[70%] sm:max-w-[20%] md:max-w-[430px] lg:max-w-[200px] xl:max-w-[400px] 3xl:max-w-[500px]!"
-        />
+        <Heading1 text="More about me" className="border-b-[6px] border-black pl-0.5 pr-6 w-max" />
       </motion.div>
 
       <div className="space-y-[8px] md:space-y-[12px] mt-[38px] sm:mt-[42px] lg:-mt-12 flex flex-col">

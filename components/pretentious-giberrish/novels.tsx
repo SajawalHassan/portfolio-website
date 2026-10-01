@@ -33,7 +33,7 @@ export const Novels = (props: Props) => {
       <Heading3 text="Unfinished, and never to be finished novels" className="leading-[128.7%]" />
       <HeadingSubText text="Novels I shall never complete perhaps, but filled with fluttering creativity and horrid prose." />
 
-      <div className="mt-[30px] w-screen relative left-1/2 right-1/2 -mx-[50vw] sm:max-width-stuff px-0! sm:mx-auto sm:left-0 sm:right-0">
+      <div className="mt-[30px] w-screen relative left-1/2 right-1/2 -mx-[50vw] sm:max-width-stuff px-0! sm:mx-auto sm:left-0 sm:right-0 sm:w-full">
         <NovelItem
           text="They who wrestle with dieties"
           subtext="Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me."

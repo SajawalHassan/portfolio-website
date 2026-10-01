@@ -23,7 +23,7 @@ function Hero() {
         <motion.div variants={item}>
           <HeadingSubText
             className="lg:mx-auto xl:mx-0 max-w-[800px]!"
-            text={`Sometimes I think I'm Shakespeare; sometimes I think I can write my own kernel; sometimes I feel like Hamilton; sometimes I'm a singer; and all of the time I have adhd, probably, not sure actually, never got it checked >.< . Welcome to my mess of a personality under the guise of a catppuccin-themed (mostly) website!`}
+            text={`I make peculiar websites and leave them unfinished; write unpolished prose and leave it stranded; create small, niche scripts that benefit no one — perhaps not even myself. I code, study philosophy, read literature, and write embarrassing poems, not for some career path, but instead for my purpose of experiencing, fully, what it means to be a human, to see what ecstasy evolution has allowed me to feel.`}
           />
         </motion.div>
 

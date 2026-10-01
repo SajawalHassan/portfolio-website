@@ -42,13 +42,13 @@ export const ProjectLayout = ({ heading, subtext, projectList, planetImage, hand
       {isDesktop ? (
         <div className="static z-10 hidden lg:flex items-stretch justify-around min-[1800px]:justify-between gap-x-[80px]">
           <div>
-            <div className="lg:max-w-[650px] 3xl:max-w-[750px]">
+            <div className="">
               <Breadcrumb className="mb-3" />
               <motion.div variants={item}>
                 <Heading2 text={heading} className="2xl:text-[54px]!" />
               </motion.div>
               <motion.div variants={item}>
-                <HeadingSubText text={subtext} className="italic text-[14px] 2xl:text-[18px]! mt-1" />
+                <HeadingSubText text={subtext} className="italic max-w-[90%] mt-1" />
               </motion.div>
             </div>
 
