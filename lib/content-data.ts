@@ -18,7 +18,7 @@ export const TOC: ItemType[] = [
     text: "Pretentious Gibberish",
   },
   {
-    link: "#",
+    link: "/talk-to-me",
     isLast: true,
     text: "Talk to me",
   },
@@ -88,5 +88,30 @@ export const webProjects: projectType[] = [
     description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
     badgeText: "progress",
     badgeColor: "yellow",
+  },
+];
+
+import Youtube from "@/public/assets/icons/yt.svg";
+import Discord from "@/public/assets/icons/discord.svg";
+import Instagram from "@/public/assets/icons/instagram.svg";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
+export type ContactIconsType = {
+  icon: StaticImport;
+  href: string;
+};
+
+export const ContactIcons: ContactIconsType[] = [
+  {
+    icon: Youtube,
+    href: "#1",
+  },
+  {
+    icon: Discord,
+    href: "#2",
+  },
+  {
+    icon: Instagram,
+    href: "#3",
   },
 ];
