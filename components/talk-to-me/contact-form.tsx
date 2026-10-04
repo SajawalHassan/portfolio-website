@@ -65,7 +65,7 @@ export default function ContactForm() {
         <div>
           <button
             className={clsx(
-              "hover:-translate-y-1 hover:shadow-xl cursor-pointer transition-all text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]",
+              "btn-translate-hover text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]",
               sent && "bg-black text-white",
             )}
           >

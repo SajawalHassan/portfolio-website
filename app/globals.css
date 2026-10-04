@@ -113,6 +113,10 @@
   @apply transition-transform duration-150 ease-out group-hover:translate-x-[4px] group-hover/novel:translate-x-[4px];
 }
 
+@utility btn-translate-hover {
+  @apply hover:-translate-y-1 hover:shadow-xl cursor-pointer transition-all;
+}
+
 body {
   font-family: var(--font-inter);
 }

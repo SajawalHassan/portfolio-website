@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ContactForm from "@/components/talk-to-me/contact-form";
 import Breadcrumb from "@/components/ui/breadcrumb";
-import CustomLink from "@/components/ui/custom-link";
 import { Heading1 } from "@/components/ui/headings";
 import { PageTransition } from "@/components/page-transition";
 import { ContactIcons as contactIcons } from "@/lib/content-data";
@@ -19,9 +18,10 @@ type Props = {};
 
 const IconBtn = (props: { icon: StaticImport; href: string }) => {
   return (
-    <CustomLink
+    <a
+      target="_blank"
       href={props.href}
-      className="w-[40] h-[40] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] xl:w-[55px] xl:h-[55px] 2xl:w-[65px] 2xl:h-[65px] rounded-[6px] bg-bg border-[3px] border-black flex items-center justify-center"
+      className="btn-translate-hover w-[40] h-[40] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] xl:w-[55px] xl:h-[55px] 2xl:w-[65px] 2xl:h-[65px] rounded-[6px] bg-bg border-[3px] border-black flex items-center justify-center"
     >
       <Image
         src={props.icon}
@@ -30,7 +30,7 @@ const IconBtn = (props: { icon: StaticImport; href: string }) => {
         height={20}
         className="md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px] 2xl:w-[35px] 2xl:h-[35px]"
       />
-    </CustomLink>
+    </a>
   );
 };
 
@@ -85,6 +85,7 @@ export const TalkToMeContainer = (props: Props) => {
                 width={300}
                 height={300}
                 className="h-auto w-full object-contain animate-float"
+                loading="eager"
               />
             </motion.div>
           </div>

@@ -19,7 +19,7 @@ function ComputersHero() {
 
   return (
     <motion.div
-      className="mt-[43px] md:flex md:gap-x-4 md:justify-around"
+      className="mt-[43px] md:flex md:gap-x-4 md:justify-around md:items-center"
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
       animate={everythingState.doExitAnim ? "exit" : "show"}
