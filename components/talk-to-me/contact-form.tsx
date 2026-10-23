@@ -45,7 +45,7 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="mx-auto lg:mx-0 flex w-full shrink-0 flex-col gap-10 bg-bg border-2 border-black rounded-[4px] p-6 sm:p-10"
+      className="mx-auto lg:mx-0 flex w-full shrink-0 flex-col gap-2 bg-bg border-2 border-black rounded-[4px] p-6 sm:p-10"
     >
       <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
         <TextField label="Name" name="name" placeholder="What’s your name?" autoComplete="name" error={errors.name} />

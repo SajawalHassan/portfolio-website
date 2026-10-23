@@ -54,7 +54,7 @@ function ComputersBtn(props: ComputersBtnProps) {
   return (
     <CustomLink
       href={props.href}
-      className="overflow-x-hidden relative overflow-y-hidden cursor-pointer group 2xl:max-w-[325px] border-[5px] border-black py-[4px] pl-[6px] xl:py-[6px] 2xl:px-[10px] flex items-center gap-x-[6px] md:gap-x-[2px] 2xl:gap-x-[10px] pr-2 h-max bg-bg text-black transition-all duration-200 btn-translate-hover"
+      className="overflow-x-hidden relative overflow-y-hidden cursor-pointer group 2xl:max-w-[325px] border-[5px] border-black py-[4px] pl-[6px] xl:py-[6px] 2xl:px-[10px] flex items-center gap-x-[6px] md:gap-x-[2px] 2xl:gap-x-[10px] pr-2 h-max bg-transparent hover:bg-bg text-black transition-all duration-200 btn-translate-hover"
     >
       <FolderIcon
         width={30}

@@ -67,7 +67,6 @@ export const ProjectLayout = ({ heading, subtext, projectList, planetImage, hand
             </div>
           </div>
 
-          {/* THIS DIV */}
           <div className="relative self-stretch flex flex-col items-end min-[1800px]:w-[50%]">
             <motion.div variants={item} className="w-max">
               <HandwrittenHeading text={handwrittenText} className="lg:text-[40px] z-10" />
