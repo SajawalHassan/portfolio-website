@@ -1,9 +1,20 @@
-import React from "react";
+import Header from "@/components/header";
+import FloatingCircles from "@/components/ui/bg-circles";
+import { PoemsContainer } from "@/app/pretentious-gibberish/poems/_components/poems-container";
 
-type Props = {};
+function Page() {
+  return (
+    <div className="home-page relative">
+      <div className="w-full h-full z-999 relative pb-30">
+        <Header />
 
-function Page({}: Props) {
-  return <div>Poems Page</div>;
+        <div className="px-[14px] md:px-[24px] lg:px-[60px] mt-[30px] max-width-stuff">
+          <PoemsContainer />
+        </div>
+      </div>
+      <FloatingCircles />
+    </div>
+  );
 }
 
 export default Page;

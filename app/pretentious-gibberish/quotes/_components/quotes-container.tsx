@@ -76,7 +76,7 @@ const QuoteItem = memo(
 const QuoteList = memo(function QuoteList({ quotes }: { quotes: Quote[] }) {
   return (
     <motion.div variants={listContainer} className="relative flex flex-wrap gap-4">
-      <AnimatePresence initial={false} mode="popLayout">
+      <AnimatePresence mode="popLayout">
         {quotes.map(({ id, text }, index) => (
           <QuoteItem key={id} text={text} index={index} />
         ))}
