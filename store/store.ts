@@ -1,5 +1,11 @@
 import { create } from "zustand";
 
+export type poemType = {
+  title: string;
+  body: string;
+  date: string;
+};
+
 interface EverythingState {
   doExitAnim: boolean;
   setDoExitAnim: (val: boolean) => void;
@@ -9,13 +15,27 @@ interface EverythingState {
 
   showInitAnim: boolean;
   setShowInitAnim: (val: boolean) => void;
+
+  quotes: string[];
+  setQuotes: (val: string[]) => void;
+
+  poems: poemType[];
+  setPoems: (val: poemType[]) => void;
 }
 
 export const useEverythingState = create<EverythingState>((set) => ({
   doExitAnim: false,
-  setDoExitAnim: (val) => set(() => ({ doExitAnim: val })),
+  setDoExitAnim: (val) => set({ doExitAnim: val }),
+
   transitionLink: "#",
-  setTransitionLink: (val) => set(() => ({ transitionLink: val })),
+  setTransitionLink: (val) => set({ transitionLink: val }),
+
   showInitAnim: true,
-  setShowInitAnim: (val) => set(() => ({ showInitAnim: val })),
+  setShowInitAnim: (val) => set({ showInitAnim: val }),
+
+  quotes: [],
+  setQuotes: (val) => set({ quotes: val }),
+
+  poems: [],
+  setPoems: (val) => set({ poems: val }),
 }));

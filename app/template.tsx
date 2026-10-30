@@ -11,7 +11,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, []);
   return (
     <>
-      {everythingState.showInitAnim && <InitAnim />}
+      {/* {everythingState.showInitAnim && <InitAnim />} */}
       {children}
     </>
   );
