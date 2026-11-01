@@ -1,6 +1,6 @@
 "server only";
 
-import { cleanGoogleDocHtml } from "@/lib/helper";
+import { parsePoemsMarkdown } from "@/lib/helper";
 import { google } from "googleapis";
 
 const auth = new google.auth.JWT({
@@ -27,10 +27,10 @@ export async function getPortfolioContent(folderId: string) {
       if (file.mimeType === "application/vnd.google-apps.document") {
         const docExport = await drive.files.export({
           fileId: file.id!,
-          mimeType: "text/html",
+          mimeType: "text/plain",
         });
 
-        textContent = cleanGoogleDocHtml(docExport.data as string);
+        textContent = docExport.data as string;
       }
 
       return {
@@ -46,5 +46,16 @@ export async function getPortfolioContent(folderId: string) {
   } catch (error) {
     console.error("Error fetching Google Drive content:", error);
     return [];
+  }
+}
+
+export async function getDocumentMarkdown(fileId: string): Promise<string | null> {
+  try {
+    const response = await drive.files.export({ fileId, mimeType: "text/markdown" }, { responseType: "text" });
+
+    return response.data as string;
+  } catch (error) {
+    console.error(`Error exporting document ${fileId} as markdown:`, error);
+    return null;
   }
 }

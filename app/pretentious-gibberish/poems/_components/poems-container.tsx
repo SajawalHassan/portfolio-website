@@ -8,12 +8,10 @@ import TextField from "@/components/ui/text-field";
 import { PageTransition } from "@/components/page-transition";
 import SearchIcon from "@/public/assets/icons/search.svg";
 import { container, containerUndelayed, item } from "@/lib/global-anim-variants";
-import { useEverythingState } from "@/store/store";
+import { poemType, useEverythingState } from "@/store/store";
 import { PoemBox } from "@/components/ui/poem-box";
 import Image from "next/image";
 import PlanetImage from "@/public/assets/icons/planet-1.svg";
-
-type Poem = { id: string; text: string };
 
 const listContainer = {
   hidden: {},
@@ -25,15 +23,11 @@ const removeExit = { opacity: 0, scale: 0.9, transition: { duration: 0.15 } };
 
 const layoutTransition = { layout: { duration: 0.25, ease: "easeOut" } } as const;
 
-const examplePoem = `When will the lifeless winter come
-Wake my corpse from its dream
-Rid me of all the sun's heat
-Give me the food of life to eat?
-
-When will this sickle of death come...`;
-
 const PoemItem = memo(
-  forwardRef<HTMLDivElement, { text: string; index: number }>(function PoemItem({ text, index }, ref) {
+  forwardRef<HTMLDivElement, { text: string; title: string; index: number }>(function PoemItem(
+    { text, index, title },
+    ref,
+  ) {
     return (
       <motion.div
         ref={ref}
@@ -43,21 +37,21 @@ const PoemItem = memo(
         layoutDependency={index}
         transition={layoutTransition}
       >
-        <PoemBox title="A longing" poemText={examplePoem} />
+        <PoemBox title={title} poemText={text} />
       </motion.div>
     );
   }),
 );
 
-const PoemList = memo(function PoemList({ Poems }: { Poems: Poem[] }) {
+const PoemList = memo(function PoemList({ Poems }: { Poems: poemType[] }) {
   return (
     <motion.div
       variants={listContainer}
       className="relative flex flex-wrap gap-4 lg:gap-6 justify-center xl:justify-start"
     >
       <AnimatePresence mode="popLayout">
-        {Poems.map((_, index) => (
-          <PoemItem key={index} text={""} index={index} />
+        {Poems.map((p, index) => (
+          <PoemItem key={index} text={p.body} title={p.title} index={index} />
         ))}
       </AnimatePresence>
     </motion.div>
@@ -105,7 +99,7 @@ export function PoemsContainer() {
             />
           </motion.div>
 
-          <PoemList Poems={Array.from({ length: 30 })} />
+          <PoemList Poems={everythingState.poems} />
         </div>
         <motion.div variants={item} className="absolute -right-30 top-100 z-0 max-[1500px]:pr-20">
           <Image

@@ -56,6 +56,7 @@ function QuotesContainer() {
   const [quotes, setQuotes] = useState<string[]>([]);
   const deferredQuery = useDeferredValue(query);
   const everythingState = useEverythingState();
+  console.log(everythingState.quotes);
 
   useEffect(() => {
     if (everythingState.quotes.length === 0) return;

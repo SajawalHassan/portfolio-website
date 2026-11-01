@@ -1,69 +1,33 @@
 import { poemType as PoemType } from "@/store/store";
-import sanitizeHtml from "sanitize-html";
 
-const isEmptyTag = (html: string) => html.replace(/<[^>]*>/g, "").trim() === "";
+const unescapeMd = (s: string) => s.replace(/\\(.)/g, "$1");
 
-export function parsePoems(html: string): PoemType[] {
-  // Split right before each <h1>, keeping the <h1> in its chunk
-  const chunks = html.split(/(?=<h1[\s>])/).filter((c) => c.startsWith("<h1"));
+export function parsePoemsMarkdown(md: string): PoemType[] {
+  const chunks = md
+    .replace(/\r\n/g, "\n")
+    .split(/^(?=# )/m)
+    .filter((c) => c.startsWith("# "));
 
   return chunks.flatMap((chunk) => {
-    const title = chunk.match(/<h1[\s>][\s\S]*?<\/h1>/)?.[0];
-    if (!title) return [];
+    const [titleLine, ...rest] = chunk.split("\n");
 
-    const rest = chunk.slice(chunk.indexOf(title) + title.length);
-    const paragraphs = rest.match(/<p[\s>][\s\S]*?<\/p>/g) ?? [];
+    const lines = rest.map((l) => l.trim()).filter((l) => !/^(-{3,}|\*{3,}|_{3,})$/.test(l));
 
-    // Drop trailing empty <p>s
-    while (paragraphs.length && isEmptyTag(paragraphs[paragraphs.length - 1])) {
-      paragraphs.pop();
-    }
-    if (!paragraphs.length) return [];
+    while (lines.length && !lines[lines.length - 1]) lines.pop();
+    if (!lines.length) return [];
+    const date = lines.pop()!;
 
-    const date = paragraphs.pop()!;
+    while (lines.length && !lines[lines.length - 1]) lines.pop();
+    while (lines.length && !lines[0]) lines.shift();
 
-    // Drop the empty spacer <p> between the last stanza and the date
-    while (paragraphs.length && isEmptyTag(paragraphs[paragraphs.length - 1])) {
-      paragraphs.pop();
-    }
+    const body = unescapeMd(lines.join("\n").replace(/\n{3,}/g, "\n\n"));
 
-    return [{ title, body: paragraphs.join(""), date }];
+    return [
+      {
+        title: unescapeMd(titleLine.replace(/^#\s+/, "").trim()),
+        body,
+        date: unescapeMd(date),
+      },
+    ];
   });
-}
-
-export function cleanGoogleDocHtml(rawHtml: string) {
-  return sanitizeHtml(rawHtml, {
-    allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-    allowedAttributes: false,
-  });
-}
-
-const decodeEntities = (s: string) =>
-  s
-    .replace(/&nbsp;/g, " ")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&amp;/g, "&"); // keep &amp; last
-
-export function getParagraphTexts(html: string, keepEmpty = false): string[] {
-  const texts: string[] = [];
-  const pRe = /<p[\s>][\s\S]*?<\/p>/g;
-  const spanRe = /<span[^>]*>([\s\S]*?)<\/span>/g;
-
-  const paragraphs = html.match(pRe) ?? [];
-
-  for (const p of paragraphs) {
-    // Collect every span's text in this <p> and join into one string
-    const text = Array.from(p.matchAll(spanRe))
-      .map((m) => decodeEntities(m[1].replace(/<[^>]*>/g, "")))
-      .join("");
-
-    if (keepEmpty || text.trim() !== "") {
-      texts.push(text);
-    }
-  }
-
-  return texts;
 }

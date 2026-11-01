@@ -1,8 +1,9 @@
 import { create } from "zustand";
 
-export type ModalTypes = "quotes";
+export type ModalTypes = "quotes" | "poems";
 
 interface ModalData {
+  title?: string;
   text?: string;
 }
 

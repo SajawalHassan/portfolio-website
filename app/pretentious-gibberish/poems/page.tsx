@@ -5,7 +5,7 @@ import { PoemsContainer } from "@/app/pretentious-gibberish/poems/_components/po
 function Page() {
   return (
     <div className="home-page relative">
-      <div className="w-full h-full  relative pb-30">
+      <div className="w-full h-full relative pb-30">
         <Header />
 
         <div className="px-[14px] md:px-[24px] lg:px-[60px] mt-[30px] max-width-stuff">
