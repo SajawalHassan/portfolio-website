@@ -1,4 +1,3 @@
-import { parseSections } from "@/lib/helper";
 import { getPortfolioContent } from "@/lib/google-drive";
 
 // Revalidate cache every hour (Incremental Static Regeneration)
@@ -6,8 +5,8 @@ export const revalidate = 3600;
 
 export default async function BlogsPage() {
   const posts = await getPortfolioContent(process?.env?.GOOGLE_DRIVE_FOLDER_ID || "");
-  const poems = parseSections(posts.filter((post) => post.title == "POEMS")[0].content);
   const quotes = posts.filter((post) => post.title == "QUOTES")[0].content.split("\n");
+  console.log(quotes.length);
 
   if (!posts) return <div>loading..</div>;
 

@@ -6,7 +6,7 @@ import TOC from "@/components/homepage/TOC";
 export default function Home() {
   return (
     <div className="home-page relative">
-      <div className="w-full h-full z-999 relative pb-30">
+      <div className="w-full h-full relative pb-30">
         <Header />
         <div className="px-[14px] md:px-[24px] flex xl:flex-row xl:gap-x-20 xl:justify-between lg:mx-auto gap-y-15 sm:gap-y-20 lg:gap-y-30 flex-col max-width-stuff mt-[42px] md:mx-auto">
           <Hero />

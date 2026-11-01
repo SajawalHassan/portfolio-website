@@ -37,3 +37,33 @@ export function cleanGoogleDocHtml(rawHtml: string) {
     allowedAttributes: false,
   });
 }
+
+const decodeEntities = (s: string) =>
+  s
+    .replace(/&nbsp;/g, " ")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&"); // keep &amp; last
+
+export function getParagraphTexts(html: string, keepEmpty = false): string[] {
+  const texts: string[] = [];
+  const pRe = /<p[\s>][\s\S]*?<\/p>/g;
+  const spanRe = /<span[^>]*>([\s\S]*?)<\/span>/g;
+
+  const paragraphs = html.match(pRe) ?? [];
+
+  for (const p of paragraphs) {
+    // Collect every span's text in this <p> and join into one string
+    const text = Array.from(p.matchAll(spanRe))
+      .map((m) => decodeEntities(m[1].replace(/<[^>]*>/g, "")))
+      .join("");
+
+    if (keepEmpty || text.trim() !== "") {
+      texts.push(text);
+    }
+  }
+
+  return texts;
+}

@@ -13,13 +13,14 @@ export function PrententiousGibberishProvider({ children }: { children: React.Re
       if (!res.ok) throw new Error("unable to fetch data");
 
       const data = await res.json();
+      console.log({ res, data });
 
       setPoems(data.poems);
       setQuotes(data.quotes);
     }
 
     fetchData();
-  }, [setPoems, setQuotes]);
+  }, []);
 
   return children;
 }

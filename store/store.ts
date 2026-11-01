@@ -21,6 +21,9 @@ interface EverythingState {
 
   poems: poemType[];
   setPoems: (val: poemType[]) => void;
+
+  modalIsOpen: boolean;
+  setModalIsOpen: (val: boolean) => void;
 }
 
 export const useEverythingState = create<EverythingState>((set) => ({
@@ -38,4 +41,7 @@ export const useEverythingState = create<EverythingState>((set) => ({
 
   poems: [],
   setPoems: (val) => set({ poems: val }),
+
+  modalIsOpen: true,
+  setModalIsOpen: (val) => set({ modalIsOpen: val }),
 }));

@@ -5,7 +5,7 @@ import Header from "@/components/header";
 const Page = () => {
   return (
     <div className="home-page relative">
-      <div className="w-full h-full z-999 relative pb-30">
+      <div className="w-full h-full relative pb-30">
         <Header />
 
         <div className="max-width-stuff px-[14px] md:px-[24px]">

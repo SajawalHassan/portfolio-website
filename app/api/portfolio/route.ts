@@ -1,14 +1,16 @@
 import { NextResponse } from "next/server";
 import { getPortfolioContent } from "@/lib/google-drive";
-import { parsePoems } from "@/lib/helper";
+import { getParagraphTexts, parsePoems } from "@/lib/helper";
 
 export async function GET() {
-  const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID!;
+  const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID || "";
+  const items = await getPortfolioContent(folderId);
 
-  const items = await getPortfolioContent(process?.env?.GOOGLE_DRIVE_FOLDER_ID || "");
+  const quotesRaw = items.filter((item) => item.title == "QUOTES")[0].content;
+  const poemsRaw = items.filter((item) => item.title == "POEMS")[0].content;
 
-  const poems = parsePoems(items.filter((item) => item.title == "POEMS")[0].content);
-  const quotes = items.filter((item) => item.title == "QUOTES")[0].content.split("\n");
+  const poems = parsePoems(poemsRaw);
+  const quotes = getParagraphTexts(quotesRaw);
 
-  return NextResponse.json({ poems, quotes });
+  return NextResponse.json({ poems, quotes, quotesRaw });
 }

@@ -13,7 +13,7 @@ export const BlogView = (props: Props) => {
       <div className="mt-[30px] w-screen relative left-1/2 right-1/2 -mx-[50vw] sm:max-width-stuff px-0! sm:mx-auto sm:left-0 sm:right-0 sm:w-full">
         <RowItem
           doWidthStuff={true}
-          text="Thoughts on religion"
+          text="The education of morals"
           subtext="Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me."
           badgeColor="green"
           badgeText="Philosophy"
@@ -21,14 +21,14 @@ export const BlogView = (props: Props) => {
         />
         <RowItem
           doWidthStuff={true}
-          text="Thoughts on religion"
+          text="The education of morals"
           subtext="Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me."
           badgeColor="green"
           badgeText="Philosophy"
         />
         <RowItem
           doWidthStuff={true}
-          text="Thoughts on religion"
+          text="The education of morals"
           subtext="Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me."
           badgeColor="green"
           badgeText="Philosophy"

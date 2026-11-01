@@ -5,7 +5,7 @@ import QuotesContainer from "@/app/pretentious-gibberish/quotes/_components/quot
 function Page() {
   return (
     <div className="home-page relative">
-      <div className="w-full h-full z-999 relative pb-30">
+      <div className="w-full h-full  relative pb-30">
         <Header />
 
         <div className="px-[14px] md:px-[24px] lg:px-[60px] mt-[30px] max-width-stuff">

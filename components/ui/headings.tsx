@@ -48,7 +48,7 @@ export const Heading4 = (props: Props) => {
   return (
     <h1
       className={clsx(
-        `text-[20px] lg:text-[22px] 2xl:text-[26px] font-francois text-black transition-all z-50 duration-400 `,
+        `text-[20px] lg:text-[22px] 2xl:text-[26px] font-francois text-black transition-all duration-400 `,
         props.className,
       )}
     >
