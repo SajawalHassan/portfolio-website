@@ -43,7 +43,7 @@ export const PoemBox = (props: { title: string; poemText: string }) => {
       >
         <HeadingSubText
           text={props.poemText}
-          className="whitespace-pre-line cursor-pointer leading-6 line-clamp-[var(--lines)]"
+          className="whitespace-pre-line cursor-pointer font-lora! leading-6 line-clamp-[var(--lines)]"
         />
       </div>
     </div>

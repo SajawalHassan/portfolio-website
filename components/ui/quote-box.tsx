@@ -1,5 +1,5 @@
 "use client";
-import { Heading4, HeadingSubText } from "@/components/ui/headings";
+import { HeadingSubText } from "@/components/ui/headings";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useModal } from "@/store/modal-store";
 import { Fragment, useMemo } from "react";

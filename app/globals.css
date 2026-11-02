@@ -1,6 +1,5 @@
-.google-doc-content p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
+.react-markdown-container > p {
+  white-space: pre-line;
 }
 
 @import "tailwindcss";
@@ -122,6 +121,10 @@
 
 @utility text-transition-translate {
   @apply transition-transform duration-150 ease-out group-hover:translate-x-[4px] group-hover/novel:translate-x-[4px];
+}
+
+@utility poem-container {
+  @apply [&_p]:whitespace-pre-line space-y-4 mt-1.5 text-[#403c36]! font-lora! text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[18px] 3xl:text-[20px]! leading-[134%];
 }
 
 @utility btn-translate-hover {
