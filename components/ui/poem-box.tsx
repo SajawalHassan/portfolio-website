@@ -32,10 +32,10 @@ export const PoemBox = memo(function PoemBox(props: { title: string; poemText: s
       onClick={(_) => modalStore.openModal("poems", { title: props.title, text: props.poemText })}
       className="xl:w-[320px] w-[260px] h-[200px] lg:w-[310px] lg:h-[250px] 2xl:h-[270px] mx-auto md:mx-0 transition-all rounded-[9px] border-2 border-black pt-[13px] px-[13px] pb-[5px] bg-bg cursor-pointer hover:-translate-y-2 hover:shadow-xl flex flex-col"
     >
-      <Heading4 text={props.title} className="cursor-pointer shrink-0" />
+      <Heading4 text={props.title} className="cursor-pointer leading-[120%] shrink-0" />
       <div
         ref={textAreaRef}
-        className="flex-1 min-h-0 mt-1 overflow-hidden"
+        className="flex-1 min-h-0 mt-2 overflow-hidden"
         style={{ "--lines": lines } as React.CSSProperties}
       >
         <HeadingSubText

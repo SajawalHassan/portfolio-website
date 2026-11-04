@@ -18,7 +18,7 @@ export const FolderIcon = (props: IconProps) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_134_343)">
+      <g clipPath="url(#clip0_134_343)">
         <path
           d="M44.4214 124.122C47.6083 118.602 45.717 111.544 40.1973 108.357C34.6775 105.17 27.6194 107.061 24.4325 112.581C21.2457 118.101 23.1369 125.159 28.6567 128.346C34.1765 131.533 41.2346 129.642 44.4214 124.122Z"
           fill="currentColor"

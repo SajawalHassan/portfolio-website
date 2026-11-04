@@ -10,7 +10,9 @@ import { useState } from "react";
 import { PageTransition } from "@/components/page-transition";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { Heading1 } from "@/components/ui/headings";
+import Me from "@/public/assets/mee.png";
 
+const MotionImage = motion.create(Image);
 function AboutContainer() {
   const [showLoading, setShowLoading] = useState(false);
   const everythingState = useEverythingState();
@@ -40,9 +42,13 @@ function AboutContainer() {
           />
         </motion.div>
         <div className="lg:flex lg:gap-x-12 lg:mt-8 xl:gap-x-40 lg:justify-between xl:mt-3 2xl:mt-10 3xl:ml-4!">
-          <motion.div
+          <MotionImage
             variants={item}
-            className="hidden lg:block min-w-[350px] max-h-[450px] lg:min-w-[300px] lg:max-h-[400px] border-black animate-float [animation-delay:-0.5s] xl:max-h-[400px] 2xl:min-w-[350px] 2xl:max-h-[430px] 3xl:min-w-[400px]! 3xl:max-h-[500px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0!"
+            src={Me}
+            alt="Floating card"
+            width={400}
+            height={500}
+            className="hidden lg:block min-w-[350px] max-h-[450px] lg:min-w-[300px] lg:max-h-[400px] border-black animate-float [animation-delay:-0.5s] xl:max-h-[400px] 2xl:min-w-[350px] 2xl:max-h-[430px] 3xl:min-w-[400px]! 3xl:max-h-[500px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0! object-cover"
           />
           <motion.div variants={item}>
             <AboutDescription />
@@ -61,7 +67,13 @@ function AboutContainer() {
           alt="squiggle"
           className="rotate-180 hidden sm:block animate-float"
         />
-        <div className="w-[296px] h-[351px] rounded-[7px] border border-black shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0! animate-float" />
+        <Image
+          src={Me}
+          alt="Floating card"
+          width={296}
+          height={351}
+          className="w-[296px] h-[351px] rounded-[7px] border border-black shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0! animate-float object-cover"
+        />
         <Image src={Squiggle} height={200} width={50} alt="squiggle" className="hidden sm:block animate-float" />
       </motion.div>
     </motion.div>

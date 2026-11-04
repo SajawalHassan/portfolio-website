@@ -1,10 +1,13 @@
 "use client";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
 import Image from "next/image";
+import Me from "@/public/assets/me4.png";
 import { Heading1, HeadingSubText } from "../ui/headings";
 import { motion } from "framer-motion";
 import { useEverythingState } from "@/store/store";
 import { container, containerUndelayed, item } from "../../lib/global-anim-variants";
+
+const MotionImage = motion.create(Image);
 
 function Hero() {
   const everythingState = useEverythingState();
@@ -23,7 +26,7 @@ function Hero() {
         <motion.div variants={item}>
           <HeadingSubText
             className="lg:mx-auto xl:mx-0 max-w-[800px]!"
-            text={`I make peculiar websites and leave them unfinished; write unpolished prose and leave it stranded; create small, niche scripts that benefit no one — perhaps not even myself. I code, study philosophy, read literature, and write embarrassing poems, not for some career path, but instead for my purpose of experiencing, fully, what it means to be a human, to see what ecstasy evolution has allowed me to feel.`}
+            text={`I make peculiar websites and leave them unfinished; write unpolished prose and leave it stranded; create small, niche scripts that benefit no one — perhaps not even myself. I code, study philosophy, read literature, and write embarrassing poems, not for some career path, but for my purpose of experiencing, fully, what it means to be a human — to see what ecstasy evolution has allowed me to feel.`}
           />
         </motion.div>
 
@@ -38,9 +41,18 @@ function Hero() {
             />
           </motion.div>
 
-          <motion.div
+          <MotionImage
             variants={item}
-            className="animate-float [animation-delay:3s] w-[198px] h-[198px] rounded-full border-[6px] border-black bg-[#D9D9D9] sm:w-[240px] sm:h-[240px] xl:h-[220px] xl:w-[220px] 2xl:h-[280px] 2xl:w-[280px]"
+            unoptimized
+            loading="eager"
+            drag={false}
+            preload
+            placeholder="blur"
+            src={Me}
+            alt="Sajawal Hassan"
+            width={280}
+            height={280}
+            className="animate-float [animation-delay:3s] w-[198px] h-[198px] rounded-full border-[6px] border-black bg-[#D9D9D9] object-cover object-[50%_60%] sm:w-[240px] sm:h-[240px] xl:h-[220px] xl:w-[220px] 2xl:h-[280px] 2xl:w-[280px]"
           />
 
           <motion.div variants={item}>

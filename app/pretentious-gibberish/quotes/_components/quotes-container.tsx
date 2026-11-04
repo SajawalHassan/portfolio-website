@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { forwardRef, memo, useDeferredValue, useEffect, useMemo, useState } from "react";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import HandwrittenHeading from "@/components/ui/handwritten-heading";
-import { Heading1 } from "@/components/ui/headings";
+import { Heading1, HeadingSubText } from "@/components/ui/headings";
 import { QuoteBox } from "@/components/ui/quote-box";
 import TextField from "@/components/ui/text-field";
 import { PageTransition } from "@/components/page-transition";
@@ -56,7 +56,6 @@ function QuotesContainer() {
   const [quotes, setQuotes] = useState<string[]>([]);
   const deferredQuery = useDeferredValue(query);
   const everythingState = useEverythingState();
-  console.log(everythingState.quotes);
 
   useEffect(() => {
     if (everythingState.quotes.length === 0) return;
@@ -84,6 +83,10 @@ function QuotesContainer() {
         <motion.div variants={item}>
           <Breadcrumb className="mb-4" />
           <Heading1 text="Random Lines and Dialogues" />
+          <HeadingSubText
+            className=""
+            text="Pretentious and snobberish; philosophical and thought-provoking; stupid and meaningless; horrid and marvelous."
+          />
         </motion.div>
 
         <motion.div variants={item} className="mt-2 md:mt-4">

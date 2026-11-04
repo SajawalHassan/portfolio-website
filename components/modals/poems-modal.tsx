@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { Heading4 } from "@/components/ui/headings";
+import { Heading3, Heading4 } from "@/components/ui/headings";
 import { useModal } from "@/store/modal-store";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
 import ReactMarkdown from "react-markdown";
@@ -38,9 +38,9 @@ export const PoemsModal = () => {
         data-is-open={modalIsOpen}
         className={`fixed inset-0 m-auto w-max h-max max-w-[80vw] max-h-80 lg:w-140 sm:max-h-100 md:max-h-120 lg:max-h-180 px-5 py-4 lg:px-10 lg:py-7 overflow-y-auto bg-bg border-2 border-black rounded-[9px] drop-shadow-2xl z-100 ${fade}`}
       >
-        <Heading4 text={data.title as string} className="shrink-0" />
+        <Heading4 text={data.title as string} className="shrink-0 3xl:text-[28px]!" />
 
-        <div className="poem-container">
+        <div className="poem-container mt-2">
           <ReactMarkdown>{data.text as string}</ReactMarkdown>
         </div>
       </div>
