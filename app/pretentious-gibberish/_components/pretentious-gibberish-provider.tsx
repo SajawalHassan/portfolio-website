@@ -6,6 +6,7 @@ import { useEverythingState } from "@/store/store";
 export function PrententiousGibberishProvider({ children }: { children: React.ReactNode }) {
   const setPoems = useEverythingState((s) => s.setPoems);
   const setQuotes = useEverythingState((s) => s.setQuotes);
+  const setEssays = useEverythingState((s) => s.setEssays);
 
   useEffect(() => {
     async function fetchData() {
@@ -14,6 +15,7 @@ export function PrententiousGibberishProvider({ children }: { children: React.Re
 
       const data = await res.json();
 
+      setEssays(data.essays);
       setPoems(data.poems);
       setQuotes(data.quotes);
     }

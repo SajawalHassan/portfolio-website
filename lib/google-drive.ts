@@ -12,7 +12,7 @@ const auth = new google.auth.JWT({
 
 const drive = google.drive({ version: "v3", auth });
 
-export async function getPortfolioContent(folderId: string) {
+export async function getFolder(folderId: string, type: "plain" | "markdown") {
   try {
     const response = await drive.files.list({
       q: `'${folderId}' in parents and trashed = false`,
@@ -27,7 +27,7 @@ export async function getPortfolioContent(folderId: string) {
       if (file.mimeType === "application/vnd.google-apps.document") {
         const docExport = await drive.files.export({
           fileId: file.id!,
-          mimeType: "text/plain",
+          mimeType: "text/" + type,
         });
 
         textContent = docExport.data as string;
