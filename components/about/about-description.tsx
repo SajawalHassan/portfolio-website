@@ -108,12 +108,6 @@ function AboutDescription() {
             >
               {visibleParas.map((para, i) => (
                 <HeadingSubText text={para} key={i} className="leading-[144%] text-[#33312B]! lg:w-full!" />
-                // <p
-                //   key={startIndex + i}
-                //   className="font-light text-[14px] sm:text-[18px] md:text-[22px] lg:text-[14px] xl:text-[17.5px] 2xl:text-[20px] 3xl:text-[21px]! leading-[114%] text-[#33312B]"
-                // >
-                //   {para}
-                // </p>
               ))}
             </motion.div>
           </AnimatePresence>

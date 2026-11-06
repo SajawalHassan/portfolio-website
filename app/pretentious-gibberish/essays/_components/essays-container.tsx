@@ -14,6 +14,7 @@ import PlanetImage from "@/public/assets/icons/planet-1.svg";
 import { RowItem } from "@/components/ui/row-item";
 import clsx from "clsx";
 import { getSubtext } from "@/lib/helper";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const listContainer = {
   hidden: {},
@@ -27,6 +28,9 @@ const layoutTransition = { layout: { duration: 0.25, ease: "easeOut" } } as cons
 
 const EssayItem = memo(
   forwardRef<HTMLDivElement, EssayType & { index: number }>(function EssayItem(props, ref) {
+    const isLgScreen = useMediaQuery("(min-width: 1280px)");
+    console.log(isLgScreen);
+
     return (
       <motion.div
         ref={ref}
@@ -37,7 +41,8 @@ const EssayItem = memo(
         transition={layoutTransition}
       >
         <RowItem
-          className={clsx((props.index % 2 !== 0 || props.index === 0) && "border-t-2", "")}
+          // prettier-ignore
+          className={clsx(isLgScreen && props.index % 2 !== 0 && "border-t-2", props.index === 0 && "border-t-2", "")}
           text={props.title}
           subtext={getSubtext(props.body)}
           badgeColor="green"
@@ -50,7 +55,7 @@ const EssayItem = memo(
 
 const EssayList = memo(function EssayList({ items }: { items: { essay: EssayType; id: number }[] }) {
   return (
-    <motion.div variants={listContainer} className="relative grid grid-cols-2 gap-x-10 gap-y-2">
+    <motion.div variants={listContainer} className="relative grid grid-cols-1 xl:grid-cols-2 gap-x-10 gap-y-2">
       <AnimatePresence mode="popLayout">
         {items.map(({ essay, id }, index) => (
           <EssayItem
@@ -110,7 +115,7 @@ export function EssaysContainer() {
       </div>
 
       <div className="mt-2 lg:mt-13 mdmax-w-[100%] mx-auto">
-        <div className="relative z-10 flex flex-col items-center xl:items-start">
+        <div className="relative z-10 flex flex-col items-center sm:items-start">
           <motion.div variants={item} className="w-[80%] mb-2 max-w-[656px]">
             <TextField
               icon={SearchIcon}

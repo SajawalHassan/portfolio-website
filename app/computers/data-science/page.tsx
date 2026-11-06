@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import { ProjectLayout } from "@/components/computers/projects-layout";
-import { webProjects } from "@/lib/content-data";
+import { datascienceProjects } from "@/lib/content-data";
 import Planet from "@/public/assets/planet.svg";
 
 function Page() {
@@ -14,7 +14,7 @@ function Page() {
           <ProjectLayout
             heading="Planet Datarius"
             subtext="The sphere early in budding, galloping towards a dystopia of clankers."
-            projectList={webProjects}
+            projectList={datascienceProjects}
             planetImage={Planet}
             handwrittenText="A fluttering visage of wires"
           />

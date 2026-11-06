@@ -1,5 +1,5 @@
 "use client";
-import { HeadingSubText } from "@/components/ui/headings";
+import { Heading4, HeadingSubText } from "@/components/ui/headings";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useModal } from "@/store/modal-store";
 import { Fragment, useMemo } from "react";
@@ -25,7 +25,7 @@ export const QuoteBox = (props: { text: string }) => {
         style={{ maxWidth: width.toString() + "rem" }}
         className="cursor-pointer truncate bg-bg hover:-translate-y-2 hover:shadow-xl transition-all py-[10px] px-[11px] flex items-center justify-center border-[2px] border-black rounded-[9px]"
       >
-        <HeadingSubText text={props.text} className="font-lora! truncate" />
+        <Heading4 text={props.text} className="font-caveat! truncate" />
       </div>
     </Fragment>
   );

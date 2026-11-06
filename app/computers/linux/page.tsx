@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import { ProjectLayout } from "@/components/computers/projects-layout";
-import { webProjects } from "@/lib/content-data";
+import { linuxProjects } from "@/lib/content-data";
 import Planet from "@/public/assets/planet.svg";
 
 function Page() {
@@ -14,7 +14,7 @@ function Page() {
           <ProjectLayout
             heading="Planet Pinguinia"
             subtext="This is the ice-world: An antartica of penguins, verdant in caves with dotfiles, a boundless plain of distros."
-            projectList={webProjects}
+            projectList={linuxProjects}
             planetImage={Planet}
             handwrittenText="Dot files of tedious creativity"
           />

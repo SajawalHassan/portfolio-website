@@ -59,35 +59,118 @@ export interface projectType {
   description: string;
   badgeText: string;
   badgeColor: string;
-
-  className?: string; // Optional property if you want to keep track of custom classes like border-t-[2px]
 }
 
 export const webProjects: projectType[] = [
   {
-    title: "Script that renames my screenshots",
-    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
-    badgeText: "runs",
+    title: "A clone of Reddit (of the old UI)",
+    description:
+      "Made in NextJS, in like three months. Massive project, I'd recommend tinkering around for a while in there.",
+    badgeText: "complete",
     badgeColor: "green",
-    className: "border-t-[2px]",
   },
   {
-    title: "A chess clock, magnus carlson type shi",
-    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
+    title: "A clone of Discord",
+    description:
+      "A nice, simple clone of Discord, also made in NextJS. Uses websockets, has calling functionality, authentication, servers and more.",
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+  {
+    title: "This portfolio website",
+    description: "Made, as you could've guessed, in NextJS. As for the features... well, you're looking at those.",
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+  {
+    title: "Aetherize, a website builder.",
+    description:
+      "Attempted to re-make it a third time, and, like all the other ones, gave up midway. Still, it's got the core functionality.",
     badgeText: "progress",
     badgeColor: "yellow",
   },
   {
-    title: "Script that renames my screenshots",
-    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
-    badgeText: "runs",
+    title: "Html SPA loader",
+    description:
+      "Automatically generate dynamic SPA pages from HTML files with a homepage using Next.js and Tailwind CSS.",
+    badgeText: "complete",
+    badgeColor: "yellow",
+  },
+];
+
+export const linuxProjects: projectType[] = [
+  {
+    title: "My arch linux dotfiles",
+    description:
+      "Took a lot of time to set up my ideal setup, and am rather proud of it. Using hyprland, waybar, and other, for the most part, standard utils.",
+    badgeText: "Will always be wip",
+    badgeColor: "yellow",
+  },
+  {
+    title: "Random, small bash scripts",
+    description:
+      "Some were made for genuine productivity, others were for showing off. They're small, and any ai can write them, but, still, they hold a special place in my heart.",
+    badgeText: "Will always be wip",
+    badgeColor: "yellow",
+  },
+];
+
+export const datascienceProjects: projectType[] = [
+  {
+    title: "A GAN (Generative Adversarial Network) that generates images of anime faces",
+    description:
+      "Made in pytorch a very long time ago, in around sixth or seventh class. Was a very fun but difficult project for a boy so early in his youth.",
+    badgeText: "complete",
     badgeColor: "green",
   },
   {
-    title: "A chess clock, magnus carlson type shi",
-    description: "Made at 1am because “Screenshot 2026-04-07 at 11:34:23 PM (2).png” broke something in me.",
+    title: "EDA (Exploratory Data Analysis) of a housing prices dataset",
+    description:
+      "Also made during sixth or seventh grade. Part of the early steps I took towards Data Science, and drifted from ever since, hoping to return again one day.",
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+  {
+    title: "A sentence completing LSTM (Long Short-Term Memory)",
+    description:
+      "Made an LSTM in pytorch that completes a given, incomplete sentence. It's not very good, but a transformer architecuture was too difficult for me to understand back then, and even now.",
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+  {
+    title: "Sentiment analysis neural network",
+    description: "An ANN made in pytorch that classifies a sentence into a positive or a negative sentiment.",
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+];
+
+export const randomProjects: projectType[] = [
+  {
+    title: "Quote video generator.",
+    description:
+      "Made the bulk of it at 2am on a random tuesday, not wanting to study for my upcoming physics exam. Automatically chooses quotes (or you may enter them manually), generates videos of them, and publishes them.",
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+  {
+    title: "Note taking app",
+    description:
+      "Made to learn the basics of docker. Has a multi container architecture, is properly dockerized, has a working CI/CD pipeline, with automated deployments to a GCP virtual machine.",
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+  {
+    title: "A RPG game in Unity",
+    description: "Very much incomplete, maybe I'll finish it one day.",
     badgeText: "progress",
     badgeColor: "yellow",
+  },
+  {
+    title: "Shooting game in Godot",
+    description: "Made very early in my coding career. A simple shooting game in Godot",
+    badgeText: "complete",
+    badgeColor: "green",
   },
 ];
 

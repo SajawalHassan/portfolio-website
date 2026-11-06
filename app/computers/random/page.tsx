@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import { ProjectLayout } from "@/components/computers/projects-layout";
-import { webProjects } from "@/lib/content-data";
+import { randomProjects } from "@/lib/content-data";
 import Planet from "@/public/assets/planet.svg";
 
 function Page() {
@@ -14,7 +14,7 @@ function Page() {
           <ProjectLayout
             heading="Planet Varia"
             subtext="Stand on its north pole and wander anywhere, and you shall find diversity so diverse a nomenclator may go insane."
-            projectList={webProjects}
+            projectList={randomProjects}
             planetImage={Planet}
             handwrittenText="Scattered pebbles of consciousness"
           />

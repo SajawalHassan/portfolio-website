@@ -13,6 +13,7 @@ import { useState } from "react";
 import { PageTransition } from "@/components/page-transition";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import clsx from "clsx";
 
 type ProjectLayoutProps = {
   heading: string;
@@ -60,7 +61,7 @@ export const ProjectLayout = ({ heading, subtext, projectList, planetImage, hand
                     subtext={project.description}
                     badgeText={project.badgeText}
                     badgeColor={project.badgeColor}
-                    className={project.className}
+                    className={clsx(index === 0 && "border-t-2")}
                   />
                 </motion.div>
               ))}
@@ -110,7 +111,7 @@ export const ProjectLayout = ({ heading, subtext, projectList, planetImage, hand
                     subtext={project.description}
                     badgeText={project.badgeText}
                     badgeColor={project.badgeColor}
-                    className={project.className}
+                    className={clsx(index === 0 && "border-t-2")}
                   />
                 </motion.div>
               ))}
