@@ -12,9 +12,10 @@ import { EssayType, useEverythingState } from "@/store/store";
 import Image from "next/image";
 import PlanetImage from "@/public/assets/icons/planet-1.svg";
 import { RowItem } from "@/components/ui/row-item";
-import clsx from "clsx";
+import { cn, convertTextToUrl } from "@/lib/helper";
 import { getSubtext } from "@/lib/helper";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import CustomLink from "@/components/ui/custom-link";
 
 const listContainer = {
   hidden: {},
@@ -29,7 +30,6 @@ const layoutTransition = { layout: { duration: 0.25, ease: "easeOut" } } as cons
 const EssayItem = memo(
   forwardRef<HTMLDivElement, EssayType & { index: number }>(function EssayItem(props, ref) {
     const isLgScreen = useMediaQuery("(min-width: 1280px)");
-    console.log(isLgScreen);
 
     return (
       <motion.div
@@ -40,14 +40,15 @@ const EssayItem = memo(
         layoutDependency={props.index}
         transition={layoutTransition}
       >
-        <RowItem
-          // prettier-ignore
-          className={clsx(isLgScreen && props.index % 2 !== 0 && "border-t-2", props.index === 0 && "border-t-2", "")}
-          text={props.title}
-          subtext={getSubtext(props.body)}
-          badgeColor="green"
-          badgeText={props.badgeText}
-        />
+        <CustomLink href={"/pretentious-gibberish/essays/" + convertTextToUrl(props.title)}>
+          <RowItem
+            className={cn(isLgScreen && props.index % 2 !== 0 && "border-t-2", props.index === 0 && "border-t-2", "")}
+            text={props.title}
+            subtext={getSubtext(props.body)}
+            badgeColor="green"
+            badgeText={props.badgeText}
+          />
+        </CustomLink>
       </motion.div>
     );
   }),
@@ -86,8 +87,6 @@ export function EssaysContainer() {
     return all.filter(({ essay }) => essay.title.toLowerCase().includes(q));
   }, [everythingState.essays, deferredQuery]);
 
-  console.log(everythingState.essays);
-
   if (showLoading) return <PageTransition href={everythingState.transitionLink} />;
 
   return (
@@ -102,15 +101,15 @@ export function EssaysContainer() {
       <div className="lg:flex justify-between">
         <motion.div variants={item}>
           <Breadcrumb className="mb-4" />
-          <Heading1 text="Thoughts, thoughts, thoughts. All worthless." className="max-w-[90%]" />
+          <Heading1 text="Thoughts, thoughts, thoughts. All pointless." className="max-w-[90%]" />
           <HeadingSubText
             className="xl:max-w-[70%] mt-1.5"
-            text="Proper essays. Written for the mere pleasure of clarity in my own mind."
+            text="A chosen few of my mind's ideas, which were fleshed out, for reasons I cannot tell you, for I do not know."
           />
         </motion.div>
 
         <motion.div variants={item} className="mt-6">
-          <HandwrittenHeading text="Meadows of love and hate." className="relative ml-auto w-[calc(100%+15px)]" />
+          <HandwrittenHeading text="Profound humbug" className="relative ml-auto w-max pr-2.5" />
         </motion.div>
       </div>
 
@@ -139,7 +138,7 @@ export function EssaysContainer() {
             </Fragment>
           )}
         </div>
-        <motion.div variants={item} className="absolute -right-30 top-100 z-0 max-[1500px]:pr-20">
+        <motion.div variants={item} className="hidden md:block absolute -right-30 top-100 z-0 max-[1500px]:pr-20">
           <Image
             src={PlanetImage}
             alt=""

@@ -1,5 +1,5 @@
 import { Heading4 } from "@/components/ui/headings";
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 import { TextareaHTMLAttributes } from "react";
 
 type TextAreaFieldProps = {
@@ -21,7 +21,7 @@ export function TextArea({ label, name, error, className = "", ...props }: TextA
         className={`transition-all mt-[7px] min-h-56 w-full resize-y border-2 border-[#8F8C7B] rounded-sm bg-bg p-4 text-lg font-light text-neutral-800 placeholder:text-neutral-600 focus:border-black focus:outline-none ${className}`}
         {...props}
       />
-      <p role="alert" className={clsx("mt-1 text-sm text-red-700", !error && "opacity-0")}>
+      <p role="alert" className={cn("mt-1 text-sm text-red-700", !error && "opacity-0")}>
         {error ? error : "DUMMY TEXT"}
       </p>
     </div>

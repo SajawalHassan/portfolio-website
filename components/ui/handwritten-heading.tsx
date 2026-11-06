@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 
 interface Props {
   text: string;
@@ -8,7 +8,7 @@ interface Props {
 const HandwrittenHeading = (props: Props) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         "font-caveat text-[30px] sm:text-[35px] md:text-[42px] lg:text-[30px] xl:text-[40px] 3xl:text-[50px]! w-max relative",
         props.className,
       )}

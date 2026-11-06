@@ -131,6 +131,24 @@
   @apply hover:-translate-y-1 hover:shadow-xl cursor-pointer transition-all;
 }
 
+.loading-anim {
+  transform-origin: center center;
+
+  animation: sweep 2s ease-in-out infinite;
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
 body {
   font-family: var(--font-inter);
 }

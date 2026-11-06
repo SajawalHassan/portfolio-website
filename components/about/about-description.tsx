@@ -3,14 +3,14 @@ import { useRef, useState } from "react";
 import { aboutDescriptionParas } from "@/lib/content-data";
 import Image from "next/image";
 import ChevronDouble from "@/public/assets/icons/chevron-double.svg";
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { HeadingSubText } from "@/components/ui/headings";
 
 export const MoveButton = (props: { className?: string; onClick?: () => void; disabled?: boolean }) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         "relative overflow-hidden rounded-[4px] group cursor-pointer",
         props.disabled && "cursor-not-allowed",
       )}
@@ -22,7 +22,7 @@ export const MoveButton = (props: { className?: string; onClick?: () => void; di
       <button
         type="button"
         disabled={props.disabled}
-        className={clsx(
+        className={cn(
           "h-[48px] w-[48px] 2xl:h-[66px] 2xl:w-[66px] bg-[#565551] border-2 border-black rounded-[4px] flex items-center justify-center transition-opacity",
           props.disabled && "opacity-40 cursor-not-allowed",
         )}
@@ -32,7 +32,7 @@ export const MoveButton = (props: { className?: string; onClick?: () => void; di
           width={24}
           height={20}
           alt="chevron"
-          className={clsx(
+          className={cn(
             "2xl:w-[33px] 2xl:h-[27.5px] cursor-pointer relative z-10",
             props.className,
             props.disabled && "cursor-not-allowed!",

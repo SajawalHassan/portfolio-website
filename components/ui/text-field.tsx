@@ -1,5 +1,5 @@
 import { Heading4 } from "@/components/ui/headings";
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 import Image, { StaticImageData } from "next/image";
 import { InputHTMLAttributes } from "react";
 
@@ -39,7 +39,7 @@ export default function TextField({
           name={name}
           aria-invalid={!!error}
           aria-describedby={error ? `${name}-error` : undefined}
-          className={clsx(
+          className={cn(
             "transition-all w-full border-b-2 border-[#8F8C7B] bg-transparent py-1 text-[16px] 2xl:text-[18px] font-light text-neutral-800 placeholder:text-neutral-600 focus:border-black focus:outline-none",
             icon && "pl-7.5 2xl:pl-8",
             className,
@@ -47,7 +47,7 @@ export default function TextField({
           {...props}
         />
       </div>
-      <p id={`${name}-error`} role="alert" className={clsx("mt-1 text-sm text-red-700", !error && "opacity-0")}>
+      <p id={`${name}-error`} role="alert" className={cn("mt-1 text-sm text-red-700", !error && "opacity-0")}>
         {error ? error : "DUMMY TEXT"}
       </p>
     </div>

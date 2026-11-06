@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 import { Heading3, Heading4, HeadingSubText } from "@/components/ui/headings";
 
 export const RowItem = (props: {
@@ -12,13 +12,13 @@ export const RowItem = (props: {
   return (
     <div className="relative group">
       <div
-        className={clsx(
+        className={cn(
           "group cursor-pointer z-10 ml-0! border-[#8F8C7B] border-b-[2px] relative transition-[padding] duration-150 ease-out",
           props.className,
         )}
       >
         <div
-          className={clsx(
+          className={cn(
             "py-[16px] px-[16px] sm:px-[10px] md:px-[20px] lg:py-[20px] xl:px-[10px] xl:py-[22px]",
             props.doWidthStuff && "max-width-stuff relative",
           )}
@@ -34,7 +34,7 @@ export const RowItem = (props: {
 
           {/* Badge */}
           <div
-            className={clsx(
+            className={cn(
               "rounded-full px-3 py-1 md:px-4 md:py-1.5 text-center flex items-center justify-center w-max absolute right-[10px] top-[15px] lg:top-[10px] lg:right-[10px] transition-colors duration-150 ease-out",
               props.badgeColor == "green"
                 ? "bg-[#CDCEBE] text-[#858673] group-hover:bg-[#858673] group-hover:text-[#F5F1E8]"

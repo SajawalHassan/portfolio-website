@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Caveat, Francois_One, Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { ModalsProvider } from "@/components/modals/modals-provider";
+import { PrententiousGibberishProvider } from "@/app/pretentious-gibberish/_components/pretentious-gibberish-provider";
 
 const francois_font = Francois_One({
   variable: "--font-francois",
@@ -35,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-full flex flex-col bg-bg">
         <ModalsProvider />
-        {children}
+        <PrententiousGibberishProvider>{children}</PrententiousGibberishProvider>
       </body>
     </html>
   );

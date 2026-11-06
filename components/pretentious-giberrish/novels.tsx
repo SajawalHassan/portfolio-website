@@ -1,9 +1,9 @@
 import { Heading3, Heading4, HeadingSubText } from "@/components/ui/headings";
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 
 export const NovelItem = (props: { className?: string; text: string; subtext: string }) => {
   return (
-    <div className={clsx("group/novel z-10 border-[#8F8C7B] border-b-[2px] relative", props.className)}>
+    <div className={cn("group/novel z-10 border-[#8F8C7B] border-b-[2px] relative", props.className)}>
       <div className="max-width-stuff relative py-[16px] px-[16px] sm:px-[10px] md:px-[20px] lg:py-[20px] xl:px-[10px] xl:py-[22px]">
         <Heading4 text={props.text} />
         <HeadingSubText text={props.subtext} />

@@ -25,6 +25,9 @@ interface EverythingState {
 
   modalIsOpen: boolean;
   setModalIsOpen: (val: boolean) => void;
+
+  isFetching: boolean;
+  setIsFetching: (val: boolean) => void;
 }
 
 export const useEverythingState = create<EverythingState>((set) => ({
@@ -48,4 +51,7 @@ export const useEverythingState = create<EverythingState>((set) => ({
 
   modalIsOpen: true,
   setModalIsOpen: (val) => set({ modalIsOpen: val }),
+
+  isFetching: false,
+  setIsFetching: (val) => set({ isFetching: val }),
 }));

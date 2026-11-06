@@ -38,7 +38,7 @@ function AboutContainer() {
         <motion.div variants={item}>
           <HandwrittenHeading
             text="Restlessly Procastinating"
-            className="relative ml-auto mr-[15px] animate-float-sm-long w-[calc(100%+15px)]"
+            className="relative ml-auto mr-[15px] animate-float-sm-long w-max pr-2.5"
           />
         </motion.div>
         <div className="lg:flex lg:gap-x-12 lg:mt-8 xl:gap-x-40 lg:justify-between xl:mt-3 2xl:mt-10 3xl:ml-4!">

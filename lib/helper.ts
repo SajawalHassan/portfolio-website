@@ -1,4 +1,10 @@
 import { EssayType as EssayType, poemType as PoemType } from "@/store/store";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 const unescapeMd = (s: string) => s.replace(/\\(.)/g, "$1");
 
@@ -78,7 +84,7 @@ export function parsePost(raw: string): EssayType {
     title,
     badgeText: genre,
     date,
-    body: bodyLines.join("\n").trim(),
+    body: bodyLines.join("\n").trim().replaceAll("[^", "["),
   };
 }
 
@@ -88,4 +94,12 @@ export function parsePosts(rawPosts: string[]): EssayType[] {
 
 export function getSubtext(text: string, maxLength = 130): string {
   return text.slice(0, maxLength) + "...";
+}
+
+export function convertTextToUrl(text: string): string {
+  return text.toLowerCase().replaceAll(" ", "-");
+}
+
+export function convertUrlToText(text: string): string {
+  return text.toLowerCase().replaceAll("-", " ");
 }

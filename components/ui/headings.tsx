@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 
 interface Props {
   className?: string;
@@ -8,7 +8,7 @@ interface Props {
 export const Heading1 = (props: Props) => {
   return (
     <h1
-      className={clsx(
+      className={cn(
         `font-francois text-[38px] sm:text-[44px] md:text-[52px] text-black leading-[112.3%] xl:text-[56px] 2xl:text-[65px] 3xl:text-[70px]`,
         props.className,
       )}
@@ -21,7 +21,7 @@ export const Heading1 = (props: Props) => {
 export const Heading2 = (props: Props) => {
   return (
     <h1
-      className={clsx(
+      className={cn(
         `font-francois text-[36px] sm:text-[42px] md:text-[50px] text-black leading-[112.3%] xl:text-[54px] 2xl:text-[62px] 3xl:text-[68px]`,
         props.className,
       )}
@@ -34,7 +34,7 @@ export const Heading2 = (props: Props) => {
 export const Heading3 = (props: Props) => {
   return (
     <h1
-      className={clsx(
+      className={cn(
         `text-[25px] md:text-[35px] font-francois text-black transition-all z-50 duration-400 lg:text-[30px] 2xl:text-[40px] 3xl:text-[45px]`,
         props.className,
       )}
@@ -47,7 +47,7 @@ export const Heading3 = (props: Props) => {
 export const Heading4 = (props: Props) => {
   return (
     <h1
-      className={clsx(
+      className={cn(
         `text-[20px] lg:text-[22px] 2xl:text-[26px] font-francois text-black transition-all duration-400 `,
         props.className,
       )}
@@ -60,8 +60,8 @@ export const Heading4 = (props: Props) => {
 export const HeadingSubText = (props: Props) => {
   return (
     <p
-      className={clsx(
-        "text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[18px] 3xl:text-[20px]! leading-[134%] text-subtext",
+      className={cn(
+        "text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[18px] 3xl:text-[20px] leading-[134%] text-subtext",
         props.className,
       )}
     >

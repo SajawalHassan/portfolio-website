@@ -5,7 +5,7 @@ import { contactSchema, ContactFormValues } from "@/lib/schemas";
 import TextField from "@/components/ui/text-field";
 import { TextArea } from "@/components/ui/text-area";
 import { HeadingSubText } from "@/components/ui/headings";
-import clsx from "clsx";
+import { cn } from "@/lib/helper";
 
 type Errors = Partial<Record<keyof ContactFormValues, string>>;
 
@@ -64,12 +64,12 @@ export default function ContactForm() {
 
         <div>
           <button
-            className={clsx(
+            className={cn(
               "btn-translate-hover text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]",
               sent && "bg-black text-white",
             )}
           >
-            <HeadingSubText text={sent ? "Message sent" : "Send message"} className={clsx(sent && "text-white")} />
+            <HeadingSubText text={sent ? "Message sent" : "Send message"} className={cn(sent && "text-white")} />
           </button>
         </div>
       </div>

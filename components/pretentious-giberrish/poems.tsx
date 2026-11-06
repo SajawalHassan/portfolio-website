@@ -1,4 +1,5 @@
 import { Heading3, HeadingSubText } from "@/components/ui/headings";
+import Loader from "@/components/ui/loader";
 import { PoemBox } from "@/components/ui/poem-box";
 import { ViewMoreBtn } from "@/components/ui/view-more-btn";
 import { useEverythingState } from "@/store/store";
@@ -7,6 +8,7 @@ type Props = {};
 
 export const Poems = (props: Props) => {
   const poems = useEverythingState((s) => s.poems);
+  const isFetching = useEverythingState((s) => s.isFetching);
 
   return (
     <div className="mt-[50px]">
@@ -15,9 +17,11 @@ export const Poems = (props: Props) => {
 
       <div className="mt-[31px]">
         <div className="flex flex-wrap gap-[22px]">
-          {poems.slice(0, 7).map((p) => (
-            <PoemBox title={p.title} poemText={p.body} key={p.title} />
-          ))}
+          {isFetching ? (
+            <Loader />
+          ) : (
+            poems.slice(0, 7).map((p) => <PoemBox title={p.title} poemText={p.body} key={p.title} />)
+          )}
         </div>
         <ViewMoreBtn className="mt-[22px]" href="/pretentious-gibberish/poems" />
       </div>

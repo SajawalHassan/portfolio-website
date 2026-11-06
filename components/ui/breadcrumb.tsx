@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { motion } from "framer-motion";
 import { item } from "@/lib/global-anim-variants";
 import CustomLink from "@/components/ui/custom-link";
+import { HeadingSubText } from "@/components/ui/headings";
 
 type BreadcrumbProps = {
   homeLabel?: string;
@@ -32,11 +33,14 @@ export default function Breadcrumb({ homeLabel = "Home", rootPath = "/", classNa
 
   return (
     <motion.nav variants={item} aria-label="Breadcrumb" className={className}>
-      <ol className="flex items-center gap-2 text-[#4a4740]">
+      <ol className="flex items-center flex-wrap gap-2 text-[#4a4740]">
         <li className="flex items-center gap-2">
           <CustomLink href={rootPath} className="flex items-center gap-1.5 hover:text-[#1c1b19] transition-colors">
-            <HomeIcon className="h-4 w-4" />
-            <span>{homeLabel}</span>
+            <HomeIcon className="h-3 w-3 sm:w-4 sm:h-4" />
+            <HeadingSubText
+              text={homeLabel}
+              className="text-[#4a4740]! text-[12px] md:text-[14px] lg:text-[16px] 3xl:text-[20px]"
+            />
           </CustomLink>
         </li>
 
@@ -49,12 +53,18 @@ export default function Breadcrumb({ homeLabel = "Home", rootPath = "/", classNa
               </li>
               <li>
                 {isLast ? (
-                  <span aria-current="page" className="font-semibold text-[#1c1b19]">
-                    {crumb.label}
-                  </span>
+                  <HeadingSubText
+                    text={crumb.label}
+                    aria-current="page"
+                    className="font-semibold text-[#1c1b19] truncate text-[12px] md:text-[14px] lg:text-[16px] 3xl:text-[20px]"
+                  />
                 ) : (
-                  <CustomLink href={crumb.href} className="hover:text-[#1c1b19] transition-colors">
-                    {crumb.label}
+                  <CustomLink href={crumb.href}>
+                    <HeadingSubText
+                      text={crumb.label}
+                      aria-current="page"
+                      className="hover:text-[#1c1b19]! transition-all! truncate text-[12px] md:text-[14px] lg:text-[16px] 3xl:text-[20px]"
+                    />
                   </CustomLink>
                 )}
               </li>
