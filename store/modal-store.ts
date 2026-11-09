@@ -1,10 +1,11 @@
 import { create } from "zustand";
 
-export type ModalTypes = "quotes" | "poems";
+export type ModalTypes = "quotes" | "poems" | "projects";
 
 interface ModalData {
   title?: string;
   text?: string;
+  [val: string]: any;
 }
 
 interface ModalStores {

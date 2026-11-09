@@ -14,6 +14,7 @@ import { PageTransition } from "@/components/page-transition";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/helper";
+import { useModal } from "@/store/modal-store";
 
 type ProjectLayoutProps = {
   heading: string;
@@ -27,6 +28,7 @@ export const ProjectLayout = ({ heading, subtext, projectList, planetImage, hand
   const [showLoading, setShowLoading] = useState(false);
   const everythingState = useEverythingState();
   const isDesktop = useMediaQuery("(min-width: 1024px)", true);
+  const openModal = useModal((s) => s.openModal);
 
   if (showLoading) return <PageTransition href={everythingState.transitionLink} />;
 
@@ -55,10 +57,10 @@ export const ProjectLayout = ({ heading, subtext, projectList, planetImage, hand
 
             <div className="hidden lg:block mt-[24px]">
               {projectList.map((project: projectType, index: number) => (
-                <motion.div variants={item} key={index}>
+                <motion.div variants={item} key={index} onClick={(_) => openModal("projects", { ...project })}>
                   <RowItem
                     text={project.title}
-                    subtext={project.description}
+                    subtext={project.subText}
                     badgeText={project.badgeText}
                     badgeColor={project.badgeColor}
                     className={cn(index === 0 && "border-t-2")}
@@ -104,11 +106,11 @@ export const ProjectLayout = ({ heading, subtext, projectList, planetImage, hand
 
             <div className="mt-[30px] w-screen relative left-1/2 right-1/2 -mx-[50vw]">
               {projectList.map((project: projectType, index: number) => (
-                <motion.div variants={item} key={index}>
+                <motion.div variants={item} key={index} onClick={(_) => openModal("projects", { ...project })}>
                   <RowItem
                     doWidthStuff
                     text={project.title}
-                    subtext={project.description}
+                    subtext={project.subText}
                     badgeText={project.badgeText}
                     badgeColor={project.badgeColor}
                     className={cn(index === 0 && "border-t-2")}

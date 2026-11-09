@@ -1,4 +1,5 @@
 import { PoemsModal } from "@/components/modals/poems-modal";
+import { ProjectModal } from "@/components/modals/project-modal";
 import QuoteModal from "@/components/modals/quote-modal";
 
 export const ModalsProvider = () => {
@@ -6,6 +7,7 @@ export const ModalsProvider = () => {
     <>
       <QuoteModal />
       <PoemsModal />
+      <ProjectModal />
     </>
   );
 };

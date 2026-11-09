@@ -1,3 +1,6 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import me from "@/public/assets/me4.png";
+
 export interface ItemType {
   link: string;
   text: string;
@@ -56,7 +59,12 @@ export const computersGateways: ItemType[] = [
 
 export interface projectType {
   title: string;
-  description: string;
+  subText: string;
+  description?: string[];
+  technologies?: string[];
+  image?: StaticImport;
+  githubLink?: string;
+  liveLink?: string;
   badgeText: string;
   badgeColor: string;
 }
@@ -64,35 +72,70 @@ export interface projectType {
 export const webProjects: projectType[] = [
   {
     title: "A clone of Reddit (of the old UI)",
-    description:
-      "Made in NextJS, in like three months. Massive project, I'd recommend tinkering around for a while in there.",
+    subText:
+      "Made in NextJS, in like two months. Massive project, I'd recommend tinkering around for a while in there.",
+    description: [
+      "Made this back in November of 2023, when I was in seventh grade, and without AI. Took me roughly two months to complete, and made me learn a lot about just what it takes to make an entire website from scratch... all by yourself.",
+      "It's got authentication (from clerk), CRUD operations on subreddits, profiles, posts, nested comment sections, and upvotes. It has both dark and light mode, and is fully responsive. Looking back at the codebase now, even today I'm shocked as to how I did all that. It's not the most complex project, but it required a lot of work, consistency and dedication.",
+    ],
+    technologies: ["NextJS", "PrismaORM", "Typescript", "TailwindCSS", "MySQL", "Zustand", "Clerk", "Zod"],
+    image: me,
+    githubLink: "https://github.com/SajawalHassan/reddit_clone_nextjs",
+    liveLink: "https://reddit-clone-nextjs-1f12.vercel.app",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "A clone of Discord",
-    description:
+    subText:
       "A nice, simple clone of Discord, also made in NextJS. Uses websockets, has calling functionality, authentication, servers and more.",
+    description: [
+      "Took around a month to make, back in October of 2023, from a youtube tutorial. It was the first proper large-scale project I had made, and learnt much things along the way, which allowed me to make my Reddit Clone later, all by myself.",
+      "It has the ability to call (using livekit), real-time messaging ability using websockets, authentication (through clerk), CRUD on servers and profiles, alongside, of course, the ability to invite people to servers. There's a global server everyone is added to by default.",
+    ],
+    technologies: ["NextJS", "PrismaORM", "Typescript", "TailwindCSS", "MySQL", "Zustand", "Clerk", "Zod"],
+    githubLink: "https://github.com/SajawalHassan/Discord_clone_nextJS",
+    liveLink: "https://discord-clone-sajawal.vercel.app",
+    image: me,
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "This portfolio website",
-    description: "Made, as you could've guessed, in NextJS. As for the features... well, you're looking at those.",
+    subText: "Made, as you could've guessed, in NextJS. As for the features... well, you're looking at those.",
+    description: [
+      "Took roughly three months, if you're counting the gaps of commits. But proper work was roughly a month, the rest was gobbled up in the humbug toils of the life I unfortunately must bear outside books and computers.",
+      "It's an odd choice to read what features this website has, when you're on it... Just explore, see what beauty I had to code with the pain of a horrid and slow laptop.",
+    ],
+    image: me,
+    technologies: ["NextJS", "Typescript", "TailwindCSS", "Google Drive API", "Zod", "Framer Motion"],
+    githubLink: "https://github.com/SajawalHassan/portfolio-website/",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "Aetherize, a website builder.",
-    description:
+    subText:
       "Attempted to re-make it a third time, and, like all the other ones, gave up midway. Still, it's got the core functionality.",
+    description: [
+      "Got pretty far the first time I made. Restarted for a 'fresh start', got far again, then restarted again. The core functionality this time around isn't much, but poke around at its git history, you'll see some fun stuff.",
+    ],
+    githubLink: "https://github.com/SajawalHassan/aetherize",
+    image: me,
+    technologies: ["NextJS", "Typescript", "TailwindCSS", "Next Auth", "Native DnD", "React DnD"],
     badgeText: "progress",
     badgeColor: "yellow",
   },
   {
     title: "Html SPA loader",
-    description:
-      "Automatically generate dynamic SPA pages from HTML files with a homepage using Next.js and Tailwind CSS.",
+    subText: "Automatically generate dynamic SPA pages from HTML files with a homepage using Next.js and Tailwind CSS.",
+    description: [
+      "Made for my dad, who needed a way to create simple websites from simple html pages in NextJS.",
+      "You add an html file to /html-pages and the new page is automatically available. Supports tailwindcss as well. Wasn't really a difficult project, but definitely a fun idea.",
+    ],
+    githubLink: "https://github.com/SajawalHassan/html-spa-loader",
+    image: me,
+    technologies: ["NextJS", "TailwindCSS"],
     badgeText: "complete",
     badgeColor: "yellow",
   },
@@ -101,15 +144,26 @@ export const webProjects: projectType[] = [
 export const linuxProjects: projectType[] = [
   {
     title: "My arch linux dotfiles",
-    description:
+    subText:
       "Took a lot of time to set up my ideal setup, and am rather proud of it. Using hyprland, waybar, and other, for the most part, standard utils.",
+    description: [
+      "Have been a linux user for at least three years now. Been on arch for about two years. These are all my dotfiles, present on my github.",
+    ],
+    githubLink: "https://github.com/sajawalhassan/",
+    technologies: ["Hyprland", "Waybar", "Kitty", "Swaync", "Rofi", "Flameshot"],
+    image: me,
     badgeText: "Will always be wip",
     badgeColor: "yellow",
   },
   {
     title: "Random, small bash scripts",
-    description:
+    subText:
       "Some were made for genuine productivity, others were for showing off. They're small, and any ai can write them, but, still, they hold a special place in my heart.",
+    description: [
+      "Just small little niche scripts that are probably not useful to anyone besides me. Still, they're fun.",
+    ],
+    technologies: ["Bash"],
+    githubLink: "https://github.com/sajawalhassan/",
     badgeText: "Will always be wip",
     badgeColor: "yellow",
   },
@@ -118,28 +172,36 @@ export const linuxProjects: projectType[] = [
 export const datascienceProjects: projectType[] = [
   {
     title: "A GAN (Generative Adversarial Network) that generates images of anime faces",
-    description:
+    subText:
       "Made in pytorch a very long time ago, in around sixth or seventh class. Was a very fun but difficult project for a boy so early in his youth.",
+    description: [
+      "Checking the commits, it was in seventh class that I made this. Indeed a very fun project, and also a difficult one — not necessarily the code, but rather the concepts behind it.",
+    ],
+    technologies: ["Python", "Pytorch", "Numpy", "Google Colab", "Matplotlib"],
+    githubLink: "https://github.com/SajawalHassan/anime_faces_gan",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "EDA (Exploratory Data Analysis) of a housing prices dataset",
-    description:
+    subText:
       "Also made during sixth or seventh grade. Part of the early steps I took towards Data Science, and drifted from ever since, hoping to return again one day.",
+    description: [
+      "Followed an awesome playlist to learn EDA that I've now lost, but nevertheless made me learn a lot of statistical concepts.",
+    ],
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "A sentence completing LSTM (Long Short-Term Memory)",
-    description:
+    subText:
       "Made an LSTM in pytorch that completes a given, incomplete sentence. It's not very good, but a transformer architecuture was too difficult for me to understand back then, and even now.",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "Sentiment analysis neural network",
-    description: "An ANN made in pytorch that classifies a sentence into a positive or a negative sentiment.",
+    subText: "An ANN made in pytorch that classifies a sentence into a positive or a negative sentiment.",
     badgeText: "complete",
     badgeColor: "green",
   },
@@ -148,27 +210,27 @@ export const datascienceProjects: projectType[] = [
 export const randomProjects: projectType[] = [
   {
     title: "Quote video generator.",
-    description:
+    subText:
       "Made the bulk of it at 2am on a random tuesday, not wanting to study for my upcoming physics exam. Automatically chooses quotes (or you may enter them manually), generates videos of them, and publishes them.",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "Note taking app",
-    description:
+    subText:
       "Made to learn the basics of docker. Has a multi container architecture, is properly dockerized, has a working CI/CD pipeline, with automated deployments to a GCP virtual machine.",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "A RPG game in Unity",
-    description: "Very much incomplete, maybe I'll finish it one day.",
+    subText: "Very much incomplete, maybe I'll finish it one day.",
     badgeText: "progress",
     badgeColor: "yellow",
   },
   {
     title: "Shooting game in Godot",
-    description: "Made very early in my coding career. A simple shooting game in Godot",
+    subText: "Made very early in my coding career. A simple shooting game in Godot",
     badgeText: "complete",
     badgeColor: "green",
   },
@@ -177,7 +239,6 @@ export const randomProjects: projectType[] = [
 import Youtube from "@/public/assets/icons/yt.svg";
 import Discord from "@/public/assets/icons/discord.svg";
 import Instagram from "@/public/assets/icons/instagram.svg";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export type ContactIconsType = {
   icon: StaticImport;
