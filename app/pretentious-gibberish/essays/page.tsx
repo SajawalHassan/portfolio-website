@@ -1,6 +1,11 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import { EssaysContainer } from "@/app/pretentious-gibberish/essays/_components/essays-container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Essays",
+};
 
 function Page() {
   return (

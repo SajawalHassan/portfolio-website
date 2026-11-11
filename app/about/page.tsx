@@ -1,6 +1,11 @@
 import AboutContainer from "@/components/about/about-container";
 import FloatingCircles from "@/components/ui/bg-circles";
 import Header from "@/components/header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About me",
+};
 
 const Page = () => {
   return (

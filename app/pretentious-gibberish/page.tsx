@@ -1,6 +1,11 @@
 import Header from "@/components/header";
 import { PretentiousGiberrishContainer } from "@/app/pretentious-gibberish/_components/pretentious-giberrish-container";
 import FloatingCircles from "@/components/ui/bg-circles";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pretentious Gibberish",
+};
 
 function Page() {
   return (

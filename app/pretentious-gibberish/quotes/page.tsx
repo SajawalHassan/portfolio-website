@@ -1,6 +1,11 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import QuotesContainer from "@/app/pretentious-gibberish/quotes/_components/quotes-container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Quotes",
+};
 
 function Page() {
   return (

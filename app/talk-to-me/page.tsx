@@ -1,6 +1,11 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import { TalkToMeContainer } from "@/components/talk-to-me/talk-to-me-container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Talk to me",
+};
 
 type Props = {};
 

@@ -3,6 +3,11 @@ import FloatingCircles from "@/components/ui/bg-circles";
 import { ProjectLayout } from "@/components/computers/projects-layout";
 import { linuxProjects } from "@/lib/content-data";
 import Planet from "@/public/assets/planet.svg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Planet Pinguinia",
+};
 
 function Page() {
   return (

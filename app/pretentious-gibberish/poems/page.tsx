@@ -1,6 +1,11 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import { PoemsContainer } from "@/app/pretentious-gibberish/poems/_components/poems-container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Poems",
+};
 
 function Page() {
   return (

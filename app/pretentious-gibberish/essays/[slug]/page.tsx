@@ -1,9 +1,25 @@
 import Header from "@/components/header";
 import FloatingCircles from "@/components/ui/bg-circles";
 import { EssayItem } from "@/app/pretentious-gibberish/essays/_components/essay-item";
+import { Metadata } from "next";
+import { convertUrlToText } from "@/lib/helper";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  let title = convertUrlToText(slug);
+  title = title
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return {
+    title: title,
+    description: title,
+  };
 }
 
 async function Page({ params }: PageProps) {
