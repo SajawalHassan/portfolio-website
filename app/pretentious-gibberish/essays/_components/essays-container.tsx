@@ -109,7 +109,7 @@ export function EssaysContainer() {
         </motion.div>
 
         <motion.div variants={item} className="mt-6">
-          <HandwrittenHeading text="Profound humbug" className="relative ml-auto w-max pr-2.5" />
+          <HandwrittenHeading text="Scrutinized Humbug" className="relative ml-auto w-max pr-2.5" />
         </motion.div>
       </div>
 

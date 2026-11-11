@@ -1,7 +1,7 @@
 "use client";
 import Squiggle from "@/public/assets/icons/squiggle.svg";
 import Image from "next/image";
-import Me from "@/public/assets/me4.png";
+import Me from "@/public/assets/profile.webp";
 import { Heading1, HeadingSubText } from "../ui/headings";
 import { motion } from "framer-motion";
 import { useEverythingState } from "@/store/store";
@@ -43,16 +43,17 @@ function Hero() {
 
           <MotionImage
             variants={item}
-            unoptimized
             loading="eager"
+            fetchPriority="high"
             drag={false}
             preload
             placeholder="blur"
+            unoptimized
             src={Me}
             alt="Sajawal Hassan"
             width={280}
             height={280}
-            className="animate-float [animation-delay:3s] w-[198px] h-[198px] rounded-full border-[6px] border-black bg-[#D9D9D9] object-cover object-[50%_60%] sm:w-[240px] sm:h-[240px] xl:h-[220px] xl:w-[220px] 2xl:h-[280px] 2xl:w-[280px]"
+            className="animate-float [animation-delay:3s] object-cover! w-[198px] h-[198px] rounded-full border-[6px] border-black bg-[#D9D9D9] object-[50%_60%] sm:w-[240px] sm:h-[240px] xl:h-[220px] xl:w-[220px] 2xl:h-[280px] 2xl:w-[280px]"
           />
 
           <motion.div variants={item}>

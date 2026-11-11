@@ -1,5 +1,5 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import me from "@/public/assets/me4.png";
+import me from "@/public/assets/profile.webp";
 
 export interface ItemType {
   link: string;
