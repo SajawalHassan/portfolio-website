@@ -17,10 +17,12 @@ const font_inter = Inter({
 
 const font_caveat = Caveat({
   variable: "--font-caveat",
+  subsets: ["latin"],
 });
 
 const font_lora = Lora({
   variable: "--font-lora",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
   description:
     "Wander here and you'll see coding projects, bash scripts, poems, quotes, and essays — made not for some career, but only for the desire of becoming human.",
   applicationName: "Sajawal's Den",
-  authors: [{ name: "Sajawal Hassa", url: "https://sajawalhassan.vercel.app" }],
+  authors: [{ name: "Sajawal Hassan", url: "https://sajawalhassan.vercel.app" }],
   creator: "Sajawal Hassan",
   keywords: [
     "Sajawal",
@@ -45,23 +47,21 @@ export const metadata: Metadata = {
     "personal website",
   ],
 
-  alternates: { canonical: "/" },
-
   openGraph: {
     type: "website",
     url: "/",
     siteName: "Sajawal's Den",
     title: "Sajawal's Den",
-    description: "Peculiar websites, small scripts, essays, and poems.",
+    description:
+      "Wander here and you'll see coding projects, bash scripts, poems, quotes, and essays — made not for some career, but only for the desire of becoming human.",
     locale: "en_US",
-    images: [{ url: "/assets/profile.webp", width: 1200, height: 630, alt: "Sajawal's Den" }],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Sajawal's Den",
-    description: "Peculiar websites, small scripts, essays, and poems.",
-    images: ["/assets/profile.webp"],
+    description:
+      "Wander here and you'll see coding projects, bash scripts, poems, quotes, and essays — made not for some career, but only for the desire of becoming human.",
   },
 
   robots: {
