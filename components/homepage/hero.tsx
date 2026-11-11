@@ -13,7 +13,11 @@ function Hero() {
   const everythingState = useEverythingState();
 
   return (
-    <motion.div
+    <motion.section
+      id="hero"
+      aria-label="Introduction"
+      itemScope
+      itemType="https://schema.org/Person"
       className="lg:mx-auto lg:max-w-[700px] xl:max-w-[780px] 2xl:max-w-[850px]"
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
@@ -25,18 +29,23 @@ function Hero() {
         </motion.div>
         <motion.div variants={item}>
           <HeadingSubText
+            itemProp="description"
             className="lg:mx-auto xl:mx-0 max-w-[800px]!"
             text={`I make peculiar websites and leave them unfinished; write unpolished prose and leave it stranded; create small, niche scripts that benefit no one — perhaps not even myself. I code, study philosophy, read literature, and write embarrassing poems, not for some career path, but for my purpose of experiencing, fully, what it means to be a human — to see what ecstasy evolution has allowed me to feel.`}
           />
         </motion.div>
 
         <div className="mx-auto mt-[60px] lg:mt-[80px] flex items-center gap-x-[27px] w-max md:gap-x-18 2xl:gap-x-0 2xl:justify-between 2xl:max-w-[700px] 2xl:w-full">
-          <motion.div variants={item}>
+          <motion.div variants={item} aria-hidden="true" role="presentation">
             <Image
               src={Squiggle}
               height={101}
               width={25}
-              alt="squiggle"
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              draggable={false}
+              decoding="async"
               className="rotate-180 sm:h-[150px] sm:w-[75px] md:h-[215px] md:w-[55px] 2xl:h-[260px] 2xl:w-[75px] animate-float-sm"
             />
           </motion.div>
@@ -50,24 +59,32 @@ function Hero() {
             placeholder="blur"
             unoptimized
             src={Me}
-            alt="Sajawal Hassan"
+            alt="Sajawal Hassan - portrait photo"
+            title="Sajawal Hassan"
+            itemProp="image"
+            decoding="async"
+            draggable={false}
             width={280}
             height={280}
             className="animate-float [animation-delay:3s] object-cover! w-[198px] h-[198px] rounded-full border-[6px] border-black bg-[#D9D9D9] object-[50%_60%] sm:w-[240px] sm:h-[240px] xl:h-[220px] xl:w-[220px] 2xl:h-[280px] 2xl:w-[280px]"
           />
 
-          <motion.div variants={item}>
+          <motion.div variants={item} aria-hidden="true" role="presentation">
             <Image
               src={Squiggle}
               height={101}
               width={25}
-              alt="squiggle"
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              draggable={false}
+              decoding="async"
               className="sm:h-[150px] sm:w-[75px] md:h-[215px] md:w-[55px] 2xl:h-[260px] 2xl:w-[75px] animate-float-sm"
             />
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }
 export default Hero;

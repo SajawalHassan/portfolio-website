@@ -1,5 +1,5 @@
 "use client";
-import { Heading4, HeadingSubText } from "@/components/ui/headings";
+import { Heading4 } from "@/components/ui/headings";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useModal } from "@/store/modal-store";
 import { Fragment, useMemo } from "react";
@@ -19,14 +19,20 @@ export const QuoteBox = (props: { text: string }) => {
 
   return (
     <Fragment>
-      <div
+      <blockquote
+        role="button"
+        tabIndex={0}
+        aria-haspopup="dialog"
+        aria-label={`Read full quote: ${props.text}`}
+        itemScope
+        itemType="https://schema.org/Quotation"
         onClick={(_) => openModal("quotes", { text: props.text })}
         title={props.text}
         style={{ maxWidth: width.toString() + "rem" }}
         className="cursor-pointer truncate bg-bg hover:-translate-y-2 hover:shadow-xl transition-all py-[10px] px-[11px] flex items-center justify-center border-[2px] border-black rounded-[9px]"
       >
-        <Heading4 text={props.text} className="font-caveat! truncate" />
-      </div>
+        <Heading4 text={props.text} itemProp="text" className="font-caveat! truncate" />
+      </blockquote>
     </Fragment>
   );
 };

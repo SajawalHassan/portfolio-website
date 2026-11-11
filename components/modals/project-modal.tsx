@@ -33,7 +33,6 @@ export const ProjectModal = () => {
   const hasLinks = !!(data?.liveLink || data?.githubLink);
   const hasTech = !!data?.technologies && data.technologies.length > 0;
 
-  // Same buttons, rendered in either the left column (image) or the footer (no image)
   const links = hasLinks && (
     <div className={hasImage ? "order-3 flex flex-col gap-2.5" : "flex gap-2.5 sm:shrink-0"}>
       {data?.liveLink && (

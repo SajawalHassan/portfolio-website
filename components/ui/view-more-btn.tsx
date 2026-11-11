@@ -15,18 +15,35 @@ export const ViewMoreBtn = (props: Props) => {
   return (
     <CustomLink
       href={props.href ? props.href : "#"}
+      title="View more"
+      aria-label="View more"
+      aria-busy={isFetching}
       className={cn("flex items-center gap-4 w-full max-w-[90%] bg-bg mx-auto", props.className)}
     >
-      <div className="flex-1 h-px bg-black" />
+      <div aria-hidden="true" role="presentation" className="flex-1 h-px bg-black" />
       {!isFetching && (
         <>
-          <button className="cursor-pointer btn-translate-hover hover:shadow-md! flex items-center gap-1 px-[10px] py-[5.5px] lg:px-[12px] border border-black rounded text-[12px] text-gray-700">
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-hidden="true"
+            className="cursor-pointer btn-translate-hover hover:shadow-md! flex items-center gap-1 px-[10px] py-[5.5px] lg:px-[12px] border border-black rounded text-[12px] text-gray-700"
+          >
             <HeadingSubText text="View more" className="group-hover:font-semibold xl:text-[16px]!" />
-            <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg
+              className="w-4.5 h-4.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+              focusable="false"
+              role="presentation"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </button>
-          <div className="flex-1 h-px bg-black" />
+          <div aria-hidden="true" role="presentation" className="flex-1 h-px bg-black" />
         </>
       )}
     </CustomLink>

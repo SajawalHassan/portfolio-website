@@ -121,7 +121,6 @@ export const webProjects: projectType[] = [
       "Got pretty far the first time I made. Restarted for a 'fresh start', got far again, then restarted again. The core functionality this time around isn't much, but poke around at its git history, you'll see some fun stuff.",
     ],
     githubLink: "https://github.com/SajawalHassan/aetherize",
-    image: me,
     technologies: ["NextJS", "Typescript", "TailwindCSS", "Next Auth", "Native DnD", "React DnD"],
     badgeText: "progress",
     badgeColor: "yellow",
@@ -134,7 +133,6 @@ export const webProjects: projectType[] = [
       "You add an html file to /html-pages and the new page is automatically available. Supports tailwindcss as well. Wasn't really a difficult project, but definitely a fun idea.",
     ],
     githubLink: "https://github.com/SajawalHassan/html-spa-loader",
-    image: me,
     technologies: ["NextJS", "TailwindCSS"],
     badgeText: "complete",
     badgeColor: "yellow",
@@ -149,7 +147,7 @@ export const linuxProjects: projectType[] = [
     description: [
       "Have been a linux user for at least three years now. Been on arch for about two years. These are all my dotfiles, present on my github.",
     ],
-    githubLink: "https://github.com/sajawalhassan/",
+    githubLink: "https://github.com/sajawalhassan/dotfiles",
     technologies: ["Hyprland", "Waybar", "Kitty", "Swaync", "Rofi", "Flameshot"],
     image: me,
     badgeText: "Will always be wip",
@@ -171,6 +169,29 @@ export const linuxProjects: projectType[] = [
 
 export const datascienceProjects: projectType[] = [
   {
+    title: "EDA (Exploratory Data Analysis) of a housing prices dataset",
+    subText:
+      "Also made during sixth or seventh grade. Part of the early steps I took towards Data Science, and drifted from ever since, hoping to return again one day.",
+    description: [
+      "Followed an awesome playlist to learn EDA that I've now lost, but nevertheless made me learn a lot of statistical concepts.",
+      "Found univariate and bivariate stats about it, calculated heteroscedasiticity, performed bivariate visualizations, MLR (multivariate statistics), pieced out the multicollinearity between variables, and optimize for best fit columns. It was very fun.",
+    ],
+    githubLink: "https://github.com/SajawalHassan/Housing-price-analysis",
+    technologies: [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Statsmodels",
+      "SciPy",
+      "Scikit-learn",
+      "Seaborn",
+      "Matplotlib",
+      "Google Colab",
+    ],
+    badgeText: "complete",
+    badgeColor: "green",
+  },
+  {
     title: "A GAN (Generative Adversarial Network) that generates images of anime faces",
     subText:
       "Made in pytorch a very long time ago, in around sixth or seventh class. Was a very fun but difficult project for a boy so early in his youth.",
@@ -183,25 +204,27 @@ export const datascienceProjects: projectType[] = [
     badgeColor: "green",
   },
   {
-    title: "EDA (Exploratory Data Analysis) of a housing prices dataset",
-    subText:
-      "Also made during sixth or seventh grade. Part of the early steps I took towards Data Science, and drifted from ever since, hoping to return again one day.",
-    description: [
-      "Followed an awesome playlist to learn EDA that I've now lost, but nevertheless made me learn a lot of statistical concepts.",
-    ],
-    badgeText: "complete",
-    badgeColor: "green",
-  },
-  {
     title: "A sentence completing LSTM (Long Short-Term Memory)",
     subText:
       "Made an LSTM in pytorch that completes a given, incomplete sentence. It's not very good, but a transformer architecuture was too difficult for me to understand back then, and even now.",
+    description: [
+      "Made this while exploring NLP, right after getting comfortable with basic neural networks. You give it the start of a sentence, and it predicts the next words one at a time until it hits the given word generation limit",
+      "The results are not very good at all. It'll produce something grammatical maybe half the time, and the other half it wanders off into sheer humbug. Still, getting my head around embeddings, hidden states and how a model can 'remember' earlier words gave many euraka moments to me.",
+    ],
+    technologies: ["Python", "Pytorch", "Numpy", "Google Colab"],
+    githubLink: "https://github.com/SajawalHassan/sentence_generation_tensorflow",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "Sentiment analysis neural network",
     subText: "An ANN made in pytorch that classifies a sentence into a positive or a negative sentiment.",
+    description: [
+      "One of my first steps into NLP. The model takes a sentence, converts it into numerical features, and passes it through a simple feed-forward network to decide whether it sounds positive or negative.",
+      "Nothing fancy, but it taught me a lot about text preprocessing, tokenization, and how to properly train and evaluate a classifier without getting fooled with the accuracy numbers.",
+    ],
+    technologies: ["Python", "Pytorch", "Numpy", "Google Colab"],
+    githubLink: "https://github.com/SajawalHassan/sentiment_analysis_pytorch",
     badgeText: "complete",
     badgeColor: "green",
   },
@@ -212,6 +235,13 @@ export const randomProjects: projectType[] = [
     title: "Quote video generator.",
     subText:
       "Made the bulk of it at 2am on a random tuesday, not wanting to study for my upcoming physics exam. Automatically chooses quotes (or you may enter them manually), generates videos of them, and publishes them.",
+    description: [
+      "Procrastination has, on rare occasions, been productive. This is the result of one such night. It picks a quote (or takes one you type in), renders it over a background into a short video, and then uploads it automatically, no manual editing required.",
+      "It's a small automation pipeline at heart, but stitching together quote selection, video rendering and publishing into one hands-off flow was a lot of fun to figure out.",
+    ],
+    image: me,
+    technologies: ["Python", "MoviePy", "FFmpeg"],
+    githubLink: "https://github.com/SajawalHassan/quote-video-generator",
     badgeText: "complete",
     badgeColor: "green",
   },
@@ -219,18 +249,35 @@ export const randomProjects: projectType[] = [
     title: "Note taking app",
     subText:
       "Made to learn the basics of docker. Has a multi container architecture, is properly dockerized, has a working CI/CD pipeline, with automated deployments to a GCP virtual machine.",
+    description: [
+      "The app itself was rather simple, but learning how a proper project is shipped was definitely a journey. Splitting services into separate containers, wiring them together with Docker Compose, making the whole thing reproducible, implementing CI/CD pipelines, and conencting to a GCP virtual machine, opened a whole new world to me.",
+      "Every push to the main branch runs through a CI/CD pipeline that builds the images and automatically deploys them to a GCP virtual machine. I still think this project is so cool.",
+    ],
+    technologies: ["Docker", "Docker Compose", "GitHub Actions", "GCP", "NextJS"],
+    githubLink: "https://github.com/SajawalHassan/note-taking-app",
     badgeText: "complete",
     badgeColor: "green",
   },
   {
     title: "A RPG game in Unity",
     subText: "Very much incomplete, maybe I'll finish it one day.",
+    description: [
+      "Started with big ambitions and a head full of ideas, and, like many game projects, scope crept faster than I could code. The basics are in place, but a lot is still missing.",
+      "It's sitting in my repos waiting patiently for me to come back to it. Each time I give it (and myself) false-hope by the false promise of returning.",
+    ],
+    technologies: ["Unity", "C#"],
+    githubLink: "https://github.com/SajawalHassan/Rpg_game_unity",
     badgeText: "progress",
     badgeColor: "yellow",
   },
   {
     title: "Shooting game in Godot",
     subText: "Made very early in my coding career. A simple shooting game in Godot",
+    description: [
+      "One of the very first things I ever built. It's a simple shooter: move around, aim, shoot, and survive. Nothing groundbreaking, but it's where I first learned how game loops, collisions and scenes fit together.",
+    ],
+    technologies: ["Godot", "GDScript"],
+    githubLink: "https://github.com/SajawalHassan/Shootin_Game",
     badgeText: "complete",
     badgeColor: "green",
   },

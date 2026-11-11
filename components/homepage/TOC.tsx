@@ -16,7 +16,11 @@ function TOC() {
   if (showLoading) return <PageTransition href={everythingState.transitionLink} />;
 
   return (
-    <motion.div
+    <motion.nav
+      id="table-of-contents"
+      aria-label="Table of contents"
+      itemScope
+      itemType="https://schema.org/SiteNavigationElement"
       className="sm:px-10 md:px-20 lg:px-0 lg:max-w-[670px] lg:mx-auto lg:w-full lg:min-w-[420px] xl:min-w-0 xl:max-w-[460px] 2xl:max-w-[531px] 2xl:w-full"
       variants={everythingState.showInitAnim ? container : containerUndelayed}
       initial="hidden"
@@ -25,22 +29,22 @@ function TOC() {
         if (definition === "exit") setShowLoading(true);
       }}
     >
-      <div className="md:text-center lg:text-left">
+      <motion.header variants={item} className="md:text-center lg:text-left">
         <motion.div variants={item}>
           <Heading2 text="Notebook peek" />
         </motion.div>
         <motion.div variants={item}>
           <HeadingSubText text={`A table of contents of me — an entire person. What an odd thing to say.`} />
         </motion.div>
-      </div>
-      <div className="mt-[28px] space-y-[28px] lg:space-y-[20px]">
+      </motion.header>
+      <motion.ol role="list" className="mt-[28px] space-y-[28px] lg:space-y-[20px] list-none">
         {TOCItemData.map((tocItem: ItemType, index: number) => (
-          <motion.div key={index} variants={item}>
+          <motion.li key={index} variants={item} className="list-none">
             <TOCItem text={tocItem.text} number={index + 1} isAlt={tocItem.isLast} link={tocItem.link} />
-          </motion.div>
+          </motion.li>
         ))}
-      </div>
-    </motion.div>
+      </motion.ol>
+    </motion.nav>
   );
 }
 export default TOC;

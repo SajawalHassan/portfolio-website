@@ -14,7 +14,11 @@ const HandwrittenHeading = (props: Props) => {
       )}
     >
       <h2>{props.text}</h2>
-      <div className="h-[2px] xl:h-[4px] w-full absolute bottom-[9px] lg:bottom-[9px] xl:bottom-[10px] transition-all duration-400 bg-black group-hover:bg-transparent" />
+      <span
+        aria-hidden="true"
+        role="presentation"
+        className="h-[2px] xl:h-[4px] w-full absolute bottom-[9px] lg:bottom-[9px] xl:bottom-[10px] transition-all duration-400 bg-black group-hover:bg-transparent"
+      />
     </div>
   );
 };

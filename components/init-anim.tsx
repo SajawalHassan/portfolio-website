@@ -3,26 +3,35 @@
 import Coffee from "@/public/assets/icons/coffee-svgrepo-com.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { useEverythingState } from "@/store/store";
 
 // In seconds
 export const INIT_ANIM_DURATION = 2;
 
 export const InitAnim = () => {
-  const everythingState = useEverythingState();
+  const setShowInitAnim = useEverythingState((s) => s.setShowInitAnim);
 
-  setTimeout(() => {
-    everythingState.setShowInitAnim(false);
-  }, INIT_ANIM_DURATION * 1000);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowInitAnim(false);
+    }, INIT_ANIM_DURATION * 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, [setShowInitAnim]);
 
   return (
     <motion.div
+      aria-hidden="true"
+      role="presentation"
       className="fixed inset-0 bg-[#c7c1b1] flex items-center justify-center z-999"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0, display: "none" }}
       transition={{ duration: 0.4, ease: "easeInOut", delay: 1.5 }}
     >
       <motion.div
+        aria-hidden="true"
+        role="presentation"
         initial={{ y: "200%", opacity: 0 }}
         animate={{
           y: ["200%", "0%"],
@@ -39,9 +48,14 @@ export const InitAnim = () => {
           src={Coffee}
           width={200}
           height={200}
-          alt="coffee"
-          className="animate-bounce"
+          alt=""
+          aria-hidden="true"
+          role="presentation"
+          draggable={false}
+          decoding="async"
+          priority
           loading="eager"
+          className="animate-bounce"
         />
       </motion.div>
     </motion.div>

@@ -1,20 +1,23 @@
 "use client";
+
 import { MouseEvent } from "react";
 import Link from "next/link";
 import { useEverythingState } from "@/store/store";
 import { usePathname } from "next/navigation";
 
-interface Props {
-  href: string;
+interface Props extends React.ComponentPropsWithoutRef<typeof Link> {
   children: React.ReactNode;
-  className?: string;
 }
 
-function CustomLink(props: Props) {
+function CustomLink({ href, children, onClick: externalOnClick, ...props }: Props) {
   const everythingState = useEverythingState();
   const pathname = usePathname();
 
-  const onClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+  const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    externalOnClick?.(e);
+
+    if (e.defaultPrevented) return;
+
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
       return;
     }
@@ -24,17 +27,13 @@ function CustomLink(props: Props) {
     e.preventDefault();
     e.stopPropagation();
 
-    everythingState.setTransitionLink(href);
+    everythingState.setTransitionLink(href.toString());
     everythingState.setDoExitAnim(true);
   };
 
   return (
-    <Link
-      href={props.href}
-      onClick={(e) => onClick(e, props.href)}
-      className={props.className}
-    >
-      {props.children}
+    <Link href={href} onClick={onClick} {...props}>
+      {children}
     </Link>
   );
 }

@@ -4,6 +4,7 @@ import ChevronRight from "@/public/assets/icons/chevron-right-yellow.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { useEverythingState } from "@/store/store";
 
 // in seconds
@@ -11,17 +12,31 @@ export const mainAnimationDuration = 1.5;
 
 export const PageTransition = ({ href }: { href: string }) => {
   const router = useRouter();
-  const everythingState = useEverythingState();
+  const doExitAnim = useEverythingState((s) => s.doExitAnim);
 
-  setTimeout(() => {
-    if (everythingState.doExitAnim == true) {
-      router.push(href);
-    }
-  }, mainAnimationDuration * 1000);
+  // Always holds the latest value, so the timer reads it when it fires
+  const doExitAnimRef = useRef(doExitAnim);
+  doExitAnimRef.current = doExitAnim;
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (doExitAnimRef.current == true) {
+        router.push(href);
+      }
+    }, mainAnimationDuration * 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, [href, router]);
 
   return (
-    <div className="bg-[#e5e0d4] h-screen w-screen flex items-center max-w-screen overflow-x-hidden fixed top-0 left-0 z-999">
+    <div
+      aria-hidden="true"
+      role="presentation"
+      className="bg-[#e5e0d4] h-screen w-screen flex items-center max-w-screen overflow-x-hidden fixed top-0 left-0 z-999"
+    >
       <motion.div
+        aria-hidden="true"
+        role="presentation"
         initial={{
           x: "-100%",
           clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)",
@@ -38,13 +53,18 @@ export const PageTransition = ({ href }: { href: string }) => {
           },
           clipPath: { duration: mainAnimationDuration, ease: "easeIn" },
         }}
-        className="bg-black h-[145px] md:h-[230px] lg:h-[250px] xl:h-[305px] xl:h- min-w-[115%] flex items-center justify-center"
+        className="bg-black h-[145px] md:h-[230px] lg:h-[250px] xl:h-[305px] min-w-[115%] flex items-center justify-center"
       >
         <Image
           src={ChevronRight}
           height={200}
           width={200}
-          alt="chevron right"
+          alt=""
+          aria-hidden="true"
+          role="presentation"
+          draggable={false}
+          decoding="async"
+          loading="eager"
           className="md:w-[280px] md:h-[280px] xl:w-[368px] xl:h-[368px]"
         />
       </motion.div>

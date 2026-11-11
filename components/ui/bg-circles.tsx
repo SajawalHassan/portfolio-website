@@ -39,6 +39,8 @@ function FloatingCircles({ count = 12 }: { count?: number }) {
 
   return (
     <motion.div
+      aria-hidden="true"
+      role="presentation"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
@@ -51,6 +53,8 @@ function FloatingCircles({ count = 12 }: { count?: number }) {
     >
       {circles.map((circle) => (
         <motion.div
+          aria-hidden="true"
+          role="presentation"
           key={circle.id}
           className="absolute rounded-full bg-[#88857e] opacity-30"
           style={{

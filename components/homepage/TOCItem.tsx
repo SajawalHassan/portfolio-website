@@ -15,13 +15,17 @@ function TOCItem(props: Props) {
   const [isGroupHovering, setIsGroupHovering] = useState(false);
 
   return (
-    <CustomLink href={props.link}>
-      <div
+    <CustomLink href={props.link} title={props.text} aria-label={`${props.number}. ${props.text}`} itemProp="url">
+      <article
+        itemScope
+        itemType="https://schema.org/WebPage"
         className="relative group overflow-x-hidden cursor-pointer"
         onMouseEnter={() => setIsGroupHovering(true)}
         onMouseLeave={() => setIsGroupHovering(false)}
       >
         <div
+          aria-hidden="true"
+          role="presentation"
           className={cn(
             "w-full h-full bg-black absolute transition-all duration-400 z-0 rounded-[4px]",
             !props.isAlt && "-translate-x-[101%] group-hover:translate-x-0",
@@ -41,6 +45,7 @@ function TOCItem(props: Props) {
           )}
         >
           <div
+            aria-hidden="true"
             className={cn(
               "w-[35px] h-[35px] bg-transparent border-[3px] transition-all duration-400 rounded-full flex items-center justify-center z-50 shrink-0",
               !props.isAlt
@@ -48,24 +53,30 @@ function TOCItem(props: Props) {
                 : "text-accent group-hover:text-white border-accent group-hover:border-white",
             )}
           >
-            <p
+            <span
               className={cn(
                 "text-[18px] font-francois transition-all duration-400",
                 !props.isAlt ? "text-black group-hover:text-white" : "text-accent group-hover:text-white",
               )}
             >
               {props.number.toString()}
-            </p>
+            </span>
           </div>
-          <Heading3 text={props.text} className={cn("group-hover:text-white!", props.isAlt && "text-accent!")} />
+          <Heading3
+            text={props.text}
+            itemProp="name"
+            className={cn("group-hover:text-white!", props.isAlt && "text-accent!")}
+          />
         </div>
         <div
+          aria-hidden="true"
+          role="presentation"
           className={cn(
             "h-[1px] w-full transition-all duration-400",
             props.isAlt ? "bg-transparent group-hover:bg-black" : "bg-black group-hover:bg-transparent",
           )}
         />
-      </div>
+      </article>
     </CustomLink>
   );
 }

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/helper";
-import { Heading3, Heading4, HeadingSubText } from "@/components/ui/headings";
+import { Heading4, HeadingSubText } from "@/components/ui/headings";
 
 export const RowItem = (props: {
   className?: string;
@@ -10,8 +10,8 @@ export const RowItem = (props: {
   badgeColor: string;
 }) => {
   return (
-    <div className="relative group">
-      <div
+    <li className="relative group list-none">
+      <article
         className={cn(
           "group cursor-pointer z-10 ml-0! border-[#8F8C7B] border-b-[2px] relative transition-[padding] duration-150 ease-out",
           props.className,
@@ -27,6 +27,7 @@ export const RowItem = (props: {
           <span
             className="absolute left-0 top-[20px] bottom-[20px] w-[3px] bg-[#8F8C7B] scale-y-0 group-hover:scale-y-100 origin-center transition-transform duration-150 ease-out"
             aria-hidden="true"
+            role="presentation"
           />
 
           <Heading4 text={props.text} className="text-transition-translate max-w-[80%] leading-[127%]" />
@@ -44,8 +45,12 @@ export const RowItem = (props: {
             <p className="text-[10px] md:text-[12px] xl:text-[14px] font-bold">{props.badgeText}</p>
           </div>
         </div>
-      </div>
-      <div className="z-0 h-[101%] bg-linear-to-r from-bg via-bg to-bg/0 w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 duration-200" />
-    </div>
+      </article>
+      <div
+        aria-hidden="true"
+        role="presentation"
+        className="z-0 h-[101%] bg-linear-to-r from-bg via-bg to-bg/0 w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 duration-200"
+      />
+    </li>
   );
 };

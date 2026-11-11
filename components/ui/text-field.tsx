@@ -22,21 +22,31 @@ export default function TextField({
 }: TextFieldProps) {
   return (
     <div className="flex w-full flex-col">
-      {showLabel && <Heading4 text={label} className="leading-tight text-black" />}
+      {showLabel && (
+        <div id={`${name}-label`}>
+          <Heading4 text={label} className="leading-tight text-black" />
+        </div>
+      )}
       <div className="relative mt-1 w-full">
         {icon && (
           <Image
             src={icon}
             alt=""
             aria-hidden="true"
+            role="presentation"
             width={16}
             height={16}
+            loading="lazy"
+            decoding="async"
+            draggable={false}
             className="pointer-events-none absolute left-0 top-1/2 h-6 w-6 2xl:h-6.5 2xl:w-6.5 -translate-y-1/2 opacity-60"
           />
         )}
         <input
           id={name}
           name={name}
+          aria-label={showLabel ? undefined : label}
+          aria-labelledby={showLabel ? `${name}-label` : undefined}
           aria-invalid={!!error}
           aria-describedby={error ? `${name}-error` : undefined}
           className={cn(
@@ -47,7 +57,13 @@ export default function TextField({
           {...props}
         />
       </div>
-      <p id={`${name}-error`} role="alert" className={cn("mt-1 text-sm text-red-700", !error && "opacity-0")}>
+      <p
+        id={`${name}-error`}
+        role="alert"
+        aria-live="assertive"
+        aria-hidden={!error}
+        className={cn("mt-1 text-sm text-red-700", !error && "opacity-0")}
+      >
         {error ? error : "DUMMY TEXT"}
       </p>
     </div>
