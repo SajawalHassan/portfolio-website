@@ -1,5 +1,7 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import me from "@/public/assets/profile.webp";
+import reddit from "@/public/assets/project-images/REDDIT.png";
+import discord from "@/public/assets/project-images/DISCORD.png";
+import archDotfilesPreview from "@/public/assets/project-images/arch-dotfiles.png";
 
 export interface ItemType {
   link: string;
@@ -79,7 +81,7 @@ export const webProjects: projectType[] = [
       "It's got authentication (from clerk), CRUD operations on subreddits, profiles, posts, nested comment sections, and upvotes. It has both dark and light mode, and is fully responsive. Looking back at the codebase now, even today I'm shocked as to how I did all that. It's not the most complex project, but it required a lot of work, consistency and dedication.",
     ],
     technologies: ["NextJS", "PrismaORM", "Typescript", "TailwindCSS", "MySQL", "Zustand", "Clerk", "Zod"],
-    image: me,
+    image: reddit,
     githubLink: "https://github.com/SajawalHassan/reddit_clone_nextjs",
     liveLink: "https://reddit-clone-nextjs-1f12.vercel.app",
     badgeText: "complete",
@@ -96,7 +98,7 @@ export const webProjects: projectType[] = [
     technologies: ["NextJS", "PrismaORM", "Typescript", "TailwindCSS", "MySQL", "Zustand", "Clerk", "Zod"],
     githubLink: "https://github.com/SajawalHassan/Discord_clone_nextJS",
     liveLink: "https://discord-clone-sajawal.vercel.app",
-    image: me,
+    image: discord,
     badgeText: "complete",
     badgeColor: "green",
   },
@@ -107,7 +109,6 @@ export const webProjects: projectType[] = [
       "Took roughly three months, if you're counting the gaps of commits. But proper work was roughly a month, the rest was gobbled up in the humbug toils of the life I unfortunately must bear outside books and computers.",
       "It's an odd choice to read what features this website has, when you're on it... Just explore, see what beauty I had to code with the pain of a horrid and slow laptop.",
     ],
-    image: me,
     technologies: ["NextJS", "Typescript", "TailwindCSS", "Google Drive API", "Zod", "Framer Motion"],
     githubLink: "https://github.com/SajawalHassan/portfolio-website/",
     badgeText: "complete",
@@ -149,7 +150,7 @@ export const linuxProjects: projectType[] = [
     ],
     githubLink: "https://github.com/sajawalhassan/dotfiles",
     technologies: ["Hyprland", "Waybar", "Kitty", "Swaync", "Rofi", "Flameshot"],
-    image: me,
+    image: archDotfilesPreview,
     badgeText: "Will always be wip",
     badgeColor: "yellow",
   },
@@ -239,7 +240,6 @@ export const randomProjects: projectType[] = [
       "Procrastination has, on rare occasions, been productive. This is the result of one such night. It picks a quote (or takes one you type in), renders it over a background into a short video, and then uploads it automatically, no manual editing required.",
       "It's a small automation pipeline at heart, but stitching together quote selection, video rendering and publishing into one hands-off flow was a lot of fun to figure out.",
     ],
-    image: me,
     technologies: ["Python", "MoviePy", "FFmpeg"],
     githubLink: "https://github.com/SajawalHassan/quote-video-generator",
     badgeText: "complete",
