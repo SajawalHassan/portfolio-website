@@ -16,15 +16,15 @@ import Pencil from "@/public/assets/pencil.svg";
 
 type Props = {};
 
-const IconBtn = (props: { icon: StaticImport; href: string }) => {
+const IconBtn = (props: { icon: StaticImport; href: string; title: string }) => {
   return (
     <a
       target="_blank"
       rel="noopener noreferrer me"
       href={props.href}
-      title={props.href}
       aria-label={`Contact link: ${props.href}`}
       itemProp="sameAs"
+      title={props.title}
       className="btn-translate-hover w-[40px] h-[40px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] xl:w-[55px] xl:h-[55px] 2xl:w-[65px] 2xl:h-[65px] rounded-[6px] bg-bg border-[3px] border-black flex items-center justify-center"
     >
       <Image
@@ -65,7 +65,7 @@ export const TalkToMeContainer = (props: Props) => {
       className={`flex items-center gap-x-[10px] xl:gap-x-[15px] w-max ${extraClassName}`}
     >
       {contactIcons.map((cI) => (
-        <IconBtn icon={cI.icon} href={cI.href} key={cI.href} />
+        <IconBtn icon={cI.icon} href={cI.href} key={cI.href} title={cI.title} />
       ))}
     </motion.nav>
   );

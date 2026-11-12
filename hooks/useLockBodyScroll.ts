@@ -2,13 +2,16 @@
 
 import { useEffect } from "react";
 
-export function useLockBodyScroll(locked: Boolean) {
-  useEffect(() => {
-    if (!locked) return;
+let lockCount = 0;
+let saved: { overflow: string; paddingRight: string } | null = null;
 
+function lock() {
+  if (lockCount === 0) {
     const { body, documentElement } = document;
-    const originalOverflow = body.style.overflow;
-    const originalPaddingRight = body.style.paddingRight;
+    saved = {
+      overflow: body.style.overflow,
+      paddingRight: body.style.paddingRight,
+    };
 
     // Width of the scrollbar that is about to disappear
     const scrollbarWidth = window.innerWidth - documentElement.clientWidth;
@@ -17,10 +20,23 @@ export function useLockBodyScroll(locked: Boolean) {
     if (scrollbarWidth > 0) {
       body.style.paddingRight = `${scrollbarWidth}px`; // prevents layout shift
     }
+  }
+  lockCount++;
+}
 
-    return () => {
-      body.style.overflow = originalOverflow;
-      body.style.paddingRight = originalPaddingRight;
-    };
+function unlock() {
+  lockCount = Math.max(0, lockCount - 1);
+  if (lockCount === 0 && saved) {
+    document.body.style.overflow = saved.overflow;
+    document.body.style.paddingRight = saved.paddingRight;
+    saved = null;
+  }
+}
+
+export function useLockBodyScroll(locked: boolean) {
+  useEffect(() => {
+    if (!locked) return;
+    lock();
+    return unlock;
   }, [locked]);
 }

@@ -50,7 +50,7 @@ export default function TextField({
           aria-invalid={!!error}
           aria-describedby={error ? `${name}-error` : undefined}
           className={cn(
-            "transition-all w-full border-b-2 border-[#8F8C7B] bg-transparent py-1 text-[16px] 2xl:text-[18px] font-light text-neutral-800 placeholder:text-neutral-600 focus:border-black focus:outline-none",
+            "transition-all w-full border-b-2 border-[#8F8C7B] bg-transparent py-1 text-[16px] 2xl:text-[18px] font-light text-neutral-800 placeholder:text-neutral-600 transition-all focus:border-black focus:outline-none",
             icon && "pl-7.5 2xl:pl-8",
             className,
           )}

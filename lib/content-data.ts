@@ -107,7 +107,7 @@ export const webProjects: projectType[] = [
     subText: "Made, as you could've guessed, in NextJS. As for the features... well, you're looking at those.",
     description: [
       "Took roughly three months, if you're counting the gaps of commits. But proper work was roughly a month, the rest was gobbled up in the humbug toils of the life I unfortunately must bear outside books and computers.",
-      "It's an odd choice to read what features this website has, when you're on it... Just explore, see what beauty I had to code with the pain of a horrid and slow laptop.",
+      "It's an odd choice to read what features this website has, since... well you're on it. Just explore, see what beauty I had to code with the pain of a horrid and slow laptop.",
     ],
     technologies: ["NextJS", "Typescript", "TailwindCSS", "Google Drive API", "Zod", "Framer Motion"],
     githubLink: "https://github.com/SajawalHassan/portfolio-website/",
@@ -119,7 +119,7 @@ export const webProjects: projectType[] = [
     subText:
       "Attempted to re-make it a third time, and, like all the other ones, gave up midway. Still, it's got the core functionality.",
     description: [
-      "Got pretty far the first time I made. Restarted for a 'fresh start', got far again, then restarted again. The core functionality this time around isn't much, but poke around at its git history, you'll see some fun stuff.",
+      "Got pretty far the first time I made it. Restarted for a 'fresh start', got far again, then restarted again. The core functionality this time around isn't much, but poke around at its git history, you'll see some fun stuff.",
     ],
     githubLink: "https://github.com/SajawalHassan/aetherize",
     technologies: ["NextJS", "Typescript", "TailwindCSS", "Next Auth", "Native DnD", "React DnD"],
@@ -130,7 +130,7 @@ export const webProjects: projectType[] = [
     title: "Html SPA loader",
     subText: "Automatically generate dynamic SPA pages from HTML files with a homepage using Next.js and Tailwind CSS.",
     description: [
-      "Made for my dad, who needed a way to create simple websites from simple html pages in NextJS.",
+      "Made for my dad, who needed a way to create simple websites from just html pages in NextJS.",
       "You add an html file to /html-pages and the new page is automatically available. Supports tailwindcss as well. Wasn't really a difficult project, but definitely a fun idea.",
     ],
     githubLink: "https://github.com/SajawalHassan/html-spa-loader",
@@ -147,9 +147,10 @@ export const linuxProjects: projectType[] = [
       "Took a lot of time to set up my ideal setup, and am rather proud of it. Using hyprland, waybar, and other, for the most part, standard utils.",
     description: [
       "Have been a linux user for at least three years now. Been on arch for about two years. These are all my dotfiles, present on my github.",
+      "Its got hyprland with waybar, kitty, and for the most part, standard utils you'll see in typical dotfiles. Though I am very happy with these right now, I also know my urge to continually change everything about it, shall, ironically, never change.",
     ],
     githubLink: "https://github.com/sajawalhassan/dotfiles",
-    technologies: ["Hyprland", "Waybar", "Kitty", "Swaync", "Rofi", "Flameshot"],
+    technologies: ["Hyprland", "Waybar", "Kitty", "Swaync", "Rofi", "Flameshot", "Grub"],
     image: archDotfilesPreview,
     badgeText: "Will always be wip",
     badgeColor: "yellow",
@@ -175,7 +176,7 @@ export const datascienceProjects: projectType[] = [
       "Also made during sixth or seventh grade. Part of the early steps I took towards Data Science, and drifted from ever since, hoping to return again one day.",
     description: [
       "Followed an awesome playlist to learn EDA that I've now lost, but nevertheless made me learn a lot of statistical concepts.",
-      "Found univariate and bivariate stats about it, calculated heteroscedasiticity, performed bivariate visualizations, MLR (multivariate statistics), pieced out the multicollinearity between variables, and optimize for best fit columns. It was very fun.",
+      "Found univariate and bivariate stats about it, calculated heteroscedasiticity, performed bivariate visualizations and MLR (multivariate statistics), pieced out the multicollinearity between variables, and optimized for best fit columns. It was very fun.",
     ],
     githubLink: "https://github.com/SajawalHassan/Housing-price-analysis",
     technologies: [
@@ -237,7 +238,7 @@ export const randomProjects: projectType[] = [
     subText:
       "Made the bulk of it at 2am on a random tuesday, not wanting to study for my upcoming physics exam. Automatically chooses quotes (or you may enter them manually), generates videos of them, and publishes them.",
     description: [
-      "Procrastination has, on rare occasions, been productive. This is the result of one such night. It picks a quote (or takes one you type in), renders it over a background into a short video, and then uploads it automatically, no manual editing required.",
+      "Procrastination has, on rare occasions, been productive. This is the result of one such night. It picks a quote (or takes one you type in), renders it over a background into a short video, and then uploads it automatically, with no manual editing whatsoever.",
       "It's a small automation pipeline at heart, but stitching together quote selection, video rendering and publishing into one hands-off flow was a lot of fun to figure out.",
     ],
     technologies: ["Python", "MoviePy", "FFmpeg"],
@@ -283,26 +284,24 @@ export const randomProjects: projectType[] = [
   },
 ];
 
-import Youtube from "@/public/assets/icons/yt.svg";
-import Discord from "@/public/assets/icons/discord.svg";
+import YWS from "@/public/assets/yws.jpg";
 import Instagram from "@/public/assets/icons/instagram.svg";
 
 export type ContactIconsType = {
   icon: StaticImport;
   href: string;
+  title: string;
 };
 
 export const ContactIcons: ContactIconsType[] = [
   {
-    icon: Youtube,
-    href: "#1",
-  },
-  {
-    icon: Discord,
-    href: "#2",
+    icon: YWS,
+    href: "https://writerfeed.com/profile/abcisbest",
+    title: "Young Writers Society",
   },
   {
     icon: Instagram,
-    href: "#3",
+    href: "https://www.instagram.com/sajawal_hassan__",
+    title: "Instagram",
   },
 ];

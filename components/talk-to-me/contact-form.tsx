@@ -7,14 +7,16 @@ import { TextArea } from "@/components/ui/text-area";
 import { HeadingSubText } from "@/components/ui/headings";
 import { cn } from "@/lib/helper";
 
-type Errors = Partial<Record<keyof ContactFormValues, string>>;
+type Errors = Partial<Record<keyof ContactFormValues | "serverErr", string>>;
 
 export default function ContactForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (sending) return;
     setSent(false);
 
     const form = e.currentTarget;
@@ -31,14 +33,32 @@ export default function ContactForm() {
     }
 
     setErrors({});
-    // TODO: send result.data to your API route / server action
-    console.log(result.data);
-    form.reset();
-    setSent(true);
+    setSending(true);
 
-    setTimeout(() => {
-      setSent(false);
-    }, 2000);
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(result.data),
+      });
+
+      const body = await res.json();
+
+      if (!res.ok || body.error) {
+        throw new Error(body.error?.message ?? "Something went wrong. Please try again.");
+      }
+
+      form.reset();
+      setSent(true);
+      setTimeout(() => setSent(false), 2000);
+    } catch (error) {
+      console.error(error);
+      setErrors({
+        serverErr: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -64,12 +84,17 @@ export default function ContactForm() {
 
         <div>
           <button
+            disabled={sending}
             className={cn(
-              "btn-translate-hover text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]",
+              "text-[12px] disabled:cursor-not-allowed font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]",
               sent && "bg-black text-white",
+              !sending && "btn-translate-hover",
             )}
           >
-            <HeadingSubText text={sent ? "Message sent" : "Send message"} className={cn(sent && "text-white")} />
+            <HeadingSubText
+              text={sending ? "Sending..." : sent ? "Message sent" : "Send message"}
+              className={cn(sent && "text-white")}
+            />
           </button>
         </div>
       </div>
