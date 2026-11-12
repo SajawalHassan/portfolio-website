@@ -11,7 +11,7 @@ interface ModalData {
 interface ModalStores {
   type: ModalTypes | null;
   data: ModalData;
-  isOpen: Boolean;
+  isOpen: boolean;
   openModal: (type: ModalTypes, data?: ModalData) => void;
   closeModal: () => void;
 }

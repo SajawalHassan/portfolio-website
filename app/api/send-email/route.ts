@@ -2,14 +2,11 @@ import { EmailTemplate } from "@/components/emails/demo-email";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-import * as React from "react";
-
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   try {
-    const values = await req.json();
-    const { name, email, message } = values;
+    const { name, email, message } = await req.json();
 
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
@@ -19,12 +16,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
     });
 
     if (error) {
-      return NextResponse.json({ error });
+      return NextResponse.json({ error }, { status: 400 });
     }
 
     return NextResponse.json(data);
   } catch (error) {
-    console.log(error);
-    return NextResponse.json({ error });
+    console.error(error);
+    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
 }
