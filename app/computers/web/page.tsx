@@ -18,7 +18,7 @@ function Page() {
         <div className="max-width-stuff px-[14px] md:px-[24px]">
           <ProjectLayout
             heading="Planet Cybernetica"
-            subtext="In this globe are the oceans of compilers, the buds of ascii-sunflowers, and the lush caves of terminals."
+            subtext="The globe of the oceans of compilers, with the buds of ascii-sunflowers, and the lush caves of terminals."
             projectList={webProjects}
             planetImage={Planet}
             handwrittenText="Code laden with dreams"

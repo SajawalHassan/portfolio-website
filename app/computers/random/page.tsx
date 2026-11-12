@@ -18,7 +18,7 @@ function Page() {
         <div className="max-width-stuff px-[14px] md:px-[24px]">
           <ProjectLayout
             heading="Planet Varia"
-            subtext="Stand on its north pole and wander anywhere, and you shall find diversity so diverse a nomenclator may go insane."
+            subtext="Stand on its north pole and wander anywhere, you shall find diversity so diverse a nomenclator may go insane."
             projectList={randomProjects}
             planetImage={Planet}
             handwrittenText="Scattered pebbles of consciousness"

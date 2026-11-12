@@ -8,7 +8,13 @@ export const NovelItem = (props: { className?: string; text: string; subtext: st
         <Heading4 text={props.text} />
         <HeadingSubText text={props.subtext} />
 
-        <button className="hover:-translate-y-1 hover:shadow-xl cursor-pointer transition-all text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]">
+        <a
+          href={
+            "https://docs.google.com/document/d/e/2PACX-1vTldkqqW3U-DyJ1o10ZwjiWtO6auIH5UnS0y8i2nsr6u2O3dghj2hU_Zll6PsrZpdXAWAcLLaXFd7Lz/pub"
+          }
+          target="_blank"
+          className="w-max hover:-translate-y-1 hover:shadow-xl cursor-pointer transition-all text-[12px] font-semibold border-2 border-black rounded-[9px] px-[13.5px] py-[7.5px] flex items-center gap-2 mt-[17px]"
+        >
           <HeadingSubText text="View on google docs" />
           <svg
             className="w-4.5 h-4.5 xl:w-5 xl:w-5"
@@ -19,7 +25,7 @@ export const NovelItem = (props: { className?: string; text: string; subtext: st
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   );

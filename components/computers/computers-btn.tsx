@@ -1,6 +1,7 @@
 "use client";
 
 import CustomLink from "@/components/ui/custom-link";
+import { Heading3, Heading4 } from "@/components/ui/headings";
 import Planet from "@/public/assets/planet.svg";
 
 interface IconProps {
@@ -54,16 +55,14 @@ function ComputersBtn(props: ComputersBtnProps) {
   return (
     <CustomLink
       href={props.href}
-      className="overflow-x-hidden relative overflow-y-hidden cursor-pointer group 2xl:max-w-[325px] border-[5px] border-black py-[4px] pl-[6px] xl:py-[6px] 2xl:px-[10px] flex items-center gap-x-[6px] md:gap-x-[2px] 2xl:gap-x-[10px] pr-2 h-max bg-transparent hover:bg-bg text-black transition-all duration-200 btn-translate-hover"
+      className="overflow-x-hidden relative overflow-y-hidden cursor-pointer group 2xl:max-w-[325px] border-[3px] 2xl:border-[5px] border-black pl-[6px] flex items-center gap-x-[6px] md:gap-x-[2px] pr-2 h-max bg-transparent hover:bg-bg text-black transition-all duration-200 btn-translate-hover"
     >
       <FolderIcon
         width={30}
         height={30}
         className="relative z-10 sm:w-[32px] sm:h-[32px] md:w-[26px] md:h-[26px] xl:w-[30px] xl:h-[30px] 2xl:w-[55px] 2xl:h-[55px]"
       />
-      <p className="relative z-10 font-francois text-[21px] sm:text-[23px] md:text-[17px] xl:text-[21px] 2xl:text-[32px] 3xl:text-[36px]!">
-        {props.text}
-      </p>
+      <Heading4 text={props.text} className="z-10 " />
     </CustomLink>
   );
 }

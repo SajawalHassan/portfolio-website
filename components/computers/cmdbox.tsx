@@ -1,3 +1,4 @@
+import { Heading3, Heading4 } from "@/components/ui/headings";
 import { cn } from "@/lib/helper";
 
 interface Props {
@@ -21,11 +22,11 @@ function CmdBox(props: Props) {
         )}
       >
         <div className="flex items-center">
-          <span className="font-francois text-accent">~/Computers/</span>
-          {props.subPath && <span className="font-francois text-[#FFFFD7]">{props.subPath}</span>}
+          <Heading4 text="~/Computers/" className="text-accent!" />
+          {props.subPath && <Heading4 text={props.subPath} className="text-[#FFFFD7]" />}
         </div>
-        <span>$</span>
-        <span className="font-francois">ls...</span>
+        <Heading4 text="$" className="text-white" />
+        <Heading4 text="ls..." className="text-white" />
       </div>
     </div>
   );
