@@ -78,7 +78,7 @@ export const ProjectModal = () => {
         aria-modal="true"
         aria-hidden={!modalIsOpen}
         data-is-open={modalIsOpen}
-        className={`fixed inset-0 m-auto w-max h-max max-w-[80vw] max-h-120 lg:w-220 sm:max-h-100 md:max-h-120 lg:max-h-180 px-5 py-4 lg:px-10 lg:py-7 overflow-y-auto bg-bg border-2 border-black rounded-[9px] drop-shadow-2xl z-100 ${fade}`}
+        className={`fixed inset-0 m-auto w-max h-max max-w-[97vw] max-h-130 lg:w-220 sm:max-h-100 md:max-h-120 lg:max-h-180 px-5 py-4 lg:px-10 lg:py-7 overflow-y-auto bg-bg border-2 border-black rounded-[9px] drop-shadow-2xl z-100 ${fade}`}
       >
         {data && (
           <>

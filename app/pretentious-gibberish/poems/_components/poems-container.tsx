@@ -94,7 +94,7 @@ export function PoemsContainer() {
         </motion.div>
 
         <motion.div variants={item} className="mt-6">
-          <HandwrittenHeading text="Meadows of love and hate." className="relative ml-auto w-[calc(100%+15px)]" />
+          <HandwrittenHeading text="Meadows of love and hate." className="relative ml-auto w-max pl-2" />
         </motion.div>
       </div>
 

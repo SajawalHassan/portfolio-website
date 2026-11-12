@@ -32,7 +32,7 @@ const QuoteModal = () => {
         aria-modal="true"
         aria-hidden={!modalIsOpen}
         data-is-open={modalIsOpen}
-        className={`fixed inset-0 m-auto w-max h-max max-w-[80vw] max-h-110 lg:max-w-200 sm:max-h-100 md:max-h-120 lg:max-h-150 px-5 py-4 lg:px-10 lg:py-7 overflow-y-auto bg-bg border-2 border-black rounded-lg z-100 duration-200 ${fade}`}
+        className={`fixed inset-0 m-auto w-max h-max max-w-[97vw] max-h-130 lg:max-w-200 sm:max-h-100 md:max-h-120 lg:max-h-150 px-5 py-4 lg:px-10 lg:py-7 overflow-y-auto bg-bg border-2 border-black rounded-lg z-100 duration-200 ${fade}`}
       >
         <HeadingSubText text={data?.text || "UNABLE TO FETCH QUOTE"} className="text-[#34312c]! font-lora!" />
       </div>
