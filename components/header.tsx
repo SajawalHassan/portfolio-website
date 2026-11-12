@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { container, containerUndelayed, item } from "../lib/global-anim-variants";
 import { useEverythingState } from "@/store/store";
 import CustomLink from "./ui/custom-link";
+import { getAge } from "@/lib/helper";
 
 function Header() {
   const everythingState = useEverythingState();
@@ -46,7 +47,7 @@ function Header() {
         </motion.div>
 
         <motion.div variants={item}>
-          <Heading3 className="text-[#3B403C]!" text="| Sajawal Hassan | 16 |" />
+          <Heading3 className="text-[#3B403C]!" text={`| Sajawal Hassan | ${getAge()} |`} />
         </motion.div>
       </motion.div>
       <motion.div variants={item} aria-hidden="true" role="presentation">

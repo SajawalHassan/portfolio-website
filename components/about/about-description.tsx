@@ -16,22 +16,13 @@ export const MoveButton = (props: { className?: string; onClick?: () => void; di
       )}
       onClick={props.onClick}
     >
-      {!props.disabled && (
-        <div
-          aria-hidden="true"
-          role="presentation"
-          className="h-[48px] w-[48px] 2xl:h-[66px] 2xl:w-[66px] bg-[#000000] cursor-pointer rounded-[7px] z-0 absolute top-0 left-0 -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform will-change-transform"
-        />
-      )}
       <button
-        type="button"
         disabled={props.disabled}
         aria-label={props.label}
         aria-disabled={props.disabled}
-        title={props.label}
         className={cn(
-          "h-[48px] w-[48px] 2xl:h-[66px] 2xl:w-[66px] bg-[#565551] border-2 border-black rounded-[4px] flex items-center justify-center transition-opacity",
-          props.disabled && "opacity-40 cursor-not-allowed",
+          "text-[12px] disabled:cursor-not-allowed font-semibold disabled:bg-black/50 bg-[#2D2C2A] rounded-[4px] px-[13.5px] py-[13.5px] flex items-center gap-2 mt-[17px]",
+          !props.disabled && "btn-translate-hover",
         )}
       >
         <Image
@@ -128,7 +119,11 @@ function AboutDescription() {
               className="space-y-5 md:space-y-10 lg:space-y-5"
             >
               {visibleParas.map((para, i) => (
-                <HeadingSubText text={para} key={i} className="leading-[144%] text-[#33312B]! lg:w-full!" />
+                <HeadingSubText
+                  text={para}
+                  key={i}
+                  className="leading-[144%] text-[#33312B]! whitespace-pre-wrap! lg:w-full!"
+                />
               ))}
             </motion.div>
           </AnimatePresence>

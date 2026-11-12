@@ -103,3 +103,10 @@ export function convertTextToUrl(text: string): string {
 export function convertUrlToText(text: string): string {
   return text.toLowerCase().replaceAll("-", " ");
 }
+
+export function getAge(): string {
+  const yearAge = 2026 - 2009;
+  const hasReachedBirthday = new Date().getMonth() === 12;
+  const age = yearAge - (hasReachedBirthday ? 0 : 1);
+  return age.toString();
+}
