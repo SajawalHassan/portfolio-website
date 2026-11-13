@@ -10,7 +10,7 @@ import { useState } from "react";
 import { PageTransition } from "@/components/page-transition";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import { Heading1 } from "@/components/ui/headings";
-import Me from "@/public/assets/mee.png";
+import Me from "@/public/assets/me_with_friend.jpg";
 
 const MotionImage = motion.create(Image);
 function AboutContainer() {
@@ -60,7 +60,7 @@ function AboutContainer() {
             draggable={false}
             width={400}
             height={500}
-            className="hidden lg:block min-w-[350px] max-h-[450px] lg:min-w-[300px] lg:max-h-[400px] border-black animate-float [animation-delay:-0.5s] xl:max-h-[400px] 2xl:min-w-[350px] 2xl:max-h-[430px] 3xl:min-w-[400px]! 3xl:max-h-[500px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0! object-cover"
+            className="hidden object-top lg:block min-w-[350px] max-h-[450px] lg:min-w-[300px] lg:max-h-[400px] border-black animate-float [animation-delay:-0.5s] xl:max-h-[400px] 2xl:min-w-[350px] 2xl:max-h-[430px] 3xl:min-w-[400px]! 3xl:max-h-[500px]! rounded-[7px] border shadow-[18px_18px_4px_0px_rgba(0,0,0,0.25)] bg-[#D9D9D9] mx-auto sm:mx-0! object-cover"
           />
           <motion.div variants={item}>
             <AboutDescription />

@@ -47,7 +47,7 @@ function Header() {
         </motion.div>
 
         <motion.div variants={item}>
-          <Heading3 className="text-[#3B403C]!" text={`| Sajawal Hassan | ${getAge()} |`} />
+          <Heading3 className="text-[#3B403C]!" text={`| Sajawal Hassan |`} />
         </motion.div>
       </motion.div>
       <motion.div variants={item} aria-hidden="true" role="presentation">
