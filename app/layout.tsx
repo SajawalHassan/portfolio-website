@@ -3,6 +3,7 @@ import { Caveat, Francois_One, Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { ModalsProvider } from "@/components/modals/modals-provider";
 import { PrententiousGibberishProvider } from "@/app/pretentious-gibberish/_components/pretentious-gibberish-provider";
+import { Analytics } from "@vercel/analytics/next";
 
 const francois_font = Francois_One({
   variable: "--font-francois",
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ModalsProvider />
         <PrententiousGibberishProvider>{children}</PrententiousGibberishProvider>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <Analytics />
       </body>
     </html>
   );
