@@ -1,4 +1,5 @@
 import { getFolder } from "@/lib/google-drive";
+import { convertTextToUrl } from "@/lib/helper";
 import type { MetadataRoute } from "next";
 
 const baseUrl = "https://sajawalhassan.vercel.app";
@@ -27,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}${route}`,
     })),
     ...essays.map((essay) => ({
-      url: `${baseUrl}/pretentious-gibberish/essays/${essay.title}`,
+      url: `${baseUrl}/pretentious-gibberish/essays/${convertTextToUrl(essay.title as string)}`,
       lastModified: new Date(essay.lastModified as string),
     })),
   ];
