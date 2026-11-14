@@ -44,7 +44,7 @@ function AboutContainer() {
       >
         <motion.div variants={item}>
           <HandwrittenHeading
-            text="Restlessly Procastinating"
+            text="Restlessly Procrastinating"
             className="relative ml-auto mr-[15px] animate-float-sm-long w-max pr-2.5"
           />
         </motion.div>

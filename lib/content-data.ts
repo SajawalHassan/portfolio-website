@@ -206,7 +206,7 @@ export const datascienceProjects: projectType[] = [
   {
     title: "A sentence completing LSTM (Long Short-Term Memory)",
     subText:
-      "Made an LSTM in pytorch that completes a given, incomplete sentence. It's not very good, but a transformer architecuture was too difficult for me to understand back then, and even now.",
+      "Made an LSTM in pytorch that completes a given, incomplete sentence. It's not very good, but a transformer architecture was too difficult for me to understand back then, and even now.",
     description: [
       "Made this while exploring NLP, right after getting comfortable with basic neural networks. You give it the start of a sentence, and it predicts the next words one at a time until it hits the given word generation limit",
       "The results are not very good at all. It'll produce something grammatical maybe half the time, and the other half it wanders off into sheer humbug. Still, getting my head around embeddings, hidden states and how a model can 'remember' earlier words gave many euraka moments to me.",
